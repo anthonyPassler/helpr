@@ -31,5 +31,22 @@
     text-decoration: none;
     opacity: 0.8;
 
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .active > .nav-link{
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 300;
+  &:hover {
+    color: white;
+    font-weight: 400;
+  }
+}
+.navbar-light .navbar-nav .active > .nav-link {
+  font-weight: 400;
+}
+.avatar {
+  &:hover {
+    border: 1px solid white;
   }
 }

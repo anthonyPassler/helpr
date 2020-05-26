@@ -1,1 +1,28 @@
 <%= render 'shared/navbar-in-app' %>
+
+<div class="dashboard-container">
+    <div class="dashboard-item border-bottom-right ">
+      <div class="dashboard-text">
+        <%= image_tag "law.svg", alt: "hammer icon", style: "width: 80px" %>
+        <h2>My <span class="bold">Bids</span></h2>
+      </div>
+    </div>
+    <div class="dashboard-item border-bottom-left">
+      <div class="dashboard-text">
+        <%= image_tag "share-post.svg", alt: "note icon", style: "width: 75px" %>
+        <h2>My <span class="bold">Posts</span></h2>
+      </div>
+    </div>
+    <div class="dashboard-item border-top-right">
+      <div class="dashboard-text">
+        <%= image_tag "review.svg", alt: "hand with stars icon", style: "width: 80px" %>
+        <h2>My <span class="bold">Reviews</span></h2>
+      </div>
+    </div>
+    <div class="dashboard-item border-top-left">
+      <div class="dashboard-text">
+        <%= image_tag "help.svg", alt: "help icon", style: "width: 80px" %>
+        <h2>Ask for <span class="bold">Help</span></h2>
+      </div>
+    </div>
+</div>
