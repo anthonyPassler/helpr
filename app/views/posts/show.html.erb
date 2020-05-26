@@ -1,3 +1,66 @@
+
+<%= render 'shared/navbar-in-app', class: "navbar-margin" %>
+<div id="layout" class="container">
+<!--   <div id = "cardor"> -->
+<!--     <span class="image_left">
+      <%= image_tag "tyrion.jpg", alt: "alttext", class: "tyrion", id: "tyrion-with-br"%>
+    </span>
+    <div class="divbox"> -->
+
+  <div id="spacearound" class="biddertop mb-2 w-100 d-flex justify-content-space-between justify-content: space-around">
+    <div>
+    <%= image_tag "tyrion.jpg", alt: "alttext", class: "tyrion mb-3", id: "tyrion-with-br"%>
+          <h3><%= @post.title %></h3>
+          <p><%= @post.content %></p>
+          <p><%= @post.date %></p>
+   </div>
+        <div>
+          <div class="ASAP">ASAP</div>
+        </div>
+</div>
+
+<!--     </div> -->
+
+<!-- </div> -->
+    <div class="bidder mb-4">
+            <%= image_tag "tyrion.jpg", alt: "alttext", class: "tyrion", id: "tyrion-with-br1"%>
+          <div class="ml-4">
+            <div >
+            <%= @user.first_name %>
+            <%= @user.last_name %>
+            </div>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+          </div>
+          <div>
+            <div>
+              <div class="d-flex justify-content-center align-items-center ml-3">
+                  <div class="ASAP3 m-1">
+                  <%= image_tag "help", alt: "alttext", class: "icon"%>
+                  </div>
+                  <div class="ASAP4 m-1">
+                  <%= image_tag "worker", alt: "alttext", class: "icon" %>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center ml-3">
+                  <div class="ASAP2 m-1">
+                  <%= image_tag "bulb", alt: "alttext", class: "icon" %>
+                  </div>
+                  <div class="ASAP1 m-1">
+                    <%= image_tag "trolley", alt: "alttext", class: "icon" %>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div>
+            <button type="button" class="custombutton m-3">Accept</button>
+          </div>
+    </div>
+
 <%= simple_form_for [@post, @bid] do |f| %>
 <%= f.submit %>
 <% end %>
+
