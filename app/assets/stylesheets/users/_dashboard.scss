@@ -1,0 +1,51 @@
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 120px 150px;
+}
+.dashboard-item {
+  background-color: blue;
+  height: 225px;
+  flex: 0 0 45%;
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:nth-child(1) {
+    background: $purple-grad;
+  }
+  &:nth-child(2) {
+    background: $blue-grad;
+  }
+  &:nth-child(3) {
+    background: $yellow-grad;
+  }
+  &:nth-child(4) {
+    background: $purple-grad;
+  }
+}
+.dashboard-text {
+  text-align: center;
+  img {
+    margin-bottom: 16px;
+  }
+}
+.bold {
+  font-weight: 700;
+}
+.dashboard-text {
+  color: white;
+}
+.border-bottom-right {
+  border-radius: 50px 50px 0px 50px;
+}
+.border-bottom-left {
+  border-radius: 50px 50px 50px 0px;
+}
+.border-top-right {
+  border-radius: 50px 0px 50px 50px;
+}
+.border-top-left {
+  border-radius: 0px 50px 50px 50px;
+}
