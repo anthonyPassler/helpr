@@ -11,4 +11,55 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+
+.tyrion {
+  width: 100%;
+  border: 5px solid gold;
+}
+
+#layout {
+  justify-content: flex-start;
+}
+
+// .image_left{
+//   width:100%;
+// }
+
+#reviews-completed-jobs {
+  display: flex;
+  justify-content: space-between;
+}
+
+#pending-jobs-approved-jobs {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.container {
+  display-flex: none;
+}
+
+#cardor {
+  display: flex;
+}
+
+.image_left{
+  width: 50%;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.margin-left{
+  // margin-left: 500px;
+  width: 50%;
+}
+
+.margin-left-one{
+  // margin-left: 130px;
+  width: 50%;
+}
+
 @import "users/dashboard";
