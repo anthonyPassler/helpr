@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
   def show
-
-  end
-
-  def edit
-
-  end
-
-  def update
-
+    @user = User.find(params[:id])
+    @posts = @user.posts
+    @bids = @user.bids
+    @reviews = @user.reviews
   end
 
   def dashboard
