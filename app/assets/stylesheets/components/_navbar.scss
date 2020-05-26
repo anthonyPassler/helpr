@@ -15,3 +15,20 @@
   background: $purple-grad;
   border-radius: 0px 0px 30px 30px
 }
+
+#navbar-landing {
+  background: white;
+
+  img {
+    height: 40px;
+  }
+
+  a {
+    color: black
+  }
+
+  a:hover {
+    text-decoration: none;
+
+  }
+}
