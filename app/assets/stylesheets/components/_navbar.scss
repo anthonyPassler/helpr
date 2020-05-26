@@ -15,6 +15,23 @@
   background: $purple-grad;
   border-radius: 0px 0px 30px 30px
 }
+
+#navbar-landing {
+  background: white;
+
+  img {
+    height: 40px;
+  }
+
+  a {
+    color: black
+  }
+
+  a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav .active > .nav-link{
   color: white;

@@ -2,6 +2,11 @@
   background: #fafafa;
   text-align: center;
   height: 110px;
+  padding: 0px 50px;
+  margin-top: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-links a {
@@ -11,9 +16,11 @@
   padding: 0px 10px;
   &:hover {
     color: $dark-purple;
+    opacity: 0.15;
   }
 }
 
 .footer-links i {
   margin-top: 50px;
 }
+
