@@ -1,3 +1,92 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<h2>Hello All</h2>
+<div class="navbar">
+  <div id="navbar-logo">
+    <%= image_tag "helpr.png", alt: "Helpr logo" %>
+  </div>
+  <div id="navbar-links">
+    <p><a href=".about">About</a>  |  <a href=".how-it-works">How it works</a>  |  <a href=".showcase-helprs">Meet our Helprs</a></p>  |  <%= link_to "Sign in", new_user_session_path %></p>
+  </div>
+</div>
+
+<div class="banner">
+  <div id="tagline">
+    <h2>Lend a helping hand in your local community</h2>
+  </div>
+
+  <div id="hero-ctas" class="container">
+    <div class="row">
+      <div id="cta-dashboard" class="col-6">
+        <p>My <br><strong>Dasboard</strong></p>
+      </div>
+      <div id="cta-help" class="col-6">
+        <p>I need<br><strong>Help</strong></p>
+      </div>
+    </div>
+    <div class="row">
+      <div id="cta-become-helpr" class="col-6">
+        <p>Become a<br><strong>Helpr</strong></p>
+      </div>
+      <div id="cta-feed" class="col-6">
+        <p>Community<br><strong>Feed</strong></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="about">
+  <h2>About</h2>
+  <p>We are a group of like-minded humans building a tight-knit community by lending each other a helping hand.</p>
+  <div class="cards-categories">
+    <!-- insert custom icons here -->
+  </div>
+</div>
+
+<div class="how-it-works">
+  <h3>How it works</h3>
+  <p>As a member of the Helpr community, you can feel great about doing a good deed and meet new people by lending a hand to someone in your area. If you need help with some small task you can't do alone, you can also ask around for some help.</p>
+  <div class="container">
+    <div class="row">
+      <div class="card-become-helpr" class="col-6"></div>
+      <div class="card-need-help" class="col-6"></div>
+    </div>
+  </div>
+</div>
+
+<div id="showcase-helprs">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque vitae veritatis officiis sed neque deleniti in facere eum. Veritatis pariatur beatae, ratione nemo deleniti quaerat non harum? Totam, illo, soluta.</p>
+  <div class="cards-showcase">
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="contact">
+    <ul class="list-inline">
+      <li><strong>Contact</strong></li>
+      <li>info@helpr.com</li>
+      <li>+44 21657 8943</li>
+    </ul>
+  </div>
+
+  <div>
+    <p>© 2020 Helpr</p>
+  </div>
+
+  <div class="follow">
+    <p><strong>Follow us</strong></p>
+    <br>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-snapchat-square"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+
+</footer>
+
+
