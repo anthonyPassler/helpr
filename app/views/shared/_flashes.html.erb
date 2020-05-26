@@ -14,3 +14,13 @@
     </button>
   </div>
 <% end %>
+
+<script>
+  const hideMessage = () => {
+    const message = document.querySelector(".alert");
+    message.style.display = "none";
+  }
+  setTimeout(function () {
+    hideMessage();
+  }, 4000);
+</script>
