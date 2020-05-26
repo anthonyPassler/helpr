@@ -15,3 +15,22 @@
   background: $purple-grad;
   border-radius: 0px 0px 30px 30px
 }
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .active > .nav-link{
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 300;
+  &:hover {
+    color: white;
+    font-weight: 400;
+  }
+}
+.navbar-light .navbar-nav .active > .nav-link {
+  font-weight: 400;
+}
+.avatar {
+  &:hover {
+    border: 1px solid white;
+  }
+}
