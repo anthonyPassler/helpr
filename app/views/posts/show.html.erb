@@ -1,3 +1,4 @@
+
 <%= render 'shared/navbar-in-app', class: "navbar-margin" %>
 <div id="layout" class="container">
 <!--   <div id = "cardor"> -->
@@ -58,3 +59,8 @@
             <button type="button" class="custombutton m-3">Accept</button>
           </div>
     </div>
+
+<%= simple_form_for [@post, @bid] do |f| %>
+<%= f.submit %>
+<% end %>
+

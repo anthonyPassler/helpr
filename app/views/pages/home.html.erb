@@ -1,44 +1,63 @@
+<div id="navbar-landing" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "helpr.png", style: "width: 100px" %>
+    <% end %>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<h2>Hello</h2>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class="navbar">
-  <div id="navbar-logo">
-    <%= image_tag "helpr.png", alt: "Helpr logo" %>
-  </div>
-  <div id="navbar-links">
-    <p><a href=".about">About</a>  |  <a href=".how-it-works">How it works</a>  |  <a href=".showcase-helprs">Meet our Helprs</a></p>  |  <%= link_to "Sign in", new_user_session_path %></p>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a href="#about" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#how-it-works" class="nav-link">How it works</a>
+      </li>
+      <li class="nav-item">
+        <a href="#showcase-helprs" class="nav-link">Meet our Helprs</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+      </li>
+    </ul>
   </div>
 </div>
 
-<div class="banner">
-  <div id="tagline">
-    <h2>Lend a helping hand in your local community</h2>
-  </div>
 
-  <div id="hero-ctas" class="container">
+<div id="banner">
+  <div class="container">
     <div class="row">
-      <div id="cta-dashboard" class="col-6">
-        <p>My <br><strong>Dasboard</strong></p>
+      <div id="tagline" class="col-6">
+        <h2>Lend a helping hand in your local community</h2>
       </div>
-      <div id="cta-help" class="col-6">
-        <p>I need<br><strong>Help</strong></p>
+
+      <div id="hero-ctas" class="col-6">
+        <div class="row">
+          <div id="cta-dashboard" class="cta col-6">
+            <p>My<br><strong>Dashboard</strong></p>
+          </div>
+          <div id="cta-help" class="cta col-6">
+            <p>I need<br><strong>Help</strong></p>
+          </div>
+        </div>
+        <div class="row">
+          <div id="cta-become-helpr" class="cta col-6">
+            <p>Become a<br><strong>Helpr</strong></p>
+          </div>
+          <div id="cta-feed" class="cta col-6">
+            <p>Community<br><strong>Feed</strong></p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div id="cta-become-helpr" class="col-6">
-        <p>Become a<br><strong>Helpr</strong></p>
-      </div>
-      <div id="cta-feed" class="col-6">
-        <p>Community<br><strong>Feed</strong></p>
-      </div>
+
     </div>
   </div>
-
 </div>
 
-<div class="about">
+<div id="about">
   <h2>About</h2>
   <p>We are a group of like-minded humans building a tight-knit community by lending each other a helping hand.</p>
   <div class="cards-categories">
@@ -46,7 +65,7 @@
   </div>
 </div>
 
-<div class="how-it-works">
+<div id="how-it-works">
   <h3>How it works</h3>
   <p>As a member of the Helpr community, you can feel great about doing a good deed and meet new people by lending a hand to someone in your area. If you need help with some small task you can't do alone, you can also ask around for some help.</p>
   <div class="container">

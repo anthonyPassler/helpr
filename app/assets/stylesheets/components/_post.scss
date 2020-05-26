@@ -1,0 +1,48 @@
+
+.container {
+  padding: 40px 0;
+  display: flex;
+}
+.post {
+  display: flex;
+  padding: 16px;
+  margin-top: 8px;
+  background-color: rgba(145, 49, 138, 0.1);
+}
+.create-post {
+  border-radius: 40px 40px 0px 0px;
+  padding: 16px;
+  background: $purple-grad;
+  p {
+    color: white;
+    margin: 0;
+    display: inline;
+  }
+  img {
+    margin-right: 16px;
+  }
+}
+.posts-container {
+  width: 65%;
+  margin-right: 40px;
+}
+.map-container {
+  overflow: hidden;
+  width: 30%;
+  img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.map-bottom {
+  padding: 16px;
+  background: $purple-grad;
+  p {
+    color: white;
+    margin-bottom: 0;
+  }
+}
+.post-content p{
+  margin-bottom: 0;
+}

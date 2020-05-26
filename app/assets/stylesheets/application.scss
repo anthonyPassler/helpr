@@ -11,6 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "users/dashboard";
+
+h3 {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+p {
+  font-weight: 300;
+  font-size: 16px;
+}
+
 
 #spacearound{
       justify-content: space-around;
@@ -166,5 +178,3 @@ height: 50px;
   // margin-left: 130px;
   width: 50%;
 }
-
-@import "users/dashboard";

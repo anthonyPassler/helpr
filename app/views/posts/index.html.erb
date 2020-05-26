@@ -1,0 +1,32 @@
+<%= render 'shared/navbar-in-app' %>
+
+<div class="container">
+
+  <div class="posts-container">
+    <div class="create-post">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/anthonyPassler", class: "avatar", alt: "profile image" %>
+      <p><strong>Need Help?</strong> Post a request.</p>
+    </div>
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/anthonyPassler", class: "avatar-extra-large", alt: "profile image" %>
+        </div>
+        <div class="post-content">
+          <h3><%= post.title %></h3>
+          <p><%= post.content %></p>
+          <p><%= post.date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="map-container">
+
+    <%= image_tag "https://images.unsplash.com/photo-1577086664693-894d8405334a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1533&q=80", alt: "map"%>
+    <div class="map-bottom">
+      <h3>Help map</h3>
+      <p>See all the help requests in your area on the help map.</p>
+    </div>
+  </div>
+</div>
