@@ -179,3 +179,9 @@ height: 50px;
   // margin-left: 130px;
   width: 50%;
 }
+
+.min-height{
+  min-height: calc(100vh - 176px)
+}
+
+.padding-small {padding: 2rem}
