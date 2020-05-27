@@ -67,12 +67,12 @@
 }
 
 .date-btn {
-  margin-left: 24px;
   padding: 8px;
-  background: $purple-grad;
+  background: $blue-grad;
   height: 35px;
   color: white;
   border-radius: 15px 15px 15px 0px;
+  display: inline-block;
   p {
     font-size: 12px;
   }
