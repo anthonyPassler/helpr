@@ -23,12 +23,13 @@
   }
 }
 .posts-container {
-  width: 65%;
+  width: 58%;
   margin-right: 40px;
 }
 .map-container {
+  border-radius: 40px;
   overflow: hidden;
-  width: 30%;
+  width: 40%;
   img {
     height: 250px;
     width: 100%;
@@ -36,11 +37,15 @@
   }
 }
 .map-bottom {
+  border-radius: 0px 0px 40px 0px;
   padding: 16px;
   background: $purple-grad;
   p {
     color: white;
     margin-bottom: 0;
+  }
+  h3 {
+    color: white;
   }
 }
 .post-content p{
