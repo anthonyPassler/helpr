@@ -11,7 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "posts/index";
 @import "users/dashboard";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+}
 
 h3 {
   font-weight: 600;
@@ -238,6 +246,13 @@ height: 50px;
   width: 50%;
 }
 
+
 .col-5{
   max-width: 100%;
 }
+
+.min-height{
+  min-height: calc(100vh - 176px)
+}
+
+.padding-small {padding: 2rem}
