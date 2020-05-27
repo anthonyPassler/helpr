@@ -1,13 +1,18 @@
-
 .container {
   padding: 40px 0;
   display: flex;
+  align-items: flex-start;
 }
 .post {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   padding: 16px;
   margin-top: 8px;
   background-color: rgba(145, 49, 138, 0.1);
+  &:hover {
+    background-color: rgba(145, 49, 138, 0.3);
+  }
 }
 .create-post {
   border-radius: 40px 40px 0px 0px;
@@ -21,12 +26,21 @@
   img {
     margin-right: 16px;
   }
+  &:hover {
+    background: $blue-grad;
+  }
 }
 .posts-container {
   width: 58%;
   margin-right: 40px;
+  a {
+    text-decoration: none;
+  }
 }
 .map-container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 110px;
   border-radius: 40px;
   overflow: hidden;
   width: 40%;
@@ -38,7 +52,7 @@
 }
 .map-bottom {
   border-radius: 0px 0px 40px 0px;
-  padding: 16px;
+  padding: 24px;
   background: $purple-grad;
   p {
     color: white;
@@ -50,4 +64,11 @@
 }
 .post-content p{
   margin-bottom: 0;
+}
+.post-container .links {
+  color: black;
+  text-decoration: none;
+}
+.avatar-post-container {
+  display: flex;
 }

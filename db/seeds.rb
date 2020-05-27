@@ -16,5 +16,9 @@ Bid.create!(post: post, user: user, approved: false)
 Bid.create!(post: post, user: user, approved: true)
 Post.create!(title: "Care required", content: "I need help changing my nappies", user: user, completed: true)
 Post.create!(title: "Looking for companionship", content: "Can't wait to spend time with you", user: user, completed: false)
+Post.create!(title: "Need help with curtains", content: "Please could someone help me hanging up my curtains, I am afraid I will fall and hurt myself.", user: user, completed: false)
+Post.create!(title: "Need help with shopping", content: "Please could someone help me with my grocery shopping.", user: user, completed: false)
+Post.create!(title: "Need help with my computer", content: "Please could someone help me with logging into my pc, it was working until this morning.", user: user, completed: false)
+
 #for date use created_at eg for posts
 
