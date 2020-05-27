@@ -61,17 +61,23 @@
 .view {
   display: flex;
   align-items: center;
-  color: white;
-  padding: 8px;
+  color: $light-purple;
+  padding: 16px;
   background: $yellow-grad;
+  &:hover {
+    color: white;
+  }
 }
 .approve {
   display: flex;
   align-items: center;
   color: white;
   border-radius: 0px 50px 50px 0px;
-  padding: 8px;
+  padding: 16px;
   background: $purple-grad;
+  &:hover {
+    background: $blue-grad;
+  }
 }
 .view-approve {
   display: flex;
