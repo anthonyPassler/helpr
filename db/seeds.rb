@@ -19,5 +19,8 @@ Post.create!(title: "Need help with curtains", content: "Please could someone he
 Post.create!(title: "Need help with shopping", content: "Please could someone help me with my grocery shopping.", user: user, completed: false)
 Post.create!(title: "Need help with my computer", content: "Please could someone help me with logging into my pc, it was working until this morning.", user: user, completed: false)
 
+Chatroom.create! name: 'general'
+User.create! email: 'hello@world.com', password: "123456", nickname: "heaven"
+User.create! email: 'bonjour@world.com', password: "123456", nickname: "hell"
 #for date use created_at eg for posts
 
