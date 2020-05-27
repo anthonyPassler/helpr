@@ -1,10 +1,28 @@
-<div class="container mt-5 mb-3">
-  <div class="row justify-content-center mb-3 mt-3">
-    <div class="col-4">
+<div class="container mt-4 mb-4">
+  <div class="row justify-content-center w-100 mb-3 mt-3">
+    <div class="col-5">
       <br>
-      <br>
+      <div style="text-align: center;">
       <h2>Log in</h2>
+      </div>
       <br>
+
+
+      <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <button class="loginBtn loginBtn--facebook justify">
+          Login with Facebook
+        </button>
+
+        <button class="loginBtn loginBtn--google">
+          Login with Google
+        </button>
+      </div>
+
+      <div style="margin-top: 35px; margin-bottom: 35px; width: 99%; height: 14px; border-bottom: 1px solid grey; text-align: center">
+        <span style="font-size: 15px; color: grey; background-color: #F3F5F6; padding: 0 5px;">
+          OR
+        </span>
+      </div>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">

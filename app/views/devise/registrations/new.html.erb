@@ -1,9 +1,27 @@
-<div class="container mt-5 mb-3">
-  <div class="row justify-content-center mb-3 mt-3">
-    <div class="col-4">
+<div class="container mt-2 mb-4">
+  <div class="row justify-content-center w-100 mb-3 mt-3">
+    <div class="col-6">
       <br>
+      <div style="text-align: center;">
       <h2>Sign up</h2>
+      </div>
       <br>
+
+      <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <button class="loginBtn loginBtn--facebook justify">
+          Login with Facebook
+        </button>
+
+        <button class="loginBtn loginBtn--google">
+          Login with Google
+        </button>
+      </div>
+
+      <div style="margin-top: 35px; margin-bottom: 35px; width: 99%; height: 14px; border-bottom: 1px solid grey; text-align: center">
+        <span style="font-size: 15px; color: grey; background-color: #F3F5F6; padding: 0 5px;">
+          OR
+        </span>
+      </div>
 
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -16,6 +34,9 @@
         <%= f.input :last_name,
                 required: false,
                 input_html: { autocomplete: "last name" } %>
+        <%= f.input :address,
+                required: false,
+                input_html: { autocomplete: "address" } %>
         <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -27,16 +48,17 @@
         <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-        <%= f.input :photo, as: :file %>
+        <%= f.input :Photo, as: :file %>
       </div>
+      <br>
 
-       <div class="form-actions">
+      <div class="form-actions">
         <%= f.button :submit, "Sign up", class: "btn-primary" %>
-       </div>
-       <% end %>
-       <br>
-       <%= render "devise/shared/links" %>
+      </div>
+        <% end %>
         <br>
-     </div>
+        <%= render "devise/shared/links" %>
+        <br>
+      </div>
    </div>
  </div>
