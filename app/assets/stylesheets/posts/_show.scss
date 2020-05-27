@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+}
+.show-post-container {
+  background-color: rgba(145, 49, 138, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  width: 65%;
+  a {
+    text-decoration: none;
+  }
+}
+.img-text {
+  display: flex;
+}
+.show-post {
+  display: flex;
+  justify-content: space-between;
+}
+.chat-container {
+  background-color: rgba(145, 49, 138, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  width: 35%;
+  margin-left: 16px;
+}
+.show-text {
+  margin-right: 80px;
+  h3 {
+    font-size: 24px;
+  }
+}
+.bid-offer {
+  margin-top: 24px;
+  border-radius: 50px 50px 50px 0px;
+  text-align: center;
+  padding: 16px;
+  background: $purple-grad;
+  color: white;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    background: $blue-grad;
+  }
+}
+.bid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  border-radius: 50px 50px 50px 0px;
+  border: 2px solid $light-purple;
+  p {
+    margin: 0;
+  }
+  h3 {
+    padding: 16px;
+    margin: 0;
+  }
+}
+.view {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 8px;
+  background: $yellow-grad;
+}
+.approve {
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 0px 50px 50px 0px;
+  padding: 8px;
+  background: $purple-grad;
+}
+.view-approve {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

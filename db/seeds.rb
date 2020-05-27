@@ -9,7 +9,8 @@ Review.destroy_all
 Post.destroy_all
 User.destroy_all
 Bid.destroy_all
-user = User.create!(first_name: "John Montagu, Third Earl of Salisbury", last_name: "Baron Salisbury", email: "helpremail@gmail.com", password: 123456, address: "Herstmonceux Castle", bio: "Drinking and lust: No man can match me in these things. I am the god of tits and wine.", latitude: nil, longitude: nil )
+user = User.create!(first_name: "John", last_name: "Montagu", email: "helpremail@gmail.com", password: 123456, address: "Herstmonceux Castle", bio: "Drinking and lust: No man can match me in these things. I am the god of tits and wine.", latitude: nil, longitude: nil )
+user = User.create!(first_name: "Bobby", last_name: "Williams", email: "bobby@gmail.com", password: 123456, address: "wimbledon london", bio: "Drinking and lust: No man can match me in these things. Lots of football.", latitude: nil, longitude: nil )
 post = Post.create!(title: "drug pickup/ need some herbal 'medication' picked up", content: "its been snowing heavily and need some help to collect my herbal medication", user: user, completed: false)
 Review.create!(content: "Speedy pickup and delivery, must've travelled at highperspeed", rating: 5, post: post, user: user)
 Bid.create!(post: post, user: user, approved: false)
