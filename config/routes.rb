@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update]
-  get    "users/:id/dashboard",      to: "users#dashboard",  as: :dashboard
+  get "users/:id/dashboard", to: "users#dashboard", as: :dashboard
 
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
 end
