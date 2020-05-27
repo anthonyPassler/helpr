@@ -29,32 +29,24 @@
 
 <div id="banner">
   <div class="container">
-    <div class="row">
-      <div id="tagline" class="col-6">
-        <h2>Lend a helping hand in your local community</h2>
-      </div>
-
-      <div id="hero-ctas" class="col-6">
-        <div class="row">
-          <div id="cta-dashboard" class="cta col-6">
-            <p>My<br><strong>Dashboard</strong></p>
-          </div>
-          <div id="cta-help" class="cta col-6">
-            <p>I need<br><strong>Help</strong></p>
-          </div>
+      <div class="col-6 d-flex">
+        <div class="tagline">
+          <h2>Lend a helping hand in your local community</h2>
         </div>
-        <div class="row">
-          <div id="cta-become-helpr" class="cta col-6">
-            <p>Become a<br><strong>Helpr</strong></p>
+      </div>
+      <div class="col-6">
+        <div class="hero-ctas">
+          <div>
+            <p class="cta" id="cta-dashboard">My<br><strong>Dashboard</strong></p>
+            <p class="cta" id="cta-become-helpr">Become a<br><strong>Helpr</strong></p>
           </div>
-          <div id="cta-feed" class="cta col-6">
-            <p>Community<br><strong>Feed</strong></p>
+          <div>
+            <p class="cta" id="cta-help">I need<br><strong>Help</strong></p>
+            <p class="cta" id="cta-feed">Community<br><strong>Feed</strong></p>
           </div>
         </div>
       </div>
-
     </div>
-  </div>
 </div>
 
 <div id="about">
@@ -106,7 +98,6 @@
       <div class="card-categories"><%= image_tag "washingmachine.svg", alt: "washing machine", style: "height: 50px; width: 50px;" %></div>
     </div>
   </div>
-</div>
 
 <div id="showcase-helprs">
   <p>Say something nice about Helprs here</p>
@@ -119,7 +110,8 @@
   </div>
 </div>
 
-<footer>
+
+<footer class="padding-small">
   <div class="contact">
     <ul class="list-inline">
       <li><strong>Contact</strong></li>

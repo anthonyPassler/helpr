@@ -3,22 +3,35 @@
 <div class="container">
 
   <div class="posts-container">
-    <div class="create-post">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/anthonyPassler", class: "avatar", alt: "profile image" %>
-      <p><strong>Need Help?</strong> Post a request.</p>
-    </div>
-    <% @posts.each do |post| %>
-      <div class="post">
-        <div>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/anthonyPassler", class: "avatar-extra-large", alt: "profile image" %>
-        </div>
-        <div class="post-content">
-          <h3><%= post.title %></h3>
-          <p><%= post.content %></p>
-          <p><%= post.date %></p>
-        </div>
+    <%= link_to new_post_path, class: "links" do %>
+      <div class="create-post">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/anthonyPassler", class: "avatar", alt: "profile image" %>
+        <p><strong>Need Help?</strong> Post a request.</p>
       </div>
     <% end %>
+    <div class="post-container">
+
+      <% @posts.each do |post| %>
+
+        <%= link_to post_path(post), class: "links" do %>
+          <div class="post">
+            <div class="avatar-post-container">
+              <div>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/anthonyPassler", class: "avatar-extra-large", alt: "profile image" %>
+              </div>
+              <div class="post-content">
+                <h3><%= post.title %></h3>
+                <p><%= post.content %></p>
+              </div>
+            </div>
+            <div class="date-btn">
+              <p><%= post.date.nil? ? "ASAP" : post.date %></p>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
   </div>
 
   <div class="map-container">

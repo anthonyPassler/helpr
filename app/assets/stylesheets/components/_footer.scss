@@ -4,14 +4,11 @@
   height: 110px;
   padding: 0px 50px;
   margin-top: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
 .footer-links a {
   letter-spacing: 6px;
-  color: $light-purple;
+  color: $dark-purple;
   font-size: 24px;
   padding: 0px 10px;
   &:hover {
@@ -23,4 +20,5 @@
 .footer-links i {
   margin-top: 50px;
 }
+
 
