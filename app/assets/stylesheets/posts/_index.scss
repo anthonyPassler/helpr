@@ -43,10 +43,12 @@
   top: 110px;
   border-radius: 40px;
   overflow: hidden;
+  // width: 30%;
   width: 40%;
+
   img {
     height: 250px;
-    width: 100%;
+    // width: 100%;
     object-fit: cover;
   }
 }

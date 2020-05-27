@@ -31,6 +31,45 @@ p {
   font-size: 16px;
 }
 
+.icons1{
+  margin-right: 10px;
+}
+
+.map-container1 {
+  overflow: hidden;
+  // width: 30%;
+  img {
+    // height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+  }
+}
+
+.purple1 {
+  background-color: rgb(239, 233, 243);
+  border-radius: 20px 20px 20px 0px;
+}
+
+.ASAP10{
+    background: linear-gradient(to right, #72328B, #91318A);
+    border-radius: 10px 10px 10px 0px;
+    padding: 5px;
+    padding-left: 20px;
+    color: white;
+    width: 80px;
+    margin-left: 425px;
+}
+
+.map-bottom1 {
+  padding: 16px;
+  border-radius: 0px 0px 0px 20px;
+  background: $purple-grad;
+  p {
+    color: white;
+    margin-bottom: 0;
+  }
+}
 
 #spacearound{
       justify-content: space-around;
@@ -69,7 +108,7 @@ p {
     padding: 10px;
     margin-left: 20px;
     color: black;
-    width: 780px;
+    width: 100%;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -110,6 +149,14 @@ width: 50px;
 height: 50px;
 }
 
+#anotherone{
+height: 100px;
+}
+
+.paddr{
+  padding-top: 30px;
+    padding-left: 30px;
+}
 .ASAP4 {
 background: $purple-grad;
 border-radius: 10px 10px 10px 0px;
@@ -138,6 +185,18 @@ height: 50px;
   margin-left: 15px;
 }
 
+#tyrion-with-br2{
+  border-radius: 100%;
+  height: 80px;
+  width: 80px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.placeholderconvos {
+  margin-left: 15px;
+  width: 95%;
+}
 
 .tyrion {
   width: 100%;
@@ -185,6 +244,11 @@ height: 50px;
 .margin-left-one{
   // margin-left: 130px;
   width: 50%;
+}
+
+
+.col-5{
+  max-width: 100%;
 }
 
 .min-height{
