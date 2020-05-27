@@ -25,21 +25,21 @@
     <div class="all-bids">
       <% @post.bids.each do |bid|%>
 
-        <div class="bid">
-          <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
-          <div class="view-approve">
-            <%= link_to user_path(bid.user) do %>
-              <div class="view">
-                <p><strong>View Profile</strong></p>
-              </div>
-            <% end %>
-            <%= link_to post_bid_path(@post, bid), method: :patch do %>
-              <div class="approve">
-                <p><strong>Approve</strong></p>
-              </div>
-            <% end %>
+          <div class="bid">
+            <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
+            <div class="view-approve">
+              <%= link_to user_path(bid.user) do %>
+                <div class="view">
+                  <p><strong>View Profile</strong></p>
+                </div>
+              <% end %>
+              <%= link_to post_bid_path(@post, bid), method: :patch do %>
+                <div class="approve">
+                  <p><strong>Approve</strong></p>
+                </div>
+              <% end %>
+            </div>
           </div>
-        </div>
 
       <% end %>
     </div>
