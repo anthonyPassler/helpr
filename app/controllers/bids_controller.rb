@@ -8,9 +8,9 @@ class BidsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:post_id])
     @bid = Bid.find(params[:id])
-    @bid.status = true
-    @bid.update
-    redirect_to posts_path
+    @bid.update(approved: true)
+    redirect_to post_path(@post)
   end
 end
