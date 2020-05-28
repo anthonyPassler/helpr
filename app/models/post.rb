@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :bids, dependent: :destroy
-  has_one :review, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_many :chatrooms
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
