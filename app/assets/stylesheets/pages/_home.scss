@@ -1,11 +1,11 @@
 .about-header {
   text-align: center;
+  padding: 40px;
 
   h2 {
     font-size: 40px;
     font-weight: bold;
     color: $dark-purple;
-    margin: 24px;
   }
 
   h3 {
@@ -16,6 +16,56 @@
 }
 
 .how-it-works {
-  padding-top: 32px;
+  text-align: center;
+  background-color: $light-gray;
+  padding: 40px;
+
+  h3 {
+    color: $dark-blue;
+    font-size: 40px;
+  }
 }
+
+.cards-showcase {
+  justify-content: center;
+}
+
+#showcase-helprs {
+  margin-top: 40px;
+  text-align: center;
+  h4 {
+    color: $light-blue;
+    font-weight: bold;
+    font-size: 40px;
+  }
+}
+
+
+.card-helpr {
+  padding: 20px;
+  box-shadow: rgba(0,0,0,0.5);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.6;
+    color: rgba(0,0,0,0.6)
+  }
+
+  p {
+    text-align: center;
+    color: black;
+    margin-top: 8px;
+    font-weight: bold;
+  }
+}
+
 

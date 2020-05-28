@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @chatroom = Chatroom.where(host: current_user, guest: @user).first
+    @message = Message.new
   end
 
   def new
