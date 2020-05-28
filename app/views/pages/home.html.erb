@@ -1,4 +1,4 @@
-
+<% if user_signed_in? %>
 <div id="banner">
   <div class="container align-items-center">
       <div class="col-6 d-flex">
@@ -39,6 +39,7 @@
     </div>
 </div>
 
+<% else %>
 <div id="about">
   <div class="about-header">
     <h2>Who we are</h2>
@@ -134,4 +135,5 @@
     </div> <!-- end of row -->
   </div>
 </div>
+<% end %>
 
