@@ -8,7 +8,8 @@
          </div>
        <% else %>
          <div class="avatar-show-square">
-           <p>ADD PROFILE PIC</p>
+           <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                 width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
          </div>
        <% end %>
     </span>
