@@ -33,8 +33,10 @@
   </div>
 
   <div class="map-container">
-
-    <%= image_tag "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80", alt: "map"%>
+    <div id="map"
+         style="width: 100%; height: 600px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <div class="map-bottom">
       <h3>Help map</h3>
       <p>See all the help requests in your area on the help map.</p>
