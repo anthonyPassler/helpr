@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :bids, dependent: :destroy
   has_many :reviews, through: :posts, dependent: :destroy
+  has_one_attached :photo
+
   has_many :host_chatrooms, :class_name => 'Chatroom', :foreign_key => 'host_id'
   has_many :guest_chatrooms, :class_name => 'Chatroom', :foreign_key => 'guest_id'
   # has_many :messages

@@ -1,4 +1,5 @@
 .avatar {
+  object-fit: cover;
   width: 40px;
   border-radius: 50%;
 }
@@ -19,11 +20,14 @@
   border: white 1px solid;
 }
 .avatar-extra-large {
+  object-fit: cover;
   width: 72px;
   border-radius: 50%;
   margin-right: 16px;
 }
 .avatar-show-square {
+  object-fit: cover;
+  background: $yellow-grad;
   width: 150px;
   height: 150px;
   border-radius: 4px;
