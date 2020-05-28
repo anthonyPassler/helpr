@@ -9,6 +9,7 @@
       <div class="col-6">
         <div class="hero-ctas">
           <div>
+            <% if user_signed_in? %>
             <%= link_to dashboard_path(current_user) do %>
               <div class="cta text-decoration-none" id="cta-dashboard">
                 <p>My<br><strong>Dashboard</strong></p>
@@ -31,6 +32,7 @@
                 <p>Community<br><strong>Feed</strong></p>
               </div>
             <% end %>
+             <% end %>
           </div>
         </div>
       </div>
