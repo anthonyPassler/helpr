@@ -23,7 +23,12 @@
           <%= link_to "Help Feed", posts_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/anthonyPassler", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if  current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+          <% else %>
+            <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                  width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  )  %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
