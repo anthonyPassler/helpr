@@ -86,7 +86,29 @@
   </div>
   <div class="chat-container">
     <div class="header">
+      <% if @chatroom %>
+        <div class="wrapper">
+          <div>
+            <h1 class="chatroomheader">#<%= @chatroom.name %></h1>
+          </div>
 
+          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
+              <%= render 'messages/message', message: message %>
+            <% end %>
+          </div>
+
+          <div class="type">
+            <%= simple_form_for [@chatroom, @message] do |f| %>
+            <%= f.input :content, label: 'Type your message here:' %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to chatrooms_path(guest: @post.user, post_id: @post.id), method: :post do %>
+          <h5>Start Chat</h5>
+        <% end %>
+      <% end %>
     </div>
     <div class="chat">
 

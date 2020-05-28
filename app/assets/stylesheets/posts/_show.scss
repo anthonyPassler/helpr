@@ -74,6 +74,23 @@
     margin: 0;
   }
 }
+
+.bid1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  border-radius: 50px 50px 50px 0px;
+  border: 2px solid $light-purple;
+  p {
+    margin: 0;
+  }
+  h3 {
+    padding: 16px;
+    margin: 0;
+  }
+}
+
+
 .view {
   display: flex;
   align-items: center;
@@ -84,6 +101,7 @@
     color: white;
   }
 }
+
 .approve {
   display: flex;
   align-items: center;
