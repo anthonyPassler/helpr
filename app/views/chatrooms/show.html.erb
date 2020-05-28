@@ -4,17 +4,19 @@
       <h1 class="chatroomheader">#<%= @chatroom.name %></h1>
     </div>
 
-    <div class="type">
-      <%= simple_form_for [@chatroom, @message] do |f| %>
-      <%= f.input :content %>
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <%= render 'messages/message', message: message %>
       <% end %>
     </div>
 
-      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-          <%= render 'messages/message', message: message %>
-        <% end %>
-      </div>
+    <div class="type">
+      <%= simple_form_for [@chatroom, @message] do |f| %>
+      <%= f.input :content, label: 'Type your message here:' %>
+      <% end %>
+    </div>
+
+
   </div>
 </div>
 
