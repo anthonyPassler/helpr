@@ -1,55 +1,81 @@
 <%= render 'shared/navbar-in-app', class: "navbar-margin" %>
-<div id="layout" class="container">
 
-  <div id="spacearound" class="biddertop mb-2 w-100 d-flex justify-content-space-between justify-content: space-around">
-    <div>
-    <%= image_tag "tyrion.jpg", alt: "alttext", class: "tyrion mb-3", id: "tyrion-with-br"%>
-          <h3><%= @post.title %></h3>
-          <p><%= @post.content %></p>
-          <p><%= @post.date %></p>
-   </div>
-        <div>
-          <div class="ASAP">ASAP</div>
+<div class="container">
+  <div class="show-post-container">
+    <div class="show-post">
+        <div class="img-text">
+          <div>
+            <%= image_tag "tyrion.jpg", alt: "alttext", class: "avatar-show-square"%>
+          </div>
+          <div class="show-text">
+            <h3><%= @post.title %></h3>
+            <p><%= @post.content %></p>
+          </div>
         </div>
-</div>
-
-</div>
-    <div class="bidder mb-4">
-            <%= image_tag "tyrion.jpg", alt: "alttext", class: "tyrion", id: "tyrion-with-br1"%>
-          <div class="ml-4">
-            <div >
-            <%= @user.first_name %>
-            <%= @user.last_name %>
-            </div>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <div>
-            <div>
-              <div class="d-flex justify-content-center align-items-center ml-3">
-                  <div class="ASAP3 m-1">
-                  <%= image_tag "help", alt: "alttext", class: "icon"%>
-                  </div>
-                  <div class="ASAP4 m-1">
-                  <%= image_tag "worker", alt: "alttext", class: "icon" %>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center align-items-center ml-3">
-                  <div class="ASAP2 m-1">
-                  <%= image_tag "bulb", alt: "alttext", class: "icon" %>
-                  </div>
-                  <div class="ASAP1 m-1">
-                    <%= image_tag "trolley", alt: "alttext", class: "icon" %>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div>
-            <button type="button" class="custombutton m-3">Accept</button>
-          </div>
+        <div class="date-btn">
+          <p><%= @post.date.nil? ? "ASAP" : post.date %></p>
+        </div>
     </div>
 
+    <%= link_to post_bids_path(@post), method: :post do %>
+      <div class="bid-offer">
+        <p><strong>Offer your help</strong></p>
+      </div>
+    <% end %>
+    <div class="all-bids">
+      <% approved = @post.bids.any? { |bid| bid.approved} %>
+
+      <% if approved %>
+        <% @post.bids.each do |bid|%>
+            <% if bid.approved %>
+              <div class="bid">
+                <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
+                <div class="view-approve">
+                  <%= link_to user_path(bid.user) do %>
+                    <div class="view">
+                      <p><strong>View Profile</strong></p>
+                    </div>
+                  <% end %>
+                  <%= link_to post_bid_path(@post, bid), method: :patch do %>
+                    <div class="approve">
+                      <p><strong>Approve</strong></p>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+        <% end %>
+      <% else %>
+        <% @post.bids.each do |bid|%>
+            <div class="bid">
+              <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
+              <div class="view-approve">
+                <%= link_to user_path(bid.user) do %>
+                  <div class="view">
+                    <p><strong>View Profile</strong></p>
+                  </div>
+                <% end %>
+                <%= link_to post_bid_path(@post, bid), method: :patch do %>
+                  <div class="approve">
+                    <p><strong>Approve</strong></p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+
+    </div>
+
+  </div>
+  <div class="chat-container">
+    <div class="header">
+
+    </div>
+    <div class="chat">
+
+    </div>
     <%= link_to "mark complete", post_path(@post, completed: true), :method => :put %>
+  </div>
+
+</div>

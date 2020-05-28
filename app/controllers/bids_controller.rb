@@ -1,16 +1,16 @@
 class BidsController < ApplicationController
   def create
-    @bid = Bid.new
-    @bid.post = Post.find(params[:post_id])
-    @bid.user = current_user
+    @post = Post.find(params[:post_id])
+    @bid = Bid.new(user:current_user)
+    @bid.post = @post
     @bid.save
-    redirect_to posts_path
+    redirect_to post_path(@post)
   end
 
   def update
+    @post = Post.find(params[:post_id])
     @bid = Bid.find(params[:id])
-    @bid.status = true
-    @bid.update
-    redirect_to posts_path
+    @bid.update(approved: true)
+    redirect_to post_path(@post)
   end
 end
