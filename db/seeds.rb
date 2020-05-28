@@ -9,7 +9,11 @@ Review.destroy_all
 Post.destroy_all
 User.destroy_all
 Bid.destroy_all
-user1 = User.create!(first_name: "John", last_name: "Montagu", email: "helpremail@gmail.com", password: 123456, address: "Herstmonceux Castle", bio: "Drinking and lust: No man can match me in these things. I am the god of tits and wine.", latitude: nil, longitude: nil )
+
+# file = File.open("/Users/anthonypassler/Downloads/user1.jpg")
+
+user1 = User.create(first_name: "John", last_name: "Montagu", email: "helpremail@gmail.com", password: 123456, address: "Herstmonceux Castle", bio: "Drinking and lust: No man can match me in these things. I am the god of tits and wine.",latitude: nil, longitude: nil )
+# user1.photo.attach(io: file, filename: "user1.jpg", content_type: 'image/jpg')
 user2 = User.create!(first_name: "Bobby", last_name: "Williams", email: "bobby@gmail.com", password: 123456, address: "wimbledon london", bio: "Drinking and lust: No man can match me in these things. Lots of football.", latitude: nil, longitude: nil )
 user3 = User.create!(first_name: "Jamie", last_name: "Oliver", email: "jamie@gmail.com", password: 123456, address: "Hoxton, london", bio: "Love cooking and helping people.", latitude: nil, longitude: nil )
 user4 = User.create!(first_name: "Emma", last_name: "Anderson", email: "emma@gmail.com", password: 123456, address: "Richmond, london", bio: "Love going for long walks with my dog and helping people.", latitude: nil, longitude: nil )
@@ -32,7 +36,7 @@ Bid.create!(post_id: post3.id, user_id: user4.id )
 Bid.create!(post_id: post4.id, user_id: user1.id )
 
 
-Chatroom.create! name: 'general'
+# Chatroom.create! name: 'general'
 User.create! email: 'hello@world.com', password: "123456", nickname: "heaven"
 User.create! email: 'bonjour@world.com', password: "123456", nickname: "hell"
 #for date use created_at eg for posts
