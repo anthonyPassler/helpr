@@ -9,8 +9,9 @@ class ReviewsController < ApplicationController
     @post = Post.find(params[:post_id])
     @review = Review.new(review_params)
     @review.post = @post
+    @review.user = current_user
     if @review.save
-      redirect_to post_path(@post)
+      redirect_to user_path(@post.user)
     else
       render :new
     end
