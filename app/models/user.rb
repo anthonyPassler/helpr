@@ -6,5 +6,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :bids, dependent: :destroy
   has_many :reviews, through: :posts, dependent: :destroy
+  has_one_attached :photo
+
   # has_many :messages
 end
