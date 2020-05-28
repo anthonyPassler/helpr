@@ -3,7 +3,12 @@
     <div class="show-post">
         <div class="img-text">
           <div>
-            <%= image_tag "tyrion.jpg", alt: "alttext", class: "avatar-show-square"%>
+            <% if  @post.user.photo.attached? %>
+              <%= cl_image_tag @post.user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image"  %>
+            <% else %>
+              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                    width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
+            <% end %>
           </div>
           <div class="show-text">
             <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
@@ -11,7 +16,7 @@
             <p><%= @post.content %></p>
           </div>
         </div>
-        <div class="date-btn margin-left">
+        <div class="date-btn">
           <p><%= @post.date.nil? ? "ASAP" : @post.date %></p>
         </div>
     </div>
