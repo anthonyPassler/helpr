@@ -1,6 +1,6 @@
 
 <div id="banner">
-  <div class="container">
+  <div class="container align-items-center">
       <div class="col-6 d-flex">
         <div class="tagline">
           <h2>Lend a helping hand in your local community</h2>
@@ -9,12 +9,28 @@
       <div class="col-6">
         <div class="hero-ctas">
           <div>
-            <p class="cta" id="cta-dashboard">My<br><strong>Dashboard</strong></p>
-            <p class="cta" id="cta-become-helpr">Become a<br><strong>Helpr</strong></p>
+            <%= link_to dashboard_path(current_user) do %>
+              <div class="cta text-decoration-none" id="cta-dashboard">
+                <p>My<br><strong>Dashboard</strong></p>
+              </div>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+              <div class="cta" id="cta-become-helpr">
+                <p>Become a<br><strong>Helpr</strong></p>
+              </div>
+            <% end %>
           </div>
           <div>
-            <p class="cta" id="cta-help">I need<br><strong>Help</strong></p>
-            <p class="cta" id="cta-feed">Community<br><strong>Feed</strong></p>
+            <%= link_to new_user_registration_path do %>
+              <div class="cta" id="cta-help">
+                <p>I need<br><strong>Help</strong></p>
+              </div>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+              <div class="cta" id="cta-feed">
+                <p>Community<br><strong>Feed</strong></p>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -25,75 +41,95 @@
   <div class="about-header">
     <h2>Who we are</h2>
     <p>We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand.</p>
+  </div>
+
+  <div class= how-it-works justify-content-center>
     <h3>How it works</h3>
-  </div>
+    <div class="container">
+      <div class="row w-100 justify-content-center">
+        <div class="card-pls-signup card-become-helpr">
+          <div class="card-pls-signup-img" style="background-image: url('<%= image_path("hands-2.jpg") %>');">
+          </div>
+          <div class="card-description">
+            <h4>Become a Helpr</h4>
+            <ul>
+              <li>Help a neighbor in need</li>
+              <li>Feel great about a good deed</li>
+              <li>Make friends</li>
+            </ul>
+          </div>
+        </div>
 
-  <div class="container how-it-works">
-    <div class="row w-100 justify-content-center">
-      <div class="card-pls-signup card-become-helpr">
-        <div class="card-pls-signup-img" style="background-image:linear-gradient(rgba(145,50,138,0.5), rgba(145,50,138,0.5)), url('<%= image_path("hands-2.jpg") %>');">
+        <div class="card-pls-signup card-need-help">
+          <div class="card-pls-signup-img" style="background-image: url('<%= image_path("hands-3.jpg") %>');">
+          </div>
+          <div class="card-description">
+            <h4>Need help?</h4>
+            <ul>
+              <li>Reach out to a local</li>
+              <li>Get some help</li>
+              <li>Meet new people</li>
+            </ul>
+          </div>
         </div>
-        <div class="card-description">
-          <h4>Become a Helpr</h4>
-          <ul>
-            <li>Help a neighbor in need</li>
-            <li>Feel great about a good deed</li>
-            <li>Make friends</li>
-          </ul>
-        </div>
+
       </div>
-
-      <div class="card-pls-signup card-need-help">
-        <div class="card-pls-signup-img" style="background-image:linear-gradient(rgba(145,50,138,0.5), rgba(145,50,138,0.5)), url('<%= image_path("hands-3.jpg") %>');">
-        </div>
-        <div class="card-description">
-          <h4>Need help?</h4>
-          <ul>
-            <li>Reach out to a local</li>
-            <li>Get some help</li>
-            <li>Meet new people</li>
-          </ul>
-        </div>
+    </div>
+    <div class="container-card-categories">
+      <div class="cards-categories">
+        <div class="card-categories"><%= image_tag "trolley.svg", alt: "trolley", style: "height: 50px; width: 50px;" %></div>
+        <div class="card-categories"><%= image_tag "bulb.svg", alt: "lightbulb", style: "height: 50px; width: 50px;" %></div>
+        <div class="card-categories"><%= image_tag "worker.svg", alt: "worker", style: "height: 50px; width: 50px;" %></div>
+        <div class="card-categories"><%= image_tag "admin.svg", alt: "admin", style: "height: 50px; width: 50px;" %></div>
+        <div class="card-categories"><%= image_tag "car.svg", alt: "car", style: "height: 50px; width: 50px;" %></div>
+        <div class="card-categories"><%= image_tag "hoover.svg", alt: "hoover", style: "height: 50px; width: 50px;" %></div>
+        <div class="card-categories"><%= image_tag "washingmachine.svg", alt: "washing machine", style: "height: 50px; width: 50px;" %></div>
       </div>
-
     </div>
   </div>
 
-  <div class="container-card-categories">
-    <div class="cards-categories">
-      <div class="card-categories"><%= image_tag "trolley.svg", alt: "trolley", style: "height: 50px; width: 50px;" %></div>
-      <div class="card-categories"><%= image_tag "bulb.svg", alt: "lightbulb", style: "height: 50px; width: 50px;" %></div>
-      <div class="card-categories"><%= image_tag "worker.svg", alt: "worker", style: "height: 50px; width: 50px;" %></div>
-      <div class="card-categories"><%= image_tag "admin.svg", alt: "admin", style: "height: 50px; width: 50px;" %></div>
-      <div class="card-categories"><%= image_tag "car.svg", alt: "car", style: "height: 50px; width: 50px;" %></div>
-      <div class="card-categories"><%= image_tag "hoover.svg", alt: "hoover", style: "height: 50px; width: 50px;" %></div>
-      <div class="card-categories"><%= image_tag "washingmachine.svg", alt: "washing machine", style: "height: 50px; width: 50px;" %></div>
-    </div>
-  </div>
 
 <div id="showcase-helprs">
-  <p>Say something nice about Helprs here</p>
-  <div class="cards-showcase">
-    <div class="card-helpr"></div>
-    <div class="card-helpr"></div>
-    <div class="card-helpr"></div>
-    <div class="card-helpr"></div>
-    <div class="card-helpr"></div>
+  <h4>Meet a Helpr</h4>
+  <div class="cards-showcase container">
+    <div class="row justify-content-center">
+      <%= link_to user_path(1), class:"text-decoration-none" do %>
+        <div class="card-helpr col-2">
+          <%= image_tag "corey.jpg", alt: "Corey", class:"avatar-xxl"%>
+          <p>Corey</p>
+        </div>
+      <% end %>
+      <%= link_to "#", class:"text-decoration-none" do %>
+        <div class="card-helpr col-2">
+          <%= image_tag "andrea.jpg", alt: "Andrea", class:"avatar-xxl"%>
+          <p>Andrea</p>
+        </div>
+      <% end %>
+      <%= link_to "#", class:"text-decoration-none" do %>
+        <div class="card-helpr col-2">
+          <%= image_tag "justin.jpg", alt: "justin", class:"avatar-xxl"%>
+          <p>Justin</p>
+        </div>
+      <% end %>
+      <%= link_to "#", class:"text-decoration-none" do %>
+        <div class="card-helpr col-2">
+          <%= image_tag "lina.jpg", alt: "lina", class:"avatar-xxl"%>
+          <p>Lina</p>
+        </div>
+      <% end %>
+      <%= link_to "#", class:"text-decoration-none" do %>
+        <div class="card-helpr col-2">
+          <%= image_tag "stefan.jpg", alt: "stefan", class:"avatar-xxl"%>
+          <p>Stefan</p>
+        </div>
+      <% end %>
+      <%= link_to "#", class:"text-decoration-none" do %>
+        <div class="card-helpr col-2">
+          <%= image_tag "umar.jpg", alt: "umar", class:"avatar-xxl"%>
+          <p>Umar</p>
+        </div>
+      <% end %>
+    </div> <!-- end of row -->
   </div>
 </div>
-
-
-<!-- <footer class="padding-small">
-  <div class="contact">
-    <ul class="list-inline">
-      <li><strong>Contact</strong></li>
-      <li>info@helpr.com</li>
-      <li>+44 21657 8943</li>
-    </ul>
-  </div>
-
-  <div>
-    <p>© 2020 Helpr</p>
-  </div>
-</footer> -->
 
