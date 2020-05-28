@@ -1,0 +1,22 @@
+.card-img-to-left{
+  display: flex;
+  width: 100vw;
+  align-items: center;
+}
+
+.card-img {
+  height: 100vh;
+  width: 30%;
+  margin-right: 10%;
+  margin-left: 8%;
+  margin-top: 30px;
+  // margin-bottom: 0px;
+  padding-top: 70px;
+}
+
+.card-img-to-right{
+  width: auto;
+  // padding: 32px;
+  // text-align: center;
+  margin: auto;
+}

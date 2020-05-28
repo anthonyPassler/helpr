@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_131231) do
+ActiveRecord::Schema.define(version: 2020_05_28_102851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 2020_05_26_131231) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_bids_on_post_id"
     t.index ["user_id"], name: "index_bids_on_user_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "host_id"
+    t.bigint "guest_id"
+    t.index ["guest_id"], name: "index_chatrooms_on_guest_id"
+    t.index ["host_id"], name: "index_chatrooms_on_host_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -61,12 +81,17 @@ ActiveRecord::Schema.define(version: 2020_05_26_131231) do
     t.text "bio"
     t.float "latitude"
     t.float "longitude"
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bids", "posts"
   add_foreign_key "bids", "users"
+  add_foreign_key "chatrooms", "users", column: "guest_id"
+  add_foreign_key "chatrooms", "users", column: "host_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "reviews", "posts"
   add_foreign_key "reviews", "users"

@@ -1,0 +1,38 @@
+<div class="card-img-to-left">
+  <div class="card-img">
+    <img alt="volunteers4" src="/assets/volunteers4.png">
+  </div>
+
+  <div class="form-container">
+  <div class="card-img-to-right">
+  <!--   <div class="container mt-2 mb-4">
+      <div class="row justify-content-center w-100 mb-3 mt-3"> -->
+          <div class="title text-center">
+            <h2>Hello there !</h2>
+            <h6>Your post will soon be visible to the largest community of volunteers</h6>
+          </div>
+
+          <br>
+          <hr>
+          <br>
+
+           <%= simple_form_for(@post) do |f| %>
+           <%= f.error_notification %>
+           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <div class="form-inputs">
+            <%= f.input :title %>
+            <%= f.input :content %>
+            <%= f.input :date %>
+          </div>
+          <br>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Create", class: "btn-primary" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
