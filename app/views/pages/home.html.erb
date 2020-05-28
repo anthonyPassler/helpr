@@ -49,40 +49,69 @@
     </div>
 </div>
 
-<div class="padding-small">
-  <div id="about">
-    <h2>About</h2>
-    <p>We are a group of like-minded humans building a tight-knit community by lending each other a helping hand.</p>
-    <div class="cards-categories">
-      <!-- insert custom icons here -->
-    </div>
-  </div>
-
-  <div id="how-it-works">
+<div id="about">
+  <div class="about-header">
+    <h2>Who we are</h2>
+    <p>We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand.</p>
     <h3>How it works</h3>
-    <p>As a member of the Helpr community, you can feel great about doing a good deed and meet new people by lending a hand to someone in your area. If you need help with some small task you can't do alone, you can also ask around for some help.</p>
-    <div class="container">
-      <div class="row">
-        <div class="card-become-helpr" class="col-6"></div>
-        <div class="card-need-help" class="col-6"></div>
+  </div>
+
+  <div class="container how-it-works">
+    <div class="row w-100 justify-content-center">
+      <div class="card-pls-signup card-become-helpr">
+        <div class="card-pls-signup-img" style="background-image:linear-gradient(rgba(145,50,138,0.5), rgba(145,50,138,0.5)), url('<%= image_path("hands-2.jpg") %>');">
+        </div>
+        <div class="card-description">
+          <h4>Become a Helpr</h4>
+          <ul>
+            <li>Help a neighbor in need</li>
+            <li>Feel great about a good deed</li>
+            <li>Make friends</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="card-pls-signup card-need-help">
+        <div class="card-pls-signup-img" style="background-image:linear-gradient(rgba(145,50,138,0.5), rgba(145,50,138,0.5)), url('<%= image_path("hands-3.jpg") %>');">
+        </div>
+        <div class="card-description">
+          <h4>Need help?</h4>
+          <ul>
+            <li>Reach out to a local</li>
+            <li>Get some help</li>
+            <li>Meet new people</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div id="showcase-helprs">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque vitae veritatis officiis sed neque deleniti in facere eum. Veritatis pariatur beatae, ratione nemo deleniti quaerat non harum? Totam, illo, soluta.</p>
-    <div class="cards-showcase">
-      <div class="card-helpr"></div>
-      <div class="card-helpr"></div>
-      <div class="card-helpr"></div>
-      <div class="card-helpr"></div>
-      <div class="card-helpr"></div>
+  <div class="container-card-categories">
+    <div class="cards-categories">
+      <div class="card-categories"><%= image_tag "trolley.svg", alt: "trolley", style: "height: 50px; width: 50px;" %></div>
+      <div class="card-categories"><%= image_tag "bulb.svg", alt: "lightbulb", style: "height: 50px; width: 50px;" %></div>
+      <div class="card-categories"><%= image_tag "worker.svg", alt: "worker", style: "height: 50px; width: 50px;" %></div>
+      <div class="card-categories"><%= image_tag "admin.svg", alt: "admin", style: "height: 50px; width: 50px;" %></div>
+      <div class="card-categories"><%= image_tag "car.svg", alt: "car", style: "height: 50px; width: 50px;" %></div>
+      <div class="card-categories"><%= image_tag "hoover.svg", alt: "hoover", style: "height: 50px; width: 50px;" %></div>
+      <div class="card-categories"><%= image_tag "washingmachine.svg", alt: "washing machine", style: "height: 50px; width: 50px;" %></div>
     </div>
+  </div>
+
+<div id="showcase-helprs">
+  <p>Say something nice about Helprs here</p>
+  <div class="cards-showcase">
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
+    <div class="card-helpr"></div>
   </div>
 </div>
 
 
-<footer class="padding-small">
+<!-- <footer class="padding-small">
   <div class="contact">
     <ul class="list-inline">
       <li><strong>Contact</strong></li>
@@ -94,5 +123,5 @@
   <div>
     <p>© 2020 Helpr</p>
   </div>
-</footer>
+</footer> -->
 
