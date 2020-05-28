@@ -1,24 +1,36 @@
-.footer {
-  background: #fafafa;
-  text-align: center;
-  height: 110px;
-  padding: 0px 50px;
-  margin-top: 20px;
+
+.footer-container{
+  margin-left: 25px;
+  font-size: 20px;
+ letter-spacing: 6px;
 }
 
-.footer-links a {
-  letter-spacing: 6px;
+.page-footer{
+  background-color: #fafafa;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.footer-container i {
   color: $dark-purple;
-  font-size: 24px;
-  padding: 0px 10px;
-  &:hover {
-    color: $dark-purple;
+  &:hover{
     opacity: 0.15;
   }
 }
 
-.footer-links i {
-  margin-top: 50px;
+.footer-copyright{
 }
 
+.list-unstyled{
+  margin-bottom: 0px;
+}
 
+// STICK TO BOTTOM OF THE PAGE
+// body {
+//     display: flex;
+//     min-height: 100vh;
+//     flex-direction: column;
+// }
+// .container {
+//     flex: 1;    /* same as flex-grow: 1; */
+// }

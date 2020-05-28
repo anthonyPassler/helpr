@@ -51,3 +51,5 @@
             <button type="button" class="custombutton m-3">Accept</button>
           </div>
     </div>
+
+    <%= link_to "mark complete", post_path(@post, completed: true), :method => :put %>
