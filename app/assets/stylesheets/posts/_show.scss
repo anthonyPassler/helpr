@@ -28,6 +28,11 @@
   margin-right: 80px;
   h3 {
     font-size: 24px;
+    color: $light-blue;
+  }
+  h4 {
+    font-size: 20px;
+    font-weight: bolder;
   }
 }
 .bid-offer {
@@ -42,6 +47,17 @@
   }
   &:hover {
     background: $blue-grad;
+  }
+}
+.see-offer {
+  margin-top: 24px;
+  border-radius: 50px 50px 50px 0px;
+  text-align: center;
+  padding: 16px;
+  background: $purple-grad;
+  color: white;
+  p {
+    margin: 0;
   }
 }
 .bid {
@@ -79,12 +95,25 @@
     background: $blue-grad;
   }
 }
+.pending {
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 0px 50px 50px 0px;
+  padding: 16px;
+  background: $purple-grad;
+}
 .view-approve {
   display: flex;
 }
-
-
-
+.approved {
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 0px 50px 50px 0px;
+  padding: 16px;
+  background: $blue-grad;
+}
 
 
 

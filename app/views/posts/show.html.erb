@@ -1,5 +1,6 @@
 <%= render 'shared/navbar-in-app', class: "navbar-margin" %>
 
+
 <div class="container">
   <div class="show-post-container">
     <div class="show-post">
@@ -8,7 +9,8 @@
             <%= image_tag "tyrion.jpg", alt: "alttext", class: "avatar-show-square"%>
           </div>
           <div class="show-text">
-            <h3><%= @post.title %></h3>
+            <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
+            <h4><%= @post.title %></h4>
             <p><%= @post.content %></p>
           </div>
         </div>
@@ -17,14 +19,21 @@
         </div>
     </div>
 
-    <%= link_to post_bids_path(@post), method: :post do %>
-      <div class="bid-offer">
-        <p><strong>Offer your help</strong></p>
-      </div>
-    <% end %>
-    <div class="all-bids">
-      <% approved = @post.bids.any? { |bid| bid.approved} %>
+      <% if current_user == @post.user %>
+        <div class="see-offer">
+          <p><strong>See your offers to help below</strong></p>
+        </div>
+      <% else %>
+        <%= link_to post_bids_path(@post), method: :post do %>
+          <div class="bid-offer">
+            <p><strong>Offer your help</strong></p>
+          </div>
+        <% end %>
+      <% end %>
 
+    <div class="all-bids">
+
+      <% approved = @post.bids.any? { |bid| bid.approved} %>
       <% if approved %>
         <% @post.bids.each do |bid|%>
             <% if bid.approved %>
@@ -37,8 +46,8 @@
                     </div>
                   <% end %>
                   <%= link_to post_bid_path(@post, bid), method: :patch do %>
-                    <div class="approve">
-                      <p><strong>Approve</strong></p>
+                    <div class="approved">
+                      <p><strong>Approved!</strong></p>
                     </div>
                   <% end %>
                 </div>
@@ -55,11 +64,18 @@
                     <p><strong>View Profile</strong></p>
                   </div>
                 <% end %>
-                <%= link_to post_bid_path(@post, bid), method: :patch do %>
-                  <div class="approve">
-                    <p><strong>Approve</strong></p>
-                  </div>
-                <% end %>
+                   <% if current_user == @post.user %>
+                      <%= link_to post_bid_path(@post, bid), method: :patch do %>
+                        <div class="approve">
+                          <p><strong>Approve</strong></p>
+                        </div>
+                      <% end %>
+                   <% else %>
+                      <div class="pending">
+                        <p><strong>Pending</strong></p>
+                      </div>
+                   <% end %>
+
               </div>
             </div>
         <% end %>
