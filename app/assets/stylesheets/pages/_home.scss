@@ -1,1 +1,21 @@
-// Specific CSS for your home-page
+.about-header {
+  text-align: center;
+
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: $dark-purple;
+    margin: 24px;
+  }
+
+  h3 {
+    color: $light-purple;
+    font-size: 24px;
+    margin-top: 32px;
+  }
+}
+
+.how-it-works {
+  padding-top: 32px;
+}
+
