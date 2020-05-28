@@ -4,6 +4,7 @@ class BidsController < ApplicationController
     @bid.post = Post.find(params[:post_id])
     @bid.user = current_user
     @bid.save
+    # Chatroonm.create(user: current_user, )
     redirect_to posts_path
   end
 
