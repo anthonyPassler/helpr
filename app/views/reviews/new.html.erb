@@ -3,10 +3,10 @@
   <div class="col-6">
 
     <div class="title text-center">
-    <h2>Leave a review for <%= @yacht.name %></h2>
+    <h2>Leave a review for <%= @post.title %></h2>
     </div>
 
-     <%= simple_form_for([ @yacht, @review ]) do |f| %>
+     <%= simple_form_for([ @post, @review ]) do |f| %>
      <%= f.error_notification %>
      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
