@@ -18,6 +18,13 @@
 </div>
 <div class="reviews">
   <h2>My Reviews</h2>
+  <% @user.bids.where(approved: true).each do |bid| %>
+    <% if bid.post.completed %>
+      <% review = Review.find_by(user:bid.post.user, post:bid.post) %>
+      <%= review.content %>
+      <%= review.rating %>
+    <% end %>
+  <% end %>
 </div>
 
 

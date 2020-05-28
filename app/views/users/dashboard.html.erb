@@ -17,6 +17,9 @@
             <h6><strong><%= post.title.capitalize %></strong></h6>
             <p><%= post.content.capitalize %></p>
             <p><%= post.date %></p>
+            <% if current_user == post.user && post.reviews.select { |review| review.user == current_user }.empty? %>
+              <%= link_to "Leave a review", new_post_review_path(post) %>
+            <% end %>
           </div>
         </div>
         <% end %>
