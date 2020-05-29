@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     if params[:completed] == "true"
       @post.completed = true
       @post.save
-      redirect_to dashboard_path, notice: "post marked as completed"
+      redirect_to dashboard_path(current_user), notice: "post marked as completed"
     elsif @post.update(post_params)
       redirect_to posts_path
     else
