@@ -71,7 +71,7 @@ post2 = Post.create!(title: "Looking for companionship", content: "Can't wait to
 post3 = Post.create!(title: "Need help with curtains", content: "Please could someone help me hanging up my curtains, I am afraid I will fall and hurt myself.", user: fred, completed: false)
 post4 = Post.create!(title: "Need help with shopping", content: "Please could someone help me with my grocery shopping.", user: elizabeth, completed: false)
 post5 = Post.create!(title: "Computer issues", content: "Please could someone help me with logging into my pc, it was working until this morning.", user: bobby, completed: false)
-post6 = Post.create!(title: "Planting a tree", content: "Please could someone help me with planting a tree I bought this morning, I have all the tools just need help digging the hole.", user: elizabeth, completed: false)
+post6 = Post.create!(title: "Planting a tree for me", content: "Please could someone help me with planting a tree I bought this morning, I have all the tools just need help digging the hole.", user: elizabeth, completed: false)
 post7 = Post.create!(title: "Vacuum my living room", content: "Please could someone help me with giving my lving area a quick vacuum, my cleaner is on holiday and my back isn't the best.", user: annie, completed: false)
 
 Bid.create!(post_id: post0.id, user_id: matt.id )
