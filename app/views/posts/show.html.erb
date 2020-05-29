@@ -34,7 +34,6 @@
       <% end %>
 
     <div class="all-bids">
-
       <% approved = @post.bids.any? { |bid| bid.approved} %>
       <% if approved %>
         <% @post.bids.each do |bid|%>
