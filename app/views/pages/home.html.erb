@@ -1,43 +1,69 @@
 
 <div id="banner">
   <div class="container align-items-center">
-      <div class="col-6 d-flex">
-        <div class="tagline">
-          <h2>Lend a helping hand in your local community</h2>
-        </div>
+
+    <div class="col-6 d-flex">
+      <div class="tagline">
+        <h2>Lend a helping hand in your local community</h2>
       </div>
-      <div class="col-6">
-        <div class="hero-ctas">
-          <div>
-            <% if user_signed_in? %>
+    </div>
+
+    <div class="col-6">
+
+      <div class="hero-ctas">
+        <div>
+          <% if user_signed_in? %>
             <%= link_to dashboard_path(current_user) do %>
               <div class="cta text-decoration-none" id="cta-dashboard">
                 <p>My<br><strong>Dashboard</strong></p>
               </div>
             <% end %>
-            <%= link_to new_user_registration_path do %>
-              <div class="cta" id="cta-become-helpr">
-                <p>Become a<br><strong>Helpr</strong></p>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <div class="cta text-decoration-none" id="cta-dashboard">
+                <p>My<br><strong>Dashboard</strong></p>
               </div>
             <% end %>
-          </div>
-          <div>
+          <% end %>
+          <%= link_to new_user_registration_path do %>
+            <div class="cta" id="cta-become-helpr">
+              <p>Become a<br><strong>Helpr</strong></p>
+            </div>
+          <% end %>
+        </div>
+        <div>
+          <% if user_signed_in? %>
+            <%= link_to new_post_path do %>
+              <div class="cta" id="cta-help">
+                <p>I need<br><strong>Help</strong></p>
+              </div>
+            <% end %>
+          <% else %>
             <%= link_to new_user_registration_path do %>
               <div class="cta" id="cta-help">
                 <p>I need<br><strong>Help</strong></p>
               </div>
             <% end %>
-            <%= link_to new_user_registration_path do %>
+          <% end %>
+          <% if user_signed_in? %>
+            <%= link_to posts_path(current_user) do %>
               <div class="cta" id="cta-feed">
                 <p>Community<br><strong>Feed</strong></p>
               </div>
             <% end %>
-             <% end %>
-          </div>
+          <% else %>
+            <%= link_to new_user_registration_path do %>
+              <div class="cta" id="cta-feed">
+                <p>Make a<br><strong>Difference</strong></p>
+              </div>
+            <% end %>
+          <% end %>
         </div>
-      </div>
-    </div>
-</div>
+
+      </div> <!-- end of hero-CTAs -->
+    </div> <!-- end of col-6 -->
+  </div> <!-- end of container -->
+</div> <!-- end of banner -->
 
 <div id="about">
   <div class="about-header">
