@@ -2,6 +2,7 @@
 <html>
   <head>
 
+
     <%= favicon_link_tag asset_path('favicon.jpeg') %>
     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
@@ -23,6 +24,7 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
     <title>Helpr | Find Help in Your Local Community</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -30,6 +32,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <%= favicon_link_tag %>
   </head>
 
   <body>
