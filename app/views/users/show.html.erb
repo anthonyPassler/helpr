@@ -2,8 +2,7 @@
 <div class="container-narrow">
   <div class="user-info" >
     <% if  current_user.photo.attached? %>
-      <div class="avatar-show-square" style="background-image: url('<%= cl_image_path current_user.photo.key, height: 250, width: 250, crop: :fill %>')">
-      </div>
+      <%= cl_image_tag current_user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image"  %>
     <% else %>
       <div class="avatar-show-square">
         <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
@@ -19,6 +18,5 @@
 <div class="reviews">
   <h2>My Reviews</h2>
 </div>
-
 
 </div>
