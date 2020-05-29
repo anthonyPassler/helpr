@@ -29,16 +29,18 @@
 .cards-showcase {
   display: flex;
   justify-content: center;
-  padding-left: 110px;
+  padding-left: 150px;
 }
 
 #showcase-helprs {
   margin-top: 40px;
   text-align: center;
+  padding-left: 120px;
   h4 {
     color: $light-blue;
     font-weight: bold;
     font-size: 40px;
+    margin-right: 150px;
   }
 }
 
