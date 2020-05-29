@@ -76,7 +76,7 @@ post7 = Post.create!(title: "Vacuum my living room", content: "Please could some
 
 Bid.create!(post_id: post0.id, user_id: matt.id )
 Bid.create!(post_id: post0.id, user_id: emma.id )
-Bid.create!(post_id: post0.id, user_id: emma.id )
+Bid.create!(post_id: post0.id, user_id: fred.id )
 Bid.create!(post_id: post1.id, user_id: bobby.id )
 Bid.create!(post_id: post1.id, user_id: emma.id )
 Bid.create!(post_id: post1.id, user_id: matt.id )
