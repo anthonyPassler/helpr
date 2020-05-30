@@ -61,7 +61,7 @@
       <% end %>
       <h6 class="sub-header">Approved Jobs</h6>
       <% @bids.where(approved: true).each do |bid| %>
-        <%= link_to post_path(post), class: "links" do %>
+        <%= link_to post_path(bid.post), class: "links" do %>
           <div class="post">
             <div class="avatar-post-container">
               <div>
