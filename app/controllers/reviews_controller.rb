@@ -7,9 +7,11 @@ class ReviewsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
+    @bid = @post.bids.where(approved: true).first
     @review = Review.new(review_params)
     @review.post = @post
     @review.user = current_user
+    @review.bid = @bid
     if @review.save
       redirect_to user_path(@post.user)
     else

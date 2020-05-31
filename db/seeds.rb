@@ -65,7 +65,6 @@ matt = User.create!(first_name: "Matt", last_name: "Hill", email: "matt@gmail.co
 # matt.photo.attach(io: file_matt, filename: "matt.jpg", content_type: 'image/jpg')
 
 post0 = Post.create!(title: "Please need help moving washine machine.", content: "My strength isn't what it used to be and would really appreciate if someone could help me move the wahing machine to my garage.", user: fred, completed: false)
-Review.create!(content: "Speedy pickup and delivery, must've travelled at highperspeed", rating: 5, post: post0, user: fred)
 post1 = Post.create!(title: "Garden help", content: "I need help just to trim down the hedge in my garden, I make a great ice tea for afterwards.", user: fred, completed: false)
 post2 = Post.create!(title: "Looking for companionship", content: "Can't wait to spend time with you, just would like to have a nice long chat with someone about life.", user: bobby, completed: false)
 post3 = Post.create!(title: "Need help with curtains", content: "Please could someone help me hanging up my curtains, I am afraid I will fall and hurt myself.", user: fred, completed: false)
