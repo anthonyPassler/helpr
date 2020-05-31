@@ -61,21 +61,46 @@
     margin: 0;
   }
 }
-.bid {
-  display: flex;
-  justify-content: space-between;
+.completed {
   margin-top: 24px;
   border-radius: 50px 50px 50px 0px;
-  border: 2px solid $light-purple;
+  text-align: center;
+  padding: 16px;
+  background: $green-grad;
+  color: white;
+
   p {
     margin: 0;
   }
-  h3 {
+  &:hover {
+    p {
+      font-size: 18px;
+      transition: 0.3s all;
+    }
+  }
+}
+.bid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  border-radius: 50px 50px 50px 0px;
+  border: 2px solid $light-purple;
+  .bid-user-info img {
+    margin-left: 16px;
+  }
+  .bid-user-info p {
+    margin: 0;
+  }
+  .bid-user-info h3 {
     padding: 16px;
     margin: 0;
   }
 }
-
+.bid-user-info {
+  display: flex;
+  align-items: center;
+}
 .bid1 {
   display: flex;
   justify-content: space-between;
@@ -98,8 +123,12 @@
   color: $light-purple;
   padding: 16px;
   background: $yellow-grad;
+  p {
+    margin: 0;
+  }
   &:hover {
     color: white;
+    transition: 0.3s ease;
   }
 }
 
@@ -110,8 +139,12 @@
   border-radius: 0px 50px 50px 0px;
   padding: 16px;
   background: $purple-grad;
+  p {
+    margin: 0;
+  }
   &:hover {
     background: $blue-grad;
+    transition: 0.3s ease;
   }
 }
 .pending {
@@ -121,6 +154,9 @@
   border-radius: 0px 50px 50px 0px;
   padding: 16px;
   background: $purple-grad;
+  p {
+    margin: 0;
+  }
 }
 .view-approve {
   display: flex;
@@ -132,6 +168,9 @@
   border-radius: 0px 50px 50px 0px;
   padding: 16px;
   background: $blue-grad;
+  p {
+    margin: 0;
+  }
 }
 .margin-left {
   margin-left: 50px;
