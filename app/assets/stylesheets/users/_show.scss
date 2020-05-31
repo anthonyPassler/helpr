@@ -17,3 +17,11 @@
 .reviews {
   margin-top: 80px;
 }
+.review-post {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
+  margin-top: 8px;
+  background-color: rgba(145, 49, 138, 0.1);
+}

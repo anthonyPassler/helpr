@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
     @bids = @user.bids
-    @reviews = @user.reviews
+    @stars = []
   end
 
   def dashboard
