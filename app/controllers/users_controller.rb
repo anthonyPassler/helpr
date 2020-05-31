@@ -22,7 +22,9 @@ class UsersController < ApplicationController
   def avg_stars
     stars = []
     @user.bids.where(approved: true).each do |bid|
-          stars << bid.reviews.first.rating
+          unless bid.reviews.first.nil?
+            stars << bid.reviews.first.rating
+          end
     end
     stars.inject{ |sum, el| sum + el }.to_f / stars.size
 
