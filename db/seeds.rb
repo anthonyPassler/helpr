@@ -41,27 +41,27 @@ Bid.destroy_all
 
 # file_fred = File.open("/Users/anthonypassler/Downloads/fred.jpg")
 
-fred = User.create(first_name: "Fred", last_name: "Lombard", email: "fred@gmail.com", password: 123456, address: "87 Broadway, London", bio: "I like talking my dog for walks, and playing chess. I am 70 years old and am single living in a quite borough of london.",latitude: nil, longitude: nil )
+fred = User.create(first_name: "Fred", last_name: "Lombard", email: "fred@gmail.com", password: 123456, address: "87 Broadway, London, united kingdom", bio: "I like talking my dog for walks, and playing chess. I am 70 years old and am single living in a quite borough of london." )
 # fred.photo.attach(io: file_fred, filename: "fred.jpg", content_type: 'image/jpg')
 
 # file_bobby = File.open("/Users/anthonypassler/Downloads/bobby.jpg")
-bobby = User.create!(first_name: "Bobby", last_name: "Williams", email: "bobby@gmail.com", password: 123456, address: "60 Chester Road, London", bio: "I love me footy and a good pint of ale. I like meeting new people and having long conversations about life.", latitude: nil, longitude: nil )
+bobby = User.create!(first_name: "Bobby", last_name: "Williams", email: "bobby@gmail.com", password: 123456, address: "60 Chester Road, London, united kingdom", bio: "I love me footy and a good pint of ale. I like meeting new people and having long conversations about life.")
 # bobby.photo.attach(io: file_bobby, filename: "bobby.jpg", content_type: 'image/jpg')
 
 # file_emma = File.open("/Users/anthonypassler/Downloads/emma.jpg")
-emma = User.create!(first_name: "Emma", last_name: "Oliver", email: "emma@gmail.com", password: 123456, address: "342 King Street, london", bio: "Love cooking and helping people. I am a very sociable person, who loves meeting new people. Also enjoy long walks in the forrest. ", latitude: nil, longitude: nil )
+emma = User.create!(first_name: "Emma", last_name: "Oliver", email: "emma@gmail.com", password: 123456, address: "342 King Street, london, united kingdom", bio: "Love cooking and helping people. I am a very sociable person, who loves meeting new people. Also enjoy long walks in the forrest. ")
 # emma.photo.attach(io: file_emma, filename: "emma.jpg", content_type: 'image/jpg')
 
 # file_elizabeth = File.open("/Users/anthonypassler/Downloads/elizabeth.jpg")
-elizabeth = User.create!(first_name: "Elizabeth", last_name: "Reagon", email: "elizabeth@gmail.com", password: 123456, address: "9858 Grove Road, london", bio: "I enjoy a good glass of wine and lots of laughter, also this netflix thing is amazing!", latitude: nil, longitude: nil )
+elizabeth = User.create!(first_name: "Elizabeth", last_name: "Reagon", email: "elizabeth@gmail.com", password: 123456, address: "9858 Grove Road, london, united kingdom", bio: "I enjoy a good glass of wine and lots of laughter, also this netflix thing is amazing!")
 # elizabeth.photo.attach(io: file_elizabeth, filename: "elizabeth.jpg", content_type: 'image/jpg')
 
 # file_annie = File.open("/Users/anthonypassler/Downloads/annie.jpg")
-annie = User.create!(first_name: "Annie", last_name: "Davids", email: "annie@gmail.com", password: 123456, address: "160 mortload road, london", bio: "Very friendly and enjoy being around young people. Recently lost my husband, and have hip problems.", latitude: nil, longitude: nil )
+annie = User.create!(first_name: "Annie", last_name: "Davids", email: "annie@gmail.com", password: 123456, address: "160 mortlake road, richmond, united kingdom", bio: "Very friendly and enjoy being around young people. Recently lost my husband, and have hip problems.")
 # annie.photo.attach(io: file_annie, filename: "annie.jpg", content_type: 'image/jpg')
 
 # file_matt = File.open("/Users/anthonypassler/Downloads/matt.jpg")
-matt = User.create!(first_name: "Matt", last_name: "Hill", email: "matt@gmail.com", password: 123456, address: "10 wriostley way, london", bio: "Love helping out in my community and making it a better place to live.", latitude: nil, longitude: nil )
+matt = User.create!(first_name: "Matt", last_name: "Hill", email: "matt@gmail.com", password: 123456, address: "165 mortlake road, richmond, united kingdom", bio: "Love helping out in my community and making it a better place to live.")
 # matt.photo.attach(io: file_matt, filename: "matt.jpg", content_type: 'image/jpg')
 
 post0 = Post.create!(title: "Please need help moving washine machine.", content: "My strength isn't what it used to be and would really appreciate if someone could help me move the wahing machine to my garage.", user: fred, completed: false)
