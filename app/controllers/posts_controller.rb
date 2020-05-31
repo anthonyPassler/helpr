@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.geocoded
+    @posts = Post.geocoded.order(created_at: :desc)
 
     @markers = @posts.map do |post|
       {
