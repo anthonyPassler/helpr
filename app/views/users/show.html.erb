@@ -17,11 +17,27 @@
 </div>
 <div class="reviews">
   <h2>My Reviews</h2>
-  <% @user.bids.where(approved: true).each do |bid| %>
-    <% if bid.post.completed %>
-      <% review = Review.find_by(user:bid.post.user, post:bid.post) %>
-      <%= review.content %>
-      <%= review.rating %>
+  <% @bids.where(approved: true).each do |bid| %>
+    <% if bid.post.completed && bid.post.reviews.any?%>
+      <div class="review-post">
+        <div class="avatar-post-container">
+          <div>
+            <% review = bid.post.reviews %>
+            <% if  review.first.user.photo.attached? %>
+              <%= cl_image_tag review.first.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+            <% else %>
+              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                    width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+            <% end %>
+          </div>
+          <div class="post-content">
+            <h3><%= review.first.user.first_name %> <%= review.first.user.last_name %></h3>
+            <p><%= review.first.content %></p>
+            <p><%= "⭐️" * review.first.rating %></p>
+            <% @stars << review.first.rating %>
+          </div>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>
