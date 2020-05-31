@@ -25,6 +25,10 @@
         <div class="see-offer">
           <p><strong>See your offers to help below</strong></p>
         </div>
+      <% elsif @post.bids.any? { |bid| bid.user == current_user} %>
+        <div class="see-offer">
+          <p><strong>Thanks for offering your help</strong></p>
+        </div>
       <% else %>
         <%= link_to post_bids_path(@post), method: :post do %>
           <div class="bid-offer">
@@ -39,18 +43,24 @@
         <% @post.bids.each do |bid|%>
             <% if bid.approved %>
               <div class="bid">
-                <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
+                <div class="bid-user-info">
+                  <% if  bid.user.photo.attached? %>
+                    <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+                  <% else %>
+                    <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                          width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  )  %>
+                  <% end %>
+                  <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
+                </div>
                 <div class="view-approve">
                   <%= link_to user_path(bid.user) do %>
                     <div class="view">
                       <p><strong>View Profile</strong></p>
                     </div>
                   <% end %>
-                  <%= link_to post_bid_path(@post, bid), method: :patch do %>
                     <div class="approved">
                       <p><strong>Approved!</strong></p>
                     </div>
-                  <% end %>
                 </div>
               </div>
             <% end %>
@@ -58,7 +68,15 @@
       <% else %>
         <% @post.bids.each do |bid|%>
             <div class="bid">
-              <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
+              <div class="bid-user-info">
+                <% if  bid.user.photo.attached? %>
+                  <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+                <% else %>
+                  <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                        width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  )  %>
+                <% end %>
+                <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
+              </div>
               <div class="view-approve">
                 <%= link_to user_path(bid.user) do %>
                   <div class="view">
@@ -81,7 +99,13 @@
             </div>
         <% end %>
       <% end %>
-
+      <% if approved && current_user == @post.user  %>
+        <%= link_to post_path(@post, completed: true), :method => :put do %>
+          <div class="completed">
+            <p><strong>Mark as completed</strong></p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
 
   </div>
@@ -114,7 +138,6 @@
     <div class="chat">
 
     </div>
-    <%= link_to "Mark as completed", post_path(@post, completed: true), :method => :put, class: "btn btn-success"%>
   </div>
 
 </div>
