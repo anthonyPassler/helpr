@@ -15,7 +15,8 @@
   </div>
 <% end %>
 
-<!-- <script>
+<% if user_signed_in? %>
+<script>
   const hideMessage = () => {
     const message = document.querySelector(".alert");
     message.style.display = "none";
@@ -24,4 +25,5 @@
     hideMessage();
   }, 4000);
 </script>
- -->
+<% end %>
+
