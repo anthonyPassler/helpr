@@ -109,9 +109,10 @@
     </div>
 
   </div>
-  <div class="chat-container">
-    <div class="header">
-      <% if @chatroom %>
+
+  <% if @chatroom %>
+    <div class="chat-container">
+      <div class="header">
         <div class="wrapper">
           <div>
             <h1 class="chatroomheader">#<%= @chatroom.name %></h1>
@@ -129,15 +130,8 @@
             <% end %>
           </div>
         </div>
-      <% else %>
-        <%= link_to chatrooms_path(guest: @post.user, post_id: @post.id), method: :post do %>
-          <h5>Start Chat</h5>
-        <% end %>
-      <% end %>
+      </div>
     </div>
-    <div class="chat">
-
-    </div>
-  </div>
-
+    <div class="chat"></div>
+  <% end %>
 </div>

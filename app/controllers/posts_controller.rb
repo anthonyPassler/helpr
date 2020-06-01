@@ -13,7 +13,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
-    @chatroom = Chatroom.where(host: current_user, guest: @user).first
+    if current_user == @post.user || current_user == @post.bids.find_by(approved: true).try(:user)
+      @chatroom = Chatroom.find_by(post: @post)
+    end
     @message = Message.new
   end
 
