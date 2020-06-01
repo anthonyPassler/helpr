@@ -15,6 +15,8 @@ class UsersController < ApplicationController
     @posts = @user.posts
     @bids = @user.bids
     @reviews = @user.reviews
+    @top_users = User.all.sort_by { |user| user.average_rating }.first(5)
+
   end
 
   private
