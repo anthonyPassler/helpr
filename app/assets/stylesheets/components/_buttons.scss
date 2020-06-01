@@ -1,4 +1,30 @@
+.btn-profile-post{
+box-sizing: border-box;
+text-align: center;
+margin: 0.2em;
+padding: 6px 6px;
+background: linear-gradient(to right, #72328B, #91318A);
+box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+color: white;
+&:hover{
+background: linear-gradient(to right, #00ACB7, #0090AA);
+color: white;
+}
+}
 
+.btn-profile-edit{
+box-sizing: border-box;
+text-align: center;
+margin: 0.2em;
+padding: 6px 6px;
+background: linear-gradient(to right, #72328B, #91318A);
+box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+color: white;
+&:hover{
+background: linear-gradient(to right, #00ACB7, #0090AA);
+color: white;
+}
+}
 
 
 
