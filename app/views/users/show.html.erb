@@ -19,7 +19,7 @@
   </div>
 <hr>
 
-  <% if current_user %>
+  <% if user_signed_in? && @user == current_user %>
   <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-profile-edit" %>
   <%= link_to "Post a request", new_post_path, class: "btn btn-profile-post" %>
   <% end %>
@@ -52,8 +52,10 @@
       <% end %>
     <% end %>
   <% else %>
-    <p> You have no reviews yet </p>
-    <%= link_to "Browse the feed", posts_path, class: "btn btn-profile-post" %>
+    <p> No reviews yet </p>
+  <% end %>
+   <% if user_signed_in? && @user == current_user %>
+  <%= link_to "Browse the feed", posts_path, class: "btn btn-profile-post" %>
   <% end %>
   </div>
 </div>
