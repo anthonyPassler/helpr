@@ -1,45 +1,60 @@
-<div class="container-narrow">
+<br>
+<div class="container-narrow mb-3 mt-3">
   <div class="user-info" >
+    <br>
     <% if  @user.photo.attached? %>
-      <%= cl_image_tag @user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image"  %>
+    <%= cl_image_tag @user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image"  %>
     <% else %>
-      <div class="avatar-show-square">
-        <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-               width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
-      </div>
+    <div class="avatar-show-square">
+    <%= cl_image_tag("fpatfvf9edoaaqhbkfrt", width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
+    </div>
     <% end %>
     <div class="info">
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <span><%= @stars %></span>
       <p><%= @user.bio %></p>
-      <p class="address"><%= @user.address %></p>
-      <%= link_to "Edit Profile", edit_user_registration_path %>
+    <div class="address-align text-left"><a class="fas fa-map-marker-alt"></a>  <a class="address"><%= @user.address %></a></div>
+      <br>
     </div>
-</div>
+  </div>
+<hr>
+
+  <% if current_user %>
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-profile-edit" %>
+  <%= link_to "Post a request", new_post_path, class: "btn btn-profile-post" %>
+  <% end %>
+
 <div class="reviews">
   <h2>My Reviews</h2>
-  <% @bids.where(approved: true).each do |bid| %>
-    <% if bid.reviews.any?%>
-      <div class="review-post">
-        <div class="avatar-post-container">
-          <div>
-            <% review = bid.reviews.first%>
-            <% if  review.user.photo.attached? %>
-              <%= cl_image_tag review.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
-            <% else %>
-              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                    width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
-            <% end %>
-          </div>
-          <div class="post-content">
-            <h3><%= review.user.first_name %> <%= review.user.last_name %></h3>
-            <p><%= review.content %></p>
-            <p><%= '<i class="fas fa-star"></i>'.html_safe * review.rating %></p>
+  <hr>
+  <% if @bids.where(approved: true).map(&:reviews).flatten.any? %>
+    <% @bids.where(approved: true).each do |bid| %>
+      <% if bid.reviews.any?%>
+        <div class="review-post">
+          <div class="avatar-post-container">
+            <div>
+              <% review = bid.reviews.first%>
+              <% if  review.user.photo.attached? %>
+                <%= cl_image_tag review.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+              <% else %>
+                <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                      width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+              <% end %>
+
+            </div>
+            <div class="post-content">
+              <h3><%= review.user.first_name %> <%= review.user.last_name %></h3>
+              <p><%= review.content %></p>
+              <p><%= '<i class="fas fa-star"></i>'.html_safe * review.rating %></p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
+  <% else %>
+    <p> You have no reviews yet </p>
+    <%= link_to "Browse the feed", posts_path, class: "btn btn-profile-post" %>
   <% end %>
+  </div>
 </div>
-
-</div>
+<br>

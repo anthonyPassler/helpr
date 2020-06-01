@@ -38,14 +38,15 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :photo, as: :file %>
+                  <br>
+      <%= f.input :Upload_a_different_photo, as: :file %>
     </div>
     <br>
 
     <div class="form-actions">
-      <%= f.submit "update", class: "btn btn-success" %>
-      <%= link_to "Cancel account", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete %>
-      <%= link_to "Back", :back, class: "btn btn-primary"%>
+      <%= f.submit "Save changes", class: "btn btn-success" %>
+      <%= link_to "Delete account", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete %>
+      <%= link_to "Cancel", :back, class: "btn btn-primary"%>
     </div>
     <br>
   <% end %>
