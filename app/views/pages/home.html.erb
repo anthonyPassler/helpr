@@ -3,13 +3,13 @@
 
     <div class="col-6 d-flex">
       <div class="tagline">
-        <h2>Lend a helping hand in your local community</h2>
+        <h2 data-aos="fade-right" data-aos-duration="1000">Lend a helping hand in your local community</h2>
       </div>
     </div>
 
     <div class="col-6">
 
-      <div class="hero-ctas">
+      <div class="hero-ctas" data-aos="fade-left" data-aos-duration="1000">
         <div>
           <% if user_signed_in? %>
             <%= link_to dashboard_path(current_user) do %>
@@ -66,13 +66,13 @@
 
 <div id="about">
   <div class="about-header">
-    <h2>Who we are</h2>
-    <p>We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand.</p>
+    <h2 data-aos="fade-right" data-aos-duration="1000">Who we are</h2>
+    <p data-aos="fade-left" data-aos-duration="1000">We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand.</p>
   </div>
 
   <div class= how-it-works justify-content-center>
-    <h2>How it works</h2>
-    <div class="container">
+    <h2 data-aos="fade-right" data-aos-duration="1000">How it works</h2>
+    <div class="container" data-aos="fade-left" data-aos-duration="1000">
       <div class="row w-100 justify-content-center">
 
         <div class="card-pls-signup card-become-helpr">
@@ -100,8 +100,8 @@
 </div> <!-- end of about -->
 
 <div class="categories">
-  <h2>Get Helpr'd</h2>
-  <div class="container-card-categories">
+  <h2 data-aos="fade-right" data-aos-duration="1000">Get Helpr'd</h2>
+  <div class="container-card-categories" data-aos="fade-left" data-aos-duration="1000">
     <div class="cards-categories">
       <div class="category-card">
         <div class="card-categories-icon">
@@ -145,8 +145,8 @@
 
 
 <div id="showcase-helprs">
-  <h2>Meet a Helpr</h4>
-  <div class="cards-showcase container">
+  <h2 data-aos="fade-right" data-aos-duration="1000">Meet a Helpr</h4>
+  <div class="cards-showcase container" data-aos="fade-left" data-aos-duration="1000">
     <div class="row justify-content-center">
       <%= link_to user_path(4), class:"text-decoration-none" do %>
         <div class="card-helpr col-2">
