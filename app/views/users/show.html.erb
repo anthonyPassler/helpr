@@ -25,7 +25,11 @@
   <% end %>
 
 <div class="reviews">
+  <% if user_signed_in? && @user == current_user %>
   <h2>My Reviews</h2>
+  <% else %>
+  <h2>Reviews</h2>
+  <% end %>
   <hr>
   <% if @bids.where(approved: true).map(&:reviews).flatten.any? %>
     <% @bids.where(approved: true).each do |bid| %>
