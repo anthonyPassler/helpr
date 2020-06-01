@@ -30,9 +30,10 @@
 
 .cards-categories {
   display: flex;
+  color: $dark-purple;
 }
 
-.card-categories {
+.card-categories-icon {
   display: flex;
   justify-content: center;
   border-radius: 24px 24px 24px 0;
@@ -41,21 +42,21 @@
   background: $purple-grad;
   width: 72px;
   height: 72px;
-  margin: 8px;
+  margin: 16px;
   border-radius: 24px 24px 24px 0;
 }
 
 .card-pls-signup {
   display: flex;
   align-items: center;
-  border: 2px solid $dark-purple;
+  border: 2px solid $light-purple;
   margin: 0 10px;
   padding: 8px 16px;
   width: 408px;
 
   h4 {
     padding-left: 40px;
-    color: $light-purple;
+    color: $dark-blue;
     font-weight: bold;
   }
 
@@ -64,6 +65,13 @@
     font-weight: light;
     margin-left: 18px;
     color: $light-purple;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: light;
+    margin-left: 18px;
+    color: $dark-purple;
   }
 }
 
