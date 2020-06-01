@@ -44,4 +44,12 @@ document.addEventListener('turbolinks:load', () => {
   if (formElement){
     initFlatPickr();
   }
+  const formElement2 = document.querySelector(".edit_post");
+  if (formElement2){
+    initFlatPickr();
+  }
 });
+
+
+
+
