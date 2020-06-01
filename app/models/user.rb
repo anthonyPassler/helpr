@@ -11,4 +11,20 @@ class User < ApplicationRecord
   has_many :host_chatrooms, :class_name => 'Chatroom', :foreign_key => 'host_id'
   has_many :guest_chatrooms, :class_name => 'Chatroom', :foreign_key => 'guest_id'
   # has_many :messages
+
+  def average_rating
+    stars = []
+    bids.where(approved: true).each do |bid|
+          unless bid.reviews.first.nil?
+            stars << bid.reviews.first.rating
+          end
+    end
+    average = stars.sum.to_f / stars.size
+    if average.nan?
+      return 0
+    else
+      average
+    end
+  end
+
 end
