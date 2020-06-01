@@ -14,6 +14,7 @@ class BidsController < ApplicationController
     @post = Post.find(params[:post_id])
     @bid = Bid.find(params[:id])
     @bid.update(approved: true)
+    @chatroom = Chatroom.create(host: current_user, guest: @bid.user, post: @post)
     redirect_to post_path(@post)
   end
 end
