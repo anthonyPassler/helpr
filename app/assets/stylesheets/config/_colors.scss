@@ -8,7 +8,7 @@ $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 
-$light-gray: #f2f2f2;
+$light-gray: #fafafa;
 
 $light-purple: #91318A;
 $dark-purple: #72328B;
@@ -24,4 +24,4 @@ $yellow-grad: linear-gradient(to right, $light-yellow,$dark-yellow);
 
 $light-green: #a8e063;
 $dark-green: #56ab2f;
-$green-grad: linear-gradient(to right, $light-green,$dark-green);
+$green-grad: linear-gradient(to right, $dark-green,$light-green);

@@ -1,9 +1,3 @@
-.dashboard-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 120px 150px;
-}
 .dashboard-item {
   background-color: blue;
   height: 225px;
@@ -48,4 +42,46 @@
 }
 .border-top-left {
   border-radius: 0px 50px 50px 50px;
+}
+.sub-header-green {
+  background: $green-grad;
+  padding: 5px;
+  margin: 10px 0;
+  color: white;
+}
+.sub-header-purple {
+  background: $purple-grad;
+  padding: 5px;
+  margin: 10px 0;
+  color: white;
+}
+.sub-header-blue {
+  background: $blue-grad;
+  padding: 5px;
+  margin: 10px 0;
+  color: white;
+}
+.nav-item {
+  a {
+    color: #4C4C4C;
+  }
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  background-color: white;
+  border-color: $light-purple $light-purple $light-purple;
+  border-bottom: 1px solid white;
+  color: $light-purple;
+}
+.nav-tabs {
+  border-bottom: 1px solid $light-purple;
+}
+.nav-tabs .nav-link:hover {
+  border-color: $light-purple;
+  border-bottom: 1px solid white;
+}
+.tab-content {
+  margin-top: 32px;
+}
+.margin-bottom {
+  margin-bottom: 40px;
 }

@@ -3,13 +3,13 @@
 
     <div class="col-6 d-flex">
       <div class="tagline">
-        <h2>Lend a helping hand in your local community</h2>
+        <h2 data-aos="fade-right" data-aos-duration="1000">Lend a helping hand in your local community</h2>
       </div>
     </div>
 
     <div class="col-6">
 
-      <div class="hero-ctas">
+      <div class="hero-ctas" data-aos="fade-left" data-aos-duration="1000">
         <div>
           <% if user_signed_in? %>
             <%= link_to dashboard_path(current_user) do %>
@@ -66,13 +66,13 @@
 
 <div id="about">
   <div class="about-header">
-    <h2>Who we are</h2>
-    <p>We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand.</p>
+    <h2 data-aos="fade-right" data-aos-duration="1000">Who we are</h2>
+    <p data-aos="fade-left" data-aos-duration="1000">We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand.</p>
   </div>
 
   <div class= how-it-works justify-content-center>
-    <h3>How it works</h3>
-    <div class="container">
+    <h2 data-aos="fade-right" data-aos-duration="1000">How it works</h2>
+    <div class="container" data-aos="fade-left" data-aos-duration="1000">
       <div class="row w-100 justify-content-center">
 
         <div class="card-pls-signup card-become-helpr">
@@ -81,11 +81,7 @@
 
           <div class="card-description">
             <h4>Become a Helpr</h4>
-            <ul>
-              <li>Help a neighbor in need</li>
-              <li>Feel great about a good deed</li>
-              <li>Make friends</li>
-            </ul>
+            <p>Lend a hand to your neighbors. With the app, you can look at what people around you might need and offer someone your help. </p>
           </div>
         </div>
 
@@ -94,36 +90,63 @@
           </div>
           <div class="card-description">
             <h4>Need help?</h4>
-            <ul>
-              <li>Reach out to a local</li>
-              <li>Get some help</li>
-              <li>Meet new people</li>
-            </ul>
+            <p>Reach out to your local community through the app, get the help you need and meet new people!</p>
           </div>
         </div>
 
       </div>
     </div> <!-- end of container -->
-    <div class="container-card-categories">
-      <div class="cards-categories">
-        <div class="card-categories"><%= image_tag "trolley.svg", alt: "trolley", style: "height: 50px; width: 50px;" %></div>
-        <div class="card-categories"><%= image_tag "bulb.svg", alt: "lightbulb", style: "height: 50px; width: 50px;" %></div>
-        <div class="card-categories"><%= image_tag "worker.svg", alt: "worker", style: "height: 50px; width: 50px;" %></div>
-        <div class="card-categories"><%= image_tag "admin.svg", alt: "admin", style: "height: 50px; width: 50px;" %></div>
-        <div class="card-categories"><%= image_tag "car.svg", alt: "car", style: "height: 50px; width: 50px;" %></div>
-        <div class="card-categories"><%= image_tag "hoover.svg", alt: "hoover", style: "height: 50px; width: 50px;" %></div>
-        <div class="card-categories"><%= image_tag "washingmachine.svg", alt: "washing machine", style: "height: 50px; width: 50px;" %></div>
+  </div> <!-- end of how it works -->
+</div> <!-- end of about -->
+
+<div class="categories">
+  <h2 data-aos="fade-right" data-aos-duration="1000">Get Helpr'd</h2>
+  <div class="container-card-categories" data-aos="fade-left" data-aos-duration="1000">
+    <div class="cards-categories">
+      <div class="category-card">
+        <div class="card-categories-icon">
+          <%= image_tag "trolley.svg", alt: "trolley", style: "height: 50px; width: 50px;" %>
+        </div>
+        <p>Errands</p>
+      </div>
+      <div class="category-card">
+        <div class="card-categories-icon">
+          <%= image_tag "bulb.svg", alt: "lightbulb", style: "height: 50px; width: 50px;" %>
+        </div>
+        <p>Repairs</p>
+      </div>
+      <div class="category-card">
+        <div class="card-categories-icon">
+          <%= image_tag "admin.svg", alt: "admin", style: "height: 50px; width: 50px;" %>
+        </div>
+        <p>Admin</p>
+      </div>
+      <div class="category-card">
+        <div class="card-categories-icon">
+          <%= image_tag "car.svg", alt: "car", style: "height: 50px; width: 50px;" %>
+        </div>
+        <p>Lifts</p>
+      </div>
+      <div class="category-card">
+        <div class="card-categories-icon">
+          <%= image_tag "hoover.svg", alt: "hoover", style: "height: 50px; width: 50px;" %>
+        </div>
+          <p>Cleaning</p>
+      </div>
+      <div class="category-card">
+        <div class="card-categories-icon">
+          <%= image_tag "washingmachine.svg", alt: "washing machine", style: "height: 50px; width: 50px;" %>
+        </div>
+        <p>Laundry</p>
       </div>
     </div>
-  </div> <!-- end of how it works -->
-
-
-</div> <!-- end of about -->
+  </div> <!-- end of container-card-categories -->
+</div>
 
 
 <div id="showcase-helprs">
   <h4>Top Helprs</h4>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center" class="cards-showcase container" data-aos="fade-left" data-aos-duration="1000">
   <% @top_users.each do |user| %>
     <%= link_to user_path(user), class:"text-decoration-none" do %>
       <div class="card-helpr col-2">
