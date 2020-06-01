@@ -41,7 +41,7 @@ Bid.destroy_all
 
 # file_fred = File.open("/Users/anthonypassler/Downloads/fred.jpg")
 
-fred = User.create(first_name: "Fred", last_name: "Lombard", email: "fred@gmail.com", password: 123456, address: "87 Broadway, London, united kingdom", bio: "I like talking my dog for walks, and playing chess. I am 70 years old and am single living in a quite borough of london." )
+fred = User.create(first_name: "Fred", last_name: "Lombard", email: "fred@gmail.com", password: 123456, address: "87 Broadway, London, united kingdom", bio: "I like talking my dog for walks, and playing chess. I am 70 years old and am single living in a quiet borough of london." )
 # fred.photo.attach(io: file_fred, filename: "fred.jpg", content_type: 'image/jpg')
 
 # file_bobby = File.open("/Users/anthonypassler/Downloads/bobby.jpg")

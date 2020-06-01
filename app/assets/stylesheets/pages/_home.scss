@@ -2,12 +2,18 @@
   padding: 40px;
   color: $dark-purple;
   background-color: $light-gray;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .how-it-works {
   padding: 40px;
+  text-align: center;
 
   h2 {
+    font-size: 40px;
+    font-weight: bold;
     color: $dark-blue;
     font-size: 40px;
   }
@@ -23,11 +29,14 @@
 }
 
 .categories {
+  text-align: center;
   padding: 40px;
   background-color: $light-gray;
 
   h2 {
     color: $dark-purple;
+    font-size: 40px;
+    font-weight: bold;
   }
 }
 
@@ -38,12 +47,13 @@
 }
 
 #showcase-helprs {
-  margin-top: 40px;
-  padding-left: 120px;
+  padding: 40px;
+  text-align: center;
 
   h2 {
-    color: $light-purple;
-    margin-right: 150px;
+    color: $dark-purple;
+    font-size: 40px;
+    font-weight: bold;
   }
 }
 

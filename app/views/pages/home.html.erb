@@ -145,8 +145,8 @@
 
 
 <div id="showcase-helprs">
-  <h4>Top Helprs</h4>
-  <div class="row justify-content-center" class="cards-showcase container" data-aos="fade-left" data-aos-duration="1000">
+  <h2>Top Helprs</h2>
+  <div class="row cards-showcase justify-content-center " data-aos="fade-left" data-aos-duration="1000">
   <% @top_users.each do |user| %>
     <%= link_to user_path(user), class:"text-decoration-none" do %>
       <div class="card-helpr col-2">
