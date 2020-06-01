@@ -145,46 +145,23 @@
 
 
 <div id="showcase-helprs">
-  <h2 data-aos="fade-right" data-aos-duration="1000">Meet a Helpr</h4>
-  <div class="cards-showcase container" data-aos="fade-left" data-aos-duration="1000">
-    <div class="row justify-content-center">
-      <%= link_to user_path(4), class:"text-decoration-none" do %>
-        <div class="card-helpr col-2">
-          <%= image_tag "corey.jpg", alt: "Corey", class:"avatar-xxl"%>
-          <p>Corey</p>
-        </div>
-      <% end %>
-      <%= link_to "#", class:"text-decoration-none" do %>
-        <div class="card-helpr col-2">
-          <%= image_tag "andrea.jpg", alt: "Andrea", class:"avatar-xxl"%>
-          <p>Andrea</p>
-        </div>
-      <% end %>
-      <%= link_to "#", class:"text-decoration-none" do %>
-        <div class="card-helpr col-2">
-          <%= image_tag "justin.jpg", alt: "justin", class:"avatar-xxl"%>
-          <p>Justin</p>
-        </div>
-      <% end %>
-      <%= link_to "#", class:"text-decoration-none" do %>
-        <div class="card-helpr col-2">
-          <%= image_tag "lina.jpg", alt: "lina", class:"avatar-xxl"%>
-          <p>Lina</p>
-        </div>
-      <% end %>
-      <%= link_to "#", class:"text-decoration-none" do %>
-        <div class="card-helpr col-2">
-          <%= image_tag "stefan.jpg", alt: "stefan", class:"avatar-xxl"%>
-          <p>Stefan</p>
-        </div>
-      <% end %>
-      <%= link_to "#", class:"text-decoration-none" do %>
-        <div class="card-helpr col-2">
-          <%= image_tag "umar.jpg", alt: "umar", class:"avatar-xxl"%>
-          <p>Umar</p>
-        </div>
-      <% end %>
-    </div> <!-- end of row -->
+  <h4>Top Helprs</h4>
+  <div class="row justify-content-center" class="cards-showcase container" data-aos="fade-left" data-aos-duration="1000">
+  <% @top_users.each do |user| %>
+    <%= link_to user_path(user), class:"text-decoration-none" do %>
+      <div class="card-helpr col-2">
+        <% if  user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, height: 104, :quality=>60, crop: :mfit, class: "avatar-xxl", alt: "profile image"  %>
+        <% else %>
+          <div class="avatar-xxl">
+            <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                   width: 104, crop: :fill, class: "avatar-xxl", alt: "profile image")  %>
+          </div>
+        <% end %>
+        <p><%= user.first_name %></p>
+      </div>
+    <% end %>
+  <% end %>
   </div>
 </div>
 
