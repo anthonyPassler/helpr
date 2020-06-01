@@ -104,8 +104,6 @@
 
       </div>
     </div> <!-- end of container -->
-  </div> <!-- end of how it works -->
-
     <div class="container-card-categories">
       <div class="cards-categories">
         <div class="card-categories"><%= image_tag "trolley.svg", alt: "trolley", style: "height: 50px; width: 50px;" %></div>
@@ -117,6 +115,8 @@
         <div class="card-categories"><%= image_tag "washingmachine.svg", alt: "washing machine", style: "height: 50px; width: 50px;" %></div>
       </div>
     </div>
+  </div> <!-- end of how it works -->
+
 
 </div> <!-- end of about -->
 
@@ -125,7 +125,7 @@
   <h4>Meet a Helpr</h4>
   <div class="cards-showcase container">
     <div class="row justify-content-center">
-      <%= link_to user_path(1), class:"text-decoration-none" do %>
+      <%= link_to user_path(4), class:"text-decoration-none" do %>
         <div class="card-helpr col-2">
           <%= image_tag "corey.jpg", alt: "Corey", class:"avatar-xxl"%>
           <p>Corey</p>
