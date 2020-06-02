@@ -113,15 +113,19 @@
 
   <% if @chatroom %>
     <div class="chat-container">
-      <div class="header">
-        <div class="wrapper">
+<!--       <div class="header"> -->
+        <div id="chatroomdiv" class="wrapper">
           <div>
             <h1 class="chatroomheader">#<%= @chatroom.name %></h1>
           </div>
 
           <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
+              <% if message.user == current_user %>
               <%= render 'messages/message', message: message %>
+              <% else %>
+            <%= render 'messages/message_received', message: message %>
+            <% end %>
             <% end %>
           </div>
 
@@ -131,7 +135,7 @@
             <% end %>
           </div>
         </div>
-      </div>
+<!--       </div> -->
     </div>
     <div class="chat"></div>
   <% end %>
