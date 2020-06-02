@@ -14,7 +14,9 @@
             <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
             <h4><%= @post.title %></h4>
             <p><%= @post.content %></p>
-            <%= link_to "Edit post", edit_post_path(@post), class: "btn btn-profile-post"%>
+             <% if current_user == @post.user %>
+              <%= link_to "Edit post", edit_post_path(@post), class: "btn btn-profile-post"%>
+            <% end %>
           </div>
         </div>
         <div class="date-btn">
