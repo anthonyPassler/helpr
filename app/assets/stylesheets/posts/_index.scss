@@ -40,12 +40,11 @@
   }
 }
 .map-container {
-  position: sticky;
   position: -webkit-sticky;
   top: 66px;
+  position: sticky;
   border-radius: 40px;
   overflow: hidden;
-  // width: 30%;
 
   img {
     height: 250px;
@@ -57,11 +56,6 @@
 .map-dashboard {
   width: 100%;
 }
-
-.map-posts-index {
-  width: 40%;
-}
-
 .sub-header {
   background: linear-gradient(to left, #F9DD47, #EFAC42);
   padding: 5px;

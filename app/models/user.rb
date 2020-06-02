@@ -38,4 +38,8 @@ class User < ApplicationRecord
       output.html_safe
   end
 
+  def score
+    bids.joins(:post).where(approved: true, posts: { completed: true}).count
+  end
+
 end

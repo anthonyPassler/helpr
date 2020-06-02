@@ -26,35 +26,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  a {
+    text-decoration: none;
+  }
 }
 
 .cta {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   color: white;
   display: flex;
   text-align: center;
-  background-color: $dark-purple;
+  background: $purple-grad;
   opacity:0.9;
   margin: 2px;
+  margin-bottom: 4px;
   flex-direction: column;
-  text-decoration: none;
-
-  a {
-    color: white
+  h3 {
+    font-size: 22px;
   }
 
-  a:hover {
+  a {
     color: white;
-    text-decoration: none;
   }
 
   &:hover {
-    opacity: 0.7;
-    text-decoration: none;
+    background: $light-purple;
   }
 }
 
@@ -64,16 +64,27 @@
 
 #cta-help {
   border-radius: 50% 50% 50% 0;
-   background: linear-gradient(to right, #F9DD47, #EFAC42);
-
+  background: $yellow-grad;
+  &:hover {
+    background: $light-yellow;
+  }
 }
 
 #cta-become-helpr {
   border-radius: 50% 0 50% 50%;
-  background: linear-gradient(to right, #56ab2f, #a8e063);
+  background: $green-grad;
+  &:hover {
+    background: $light-green;
+  }
 }
 
 #cta-feed {
   border-radius: 0 50% 50% 50%;
-  background: linear-gradient(to right, #00ACB7, #0090AA);
+  background: $blue-grad;
+  &:hover {
+    background: $light-blue;
+  }
+}
+.light {
+  font-weight: 300;
 }

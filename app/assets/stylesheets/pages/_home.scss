@@ -1,60 +1,67 @@
 .about-header {
-  padding: 40px;
+  padding: 80px;
   text-align: center;
 
   h2 {
     font-size: 40px;
     font-weight: bold;
-    color: $dark-purple;
+    color: $light-blue;
+  }
+  p {
+    width: 60%;
+    margin: 0 auto;
   }
 }
 
 
 .how-it-works {
-  padding: 40px;
+  padding: 80px;
   text-align: center;
   background-color: $light-gray;
 
   h2 {
     font-size: 40px;
     font-weight: bold;
-    color: $dark-purple;
+    color: $light-purple;
     font-size: 40px;
   }
 
   h4 {
-    color: $dark-purple;
+    color: $light-purple;
     text-align: left;
     padding-left: 16px;
   }
 
   .card-description {
     align-self: flex-start;
-    text-align: justify;
   }
 
 }
 
 .categories {
   text-align: center;
-  padding: 40px;
+  padding: 80px;
 
   h2 {
-    color: $dark-purple;
+    color: $light-green;
     font-size: 40px;
     font-weight: bold;
   }
 }
 
 .why {
-  padding-top: 40px;
+  padding: 80px;
   text-align: center;
   background-color: $light-gray;
 
   h2 {
     font-size: 40px;
     font-weight: bold;
-    color: $dark-purple;
+    color: $light-purple;
+  }
+
+  p {
+    color: white;
   }
 
   .row {
@@ -70,11 +77,11 @@
 }
 
 #showcase-helprs {
-  padding: 40px;
+  padding: 80px;
   text-align: center;
 
   h2 {
-    color: $dark-purple;
+    color: $light-yellow;
     font-size: 40px;
     font-weight: bold;
   }
