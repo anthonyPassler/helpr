@@ -26,6 +26,19 @@
   width: 35%;
   margin-left: 16px;
 }
+.chat-container-placeholder {
+  background-color: rgba(145, 49, 138, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  width: 35%;
+  margin-left: 16px;
+  text-align: center;
+  h2 {
+    margin: 24px 0;
+    font-weight: bold;
+    color: $light-purple;
+  }
+}
 .show-text {
   h3 {
     font-size: 24px;
