@@ -13,7 +13,7 @@
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <span class="d-flex"><%= @stars %> <h3 class="helpr-points ml-2"><%= @user.score %> helpr points</h3></span>
       <p><%= @user.bio %></p>
-    <div class="address-align text-left"><a class="fas fa-map-marker-alt"></a>  <a class="address"><%= @user.address %></a></div>
+    <div class="address-align text-left"><%= image_tag "unitedkingdom.png", class: "unitedkingdom", alt: "unitedkingdom.png", height: 35 %> <a class="address"><%= @user.address %></a></div>
       <br>
     </div>
   </div>
@@ -57,9 +57,7 @@
     <% end %>
   <% else %>
     <p> No reviews yet </p>
-   <% if user_signed_in? && @user == current_user %>
   <%= link_to "Browse the feed", posts_path, class: "btn btn-profile-post" %>
-  <% end %>
   <% end %>
   </div>
 </div>
