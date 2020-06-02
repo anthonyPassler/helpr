@@ -20,7 +20,8 @@
           </div>
         </div>
         <div class="date-btn">
-          <p><%= @post.date.nil? ? "ASAP" : @post.date %></p>
+
+          <p><strong><%= @post.date.nil? ? "ASAP" : @post.date.strftime("%d %b %Y") %></strong></p>
         </div>
     </div>
 

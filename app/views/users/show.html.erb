@@ -11,7 +11,7 @@
     <% end %>
     <div class="info">
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      <span><%= @stars %></span>
+      <span class="d-flex"><%= @stars %> <h3 class="helpr-points ml-2"><%= @user.score %> helpr points</h3></span>
       <p><%= @user.bio %></p>
     <div class="address-align text-left"><a class="fas fa-map-marker-alt"></a>  <a class="address"><%= @user.address %></a></div>
       <br>
@@ -26,9 +26,9 @@
 
 <div class="reviews">
   <% if user_signed_in? && @user == current_user %>
-  <h2>My Reviews</h2>
+  <h2 class="header">My Reviews</h2>
   <% else %>
-  <h2>Reviews</h2>
+  <h2 class="header">Reviews</h2>
   <% end %>
   <hr>
   <% if @bids.where(approved: true).map(&:reviews).flatten.any? %>
@@ -57,9 +57,9 @@
     <% end %>
   <% else %>
     <p> No reviews yet </p>
-  <% end %>
    <% if user_signed_in? && @user == current_user %>
   <%= link_to "Browse the feed", posts_path, class: "btn btn-profile-post" %>
+  <% end %>
   <% end %>
   </div>
 </div>
