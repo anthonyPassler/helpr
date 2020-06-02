@@ -14,19 +14,19 @@
           <% if user_signed_in? %>
             <%= link_to dashboard_path(current_user) do %>
               <div class="cta text-decoration-none" id="cta-dashboard">
-                <p>My<br><strong>Dashboard</strong></p>
+                <h3><span class="light">My</span><br>Dashboard</h3>
               </div>
             <% end %>
           <% else %>
             <%= link_to new_user_session_path do %>
               <div class="cta text-decoration-none" id="cta-dashboard">
-                <p>My<br><strong>Dashboard</strong></p>
+                <h3><span class="light">My</span><br>Dashboard</h3>
               </div>
             <% end %>
           <% end %>
           <%= link_to new_user_registration_path do %>
             <div class="cta" id="cta-become-helpr">
-              <p>Become a<br><strong>Helpr</strong></p>
+              <h3><span class="light">Become a</span><br>Helpr</h3>
             </div>
           <% end %>
         </div>
@@ -34,26 +34,26 @@
           <% if user_signed_in? %>
             <%= link_to new_post_path do %>
               <div class="cta" id="cta-help">
-                <p>I need<br><strong>Help</strong></p>
+                <h3><span class="light">I need</span><br>Help</h3>
               </div>
             <% end %>
           <% else %>
             <%= link_to new_user_registration_path do %>
               <div class="cta" id="cta-help">
-                <p>I need<br><strong>Help</strong></p>
+                <h3><span class="light">I need</span><br>Help</h3>
               </div>
             <% end %>
           <% end %>
           <% if user_signed_in? %>
             <%= link_to posts_path(current_user) do %>
               <div class="cta" id="cta-feed">
-                <p>Community<br><strong>Feed</strong></p>
+                <h3><span class="light">Community</span><br>Feed</h3>
               </div>
             <% end %>
           <% else %>
             <%= link_to new_user_registration_path do %>
               <div class="cta" id="cta-feed">
-                <p>Make a<br><strong>Difference</strong></p>
+                <h3><span class="light">Make a</span><br>Difference</h3>
               </div>
             <% end %>
           <% end %>
@@ -67,7 +67,7 @@
 <div id="about">
   <div class="about-header">
     <h2 data-aos="fade-right" data-aos-duration="1000">Who we are</h2>
-    <p data-aos="fade-left" data-aos-duration="1000">We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand.</p>
+    <p data-aos="fade-left" data-aos-duration="1000">We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand. We have built a platform to connect people in local communities, for anyone in need of help its an easy way to to get connected with those wanting to do more good.</p>
   </div>
 
   <div class= how-it-works justify-content-center>
