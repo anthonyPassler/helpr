@@ -27,6 +27,17 @@ class User < ApplicationRecord
     end
   end
 
+  def total_rating
+    stars = []
+    bids.where(approved: true).each do |bid|
+          unless bid.reviews.first.nil?
+            stars << bid.reviews.first.rating
+          end
+    end
+    average = stars.sum
+
+  end
+
   def render_stars(value)
       output = ''
       if (1..5).include?(value.floor)
@@ -39,7 +50,8 @@ class User < ApplicationRecord
   end
 
   def score
-    bids.joins(:post).where(approved: true, posts: { completed: true}).count
+    score = bids.joins(:post).where(approved: true, posts: { completed: true}).count
+    score* 10 + total_rating
   end
 
 end
