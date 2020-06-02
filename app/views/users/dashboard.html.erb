@@ -1,6 +1,6 @@
 <div class="container">
   <div class="dashboard-container">
-    <h1 class="margin-bottom">Welcome to your dashboard</h1>
+    <h2 class="margin-bottom header">My Dashboard</h2>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Help Requests</a>
@@ -208,7 +208,7 @@
     </div>
   </div>
   <div class="top-helpr-container col-5">
-    <h1 class="margin-bottom">Top Helpr's</h1>
+    <h2 class="margin-bottom header">Top Helpr's</h2>
 
     <% @top_users.each do |user| %>
       <%= link_to user_path(user), class: "links" do %>
