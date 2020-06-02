@@ -60,13 +60,6 @@
     font-weight: bold;
   }
 
-  li {
-    font-size: 16px;
-    font-weight: light;
-    margin-left: 18px;
-    color: $light-purple;
-  }
-
   p {
     font-size: 16px;
     font-weight: light;
@@ -94,5 +87,25 @@
 .card-description {
   width: 80%;
   text-align: left;
+}
+
+.why-card {
+  display: flex;
+  margin: 24px;
+  flex-direction: column;
+  padding: 16px;
+
+  h3 {
+    font-size: 24px;
+    padding: 16px;
+  }
+}
+
+#why-card-1 {
+  background: $blue-grad;
+}
+
+#why-card-2 {
+  background: $yellow-grad;
 }
 
