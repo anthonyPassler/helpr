@@ -6,7 +6,9 @@ class PostsController < ApplicationController
       {
         lat: post.latitude,
         lng: post.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { post: post })
+        infoWindow: render_to_string(partial: "info_window", locals: { post: post }),
+        image_url: helpers.asset_url('helpr-bubble.png')
+
       }
     end
   end
