@@ -1,29 +1,36 @@
 .about-header {
   padding: 40px;
-  color: $dark-purple;
-  background-color: $light-gray;
-  text-align: center;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.how-it-works {
-  padding: 40px;
   text-align: center;
 
   h2 {
     font-size: 40px;
     font-weight: bold;
-    color: $dark-blue;
+    color: $dark-purple;
+  }
+}
+
+
+.how-it-works {
+  padding: 40px;
+  text-align: center;
+  background-color: $light-gray;
+
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: $dark-purple;
     font-size: 40px;
   }
 
   h4 {
     color: $dark-purple;
+    text-align: left;
+    padding-left: 16px;
   }
 
   .card-description {
     align-self: flex-start;
+    text-align: justify;
   }
 
 }
@@ -31,12 +38,28 @@
 .categories {
   text-align: center;
   padding: 40px;
-  background-color: $light-gray;
 
   h2 {
     color: $dark-purple;
     font-size: 40px;
     font-weight: bold;
+  }
+}
+
+.why {
+  padding-top: 40px;
+  text-align: center;
+  background-color: $light-gray;
+
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: $dark-purple;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
   }
 }
 
