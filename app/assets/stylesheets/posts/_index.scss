@@ -34,17 +34,17 @@
 .posts-container {
   width: 58%;
   margin-right: 40px;
+  min-height: 100vh;
   a {
     text-decoration: none;
   }
 }
 .map-container {
   position: -webkit-sticky;
+  top: 66px;
   position: sticky;
-  top: 100px;
   border-radius: 40px;
   overflow: hidden;
-  width: 40%;
 
   img {
     height: 250px;
