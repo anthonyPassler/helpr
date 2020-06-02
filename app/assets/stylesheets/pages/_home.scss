@@ -6,6 +6,8 @@
     font-size: 40px;
     font-weight: bold;
     color: $light-blue;
+    margin-bottom: 40px;
+
   }
   p {
     width: 60%;
@@ -71,6 +73,7 @@
 }
 
 .cards-showcase {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   padding-left: 150px;
@@ -89,7 +92,7 @@
 
 
 .card-helpr {
-  padding: 20px;
+  padding: 0 20px;
   box-shadow: rgba(0,0,0,0.5);
   text-decoration: none;
   display: flex;
