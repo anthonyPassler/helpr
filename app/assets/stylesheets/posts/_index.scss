@@ -34,6 +34,7 @@
 .posts-container {
   width: 58%;
   margin-right: 40px;
+  min-height: 100vh;
   a {
     text-decoration: none;
   }
@@ -41,7 +42,7 @@
 .map-container {
   position: sticky;
   position: -webkit-sticky;
-  top: 110px;
+  top: 66px;
   border-radius: 40px;
   overflow: hidden;
   // width: 30%;
