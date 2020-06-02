@@ -23,7 +23,14 @@ background: $blue-grad;
 color: white;
 }
 }
-
+.edit-pencil {
+  color: $light-blue;
+  font-size: 16px;
+  margin: 4px 0 0 8px;
+  &:hover {
+  color: $light-purple;
+  }
+}
 
 
 /* FACEBOOK & GOOGLE LOGIN BUTTONS FOR SIGN IN & SIGN UP */

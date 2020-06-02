@@ -8,7 +8,7 @@
 }
 .top-helpr-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   padding: 16px;
   margin-top: 16px;
@@ -67,5 +67,17 @@
   margin-bottom: 40px;
 }
 .trophy {
-  margin-right: 24px;
+  margin-right: 20px;
+}
+.points {
+  h4 {
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+  }
+  p {
+    font-size: 12px;
+    margin: 0;
+  }
 }

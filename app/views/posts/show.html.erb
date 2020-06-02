@@ -11,12 +11,12 @@
             <% end %>
           </div>
           <div class="show-text">
-            <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
+            <span class="d-flex">
+              <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
+              <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@post), class: "edit-pencil" if current_user == @post.user %>
+            </span>
             <h4><%= @post.title %></h4>
             <p><%= @post.content %></p>
-             <% if current_user == @post.user %>
-              <%= link_to "Edit post", edit_post_path(@post), class: "btn btn-profile-post"%>
-            <% end %>
           </div>
         </div>
         <div class="date-btn">
