@@ -3,7 +3,7 @@
   padding-right: 0;
   .links {
     text-decoration: none;
-    color: black;
+    color: white;
   }
 }
 .top-helpr-card {
@@ -11,15 +11,17 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 16px;
-  margin-top: 8px;
-  border: 2px solid $light-purple;
+  margin-top: 16px;
   border-radius: 50px 50px 50px 0px;
-  background-color: white;
+  background: $purple-grad;
   &:hover {
-    background-color: rgba(145, 49, 138, 0.1);
+    background: $blue-grad;
   }
 }
 .top-helpr-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 16px;
 }
 .sub-header-green {
@@ -63,4 +65,7 @@
 }
 .margin-bottom {
   margin-bottom: 40px;
+}
+.trophy {
+  margin-right: 24px;
 }

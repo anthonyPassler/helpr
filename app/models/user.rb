@@ -27,4 +27,15 @@ class User < ApplicationRecord
     end
   end
 
+  def render_stars(value)
+      output = ''
+      if (1..5).include?(value.floor)
+        value.floor.times { output  += '<i class="fas fa-star"></i>'}
+      end
+      if value == (value.floor + 0.5) && value.to_i != 5
+        output  += '<i class="fas fa-star-half"></i>'
+      end
+      output.html_safe
+  end
+
 end
