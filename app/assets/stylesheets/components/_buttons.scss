@@ -3,11 +3,11 @@ box-sizing: border-box;
 text-align: center;
 margin: 0.2em;
 padding: 6px 6px;
-background: linear-gradient(to right, #91318A, #72328B,);
+background: $purple-grad;
 box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
 color: white;
 &:hover{
-background: linear-gradient(to right, #00ACB7, #0090AA);
+background: $blue-grad;
 color: white;
 }
 }
@@ -17,11 +17,11 @@ box-sizing: border-box;
 text-align: center;
 margin: 0.2em;
 padding: 6px 6px;
-background: linear-gradient(to right, #91318A, #72328B,);
+background: $purple-grad;
 box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
 color: white;
 &:hover{
-background: linear-gradient(to right, #00ACB7, #0090AA);
+background: $blue-grad;
 color: white;
 }
 }
