@@ -30,7 +30,7 @@
                 </div>
                 <div class="post-content">
                   <h3><%= post.title %></h3>
-                  <p><%= post.content %></p>
+                  <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
                 </div>
               </div>
               <div class="date-btn">
