@@ -26,6 +26,8 @@
   display: flex;
   justify-content: center;
   padding-top: 40px;
+  @media (max-width: 767.98px) {
+    flex-direction: column; }
 }
 
 .cards-categories {
@@ -35,6 +37,8 @@
     font-weight: bold;
     margin-top: 8px;
   }
+    @media (max-width: 767.98px) {
+    flex-direction: column; }
 }
 
 .card-categories-icon {
