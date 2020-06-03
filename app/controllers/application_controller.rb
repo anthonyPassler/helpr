@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :photo])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :content, :title, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :content, :title, :photo, :bio])
   end
   def after_update_path_for(resource)
     raise

@@ -46,6 +46,11 @@ color: white;
   border-radius: 0.2em;
   font-size: 12px;
   color: #FFF;
+  display: inline-block;
+  &:hover{
+  text-decoration: none;
+  color: white;
+  }
 }
 .loginBtn:before {
   content: "";
@@ -137,19 +142,6 @@ box-sizing: border-box;
 text-align: center;
 margin: 0.2em;
 padding: 6px 6px;
-background: #56ab2f;
-color: white;
-&:hover{
-background: #0c9b18;
-color: white;
-}
-}
-
-.btn-back{
-box-sizing: border-box;
-text-align: center;
-margin: 0.2em;
-padding: 6px 6px;
 background: $purple-grad;
 color: white;
 &:hover{
@@ -158,15 +150,3 @@ color: white;
 }
 }
 
-.btn-delete{
-box-sizing: border-box;
-text-align: center;
-margin: 0.2em;
-padding: 6px 6px;
-background: #d00000;
-color: white;
-&:hover{
-background: #d62828;
-color: white;
-}
-}
