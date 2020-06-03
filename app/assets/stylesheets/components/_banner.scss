@@ -36,6 +36,9 @@
   position: absolute;
   bottom: 20px;
   left: 50%;
+  @media (max-width: 767.98px) {
+  display: none;
+  }
 }
 
 .hero-ctas {
