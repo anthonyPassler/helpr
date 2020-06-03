@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.geocoded.order(created_at: :desc)
-    @live_posts = @posts.reject { |post|  post.completed || post.bids.any? { |bid| bid.approved }}
+    @live_posts = @posts.reject { |post| post.completed || post.bids.any? { |bid| bid.approved }}
 
 
     @markers = @live_posts.map do |post|
