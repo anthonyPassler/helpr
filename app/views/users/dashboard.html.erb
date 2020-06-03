@@ -177,27 +177,33 @@
 
             <h6 class="sub-header">Completed offers</h6>
             <% @bids.where(approved: true).each do |bid| %>
-              <%= link_to post_path(bid.post), class: "links" do %>
                 <% if bid.post.completed %>
                     <div class="post">
                       <div class="avatar-post-container">
-                        <div>
-                          <% if  bid.post.user.photo.attached? %>
-                            <%= cl_image_tag bid.post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
-                          <% else %>
-                            <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                                  width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
-                          <% end %>
-                        </div>
-                        <div class="post-content">
-                          <h3><%= bid.post.title %></h3>
-                          <p><%= bid.post.content %></p>
-                        </div>
+                        <%= link_to post_path(bid.post), class: "links d-flex" do %>
+                          <div>
+                            <% if  bid.post.user.photo.attached? %>
+                              <%= cl_image_tag bid.post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+                            <% else %>
+                              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                                    width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+                            <% end %>
+                          </div>
+                          <div class="post-content">
+                            <h3><%= bid.post.title %></h3>
+                            <p><%= bid.post.content %></p>
+                          </div>
+                        <% end %>
+                        <% if bid.reviews.select{ |review| review.user_id == current_user.id }.empty? %>
+                          <div class="review-btn links">
+                            <%= link_to "Review", new_post_review_path(bid.post) %>
+                          </div>
+                        <% end %>
                       </div>
                     </div>
                   <% end %>
                 <% end %>
-              <% end %>
+
         </div>
       </div>
     </div>

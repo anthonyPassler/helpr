@@ -107,4 +107,25 @@ color: white;
     font-size: 12px;
   }
 }
-/* FACEBOOK & GOOGLE LOGIN BUTTONS FOR SIGN IN & SIGN UP */
+
+.review-btn {
+  display: flex;
+  text-align: center;
+  padding: 5px 8px 8px 8px;
+  background: $yellow-grad;
+  border-radius: 15px 15px 15px 0px;
+  display: inline-block;
+  height: 36px;
+  align-items: center;
+  a {
+    color: white;
+    margin: 0;
+    font-size: 12px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
