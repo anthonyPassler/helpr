@@ -19,6 +19,23 @@
 @import "users/show";
 
 
+.unknown{
+  position: relative;
+}
+.circle{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #00ACB7;
+  color: white;
+  position: absolute;
+    top: 45px;
+    right: 12px;
+  text-size:12px;
+  align-items: center;
+  justify-content: center;
+}
+
 .bidder {
     border: 3px solid #6f42c1;
     border-radius: 60px 60px 0px 60px;
