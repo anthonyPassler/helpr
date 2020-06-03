@@ -2,12 +2,13 @@
   <div class="show-post-container">
     <div class="show-post">
         <div class="img-text">
-          <div>
+          <div class ="linkto">
             <% if  @post.user.photo.attached? %>
               <%= cl_image_tag @post.user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image"  %>
             <% else %>
               <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
                     width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
+                    <%= link_to 'View Profile' , user_path(@user)  %>
             <% end %>
           </div>
           <div class="show-text">

@@ -289,7 +289,10 @@ height: 50px;
   justify-content: space-between;
 }
 
-
+.linkto {
+  display: flex;
+  flex-direction: column;
+}
 .container {
   display-flex: none;
 }
