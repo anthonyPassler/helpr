@@ -27,6 +27,9 @@
       <%= f.input :address,
               required: false,
               input_html: { autocomplete: "address" } %>
+      <%= f.input :bio,
+              required: false,
+              input_html: { autocomplete: "bio" } %>
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
@@ -41,13 +44,14 @@
                   <br>
       <%= f.input :photo, as: :file %>
     </div>
-    <br>
+
+    <%= f.submit "Save changes", class: "btn btn-save" %>
 
     <div class="form-actions">
-      <%= f.submit "Save changes", class: "btn btn-save" %>
-      <%= link_to "Delete account", registration_path(resource_name), class: "btn btn-delete", data: { confirm: "Are you sure?" }, method: :delete %>
-      <%= link_to "Cancel", :back, class: "btn btn-back" %>
+      <br>
+    <%= link_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
     </div>
+    <%= link_to "Cancel", :back %>
     <br>
   <% end %>
 

@@ -82,8 +82,10 @@
   }
 }
 .post-content p{
-  margin-right: 24px;
   margin-bottom: 0;
+}
+.post-content {
+  max-width: 400px;
 }
 .post-container .links {
   color: black;

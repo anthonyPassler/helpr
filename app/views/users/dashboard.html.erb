@@ -178,6 +178,7 @@
             <h6 class="sub-header">Completed offers</h6>
             <% @bids.where(approved: true).each do |bid| %>
                 <% if bid.post.completed %>
+
                     <div class="post">
                       <div class="avatar-post-container">
                         <%= link_to post_path(bid.post), class: "links d-flex" do %>
@@ -194,12 +195,12 @@
                             <p><%= bid.post.content %></p>
                           </div>
                         <% end %>
-                        <% if bid.reviews.select{ |review| review.user_id == current_user.id }.empty? %>
-                          <div class="review-btn links">
-                            <%= link_to "Review", new_post_review_path(bid.post) %>
-                          </div>
-                        <% end %>
                       </div>
+                      <% if bid.reviews.select{ |review| review.user_id == current_user.id }.empty? %>
+                        <div class="review-btn links">
+                          <%= link_to "Review", new_post_review_path(bid.post) %>
+                        </div>
+                      <% end %>
                     </div>
                   <% end %>
                 <% end %>
@@ -234,19 +235,19 @@
                 <h4><%= user.score %></h4>
                 <p>Helpr Points</p>
               </div>
-              <%= image_tag "gold.png", alt: "gold trophy", width: 80, class: "trophy" %>
+              <%= image_tag "gold.png", alt: "gold trophy", width: 40, class: "trophy" %>
             <% elsif user == @top_users[1] %>
                 <div class="points mr-3">
                   <h4><%= user.score %></h4>
                   <p>Helpr Points</p>
                 </div>
-              <%= image_tag "silver.png", alt: "silver trophy", width: 80, class: "trophy" %>
+              <%= image_tag "silver.png", alt: "silver trophy", width: 40, class: "trophy" %>
             <% elsif user == @top_users[2] %>
                 <div class="points mr-3">
                   <h4><%= user.score %></h4>
                   <p>Helpr Points</p>
                 </div>
-              <%= image_tag "bronze.png", alt: "bronze trophy", width: 80, class: "trophy" %>
+              <%= image_tag "bronze.png", alt: "bronze trophy", width: 40, class: "trophy" %>
             <% end %>
           </div>
         </div>

@@ -19,6 +19,23 @@
 @import "users/show";
 
 
+.unknown{
+  position: relative;
+}
+.circle{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #00ACB7;
+  color: white;
+  position: absolute;
+    top: 45px;
+    right: 12px;
+  text-size:12px;
+  align-items: center;
+  justify-content: center;
+}
+
 .bidder {
     border: 3px solid #6f42c1;
     border-radius: 60px 60px 0px 60px;
@@ -53,7 +70,7 @@
 }
 .message-inner {
   // border: 3px solid #72328B;
-  background: linear-gradient(to right, #00ACB7, #0090AA);
+  background-color: $light-purple;
   border-radius: 60px 60px 0px 60px;
   padding: 10px 20px;
   color: white;
@@ -65,10 +82,10 @@
 
 .message-inner-received {
   // border: 3px solid #72328B;
-  background: linear-gradient(to left, #F9DD47, #EFAC42);
+  background-color: white;
   border-radius: 60px 60px 60px 0px;
   padding: 10px 20px;
-  color: white;
+  color: $light-purple;
   margin-bottom: 5px;
   text-align: left;
   p {
@@ -89,7 +106,9 @@ justify-content: flex-start;
 
 
 .chatroomheader{
-color: purple;
+font-weight: bold;
+font-size: 24px;
+margin-bottom: 24px;
 }
 
 body {
@@ -289,6 +308,15 @@ height: 50px;
   justify-content: space-between;
 }
 
+.linkto {
+  display: flex;
+  flex-direction: column;
+}
+
+.textalignprofile{
+margin-left: 35px;
+color: #00ACB7;
+}
 
 .container {
   display-flex: none;

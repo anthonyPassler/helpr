@@ -2,12 +2,13 @@
   <div class="show-post-container">
     <div class="show-post">
         <div class="img-text">
-          <div>
+          <div class ="linkto">
             <% if  @post.user.photo.attached? %>
               <%= cl_image_tag @post.user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image"  %>
             <% else %>
               <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
                     width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
+                    <%= link_to 'View Profile' , user_path(@user), class: "textalignprofile"  %>
             <% end %>
           </div>
           <div class="show-text">
@@ -82,6 +83,13 @@
                 <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
               </div>
               <div class="view-approve">
+                <% if bid.user == current_user%>
+                  <%= link_to bid_path(bid), method: :delete, data: {confirm: "Are you sure you want to cancel this?"} do %>
+                  <div class="cancel">
+                    <p><strong>Cancel</strong></p>
+                  </div>
+                  <% end %>
+                <% end %>
                 <%= link_to user_path(bid.user) do %>
                   <div class="view">
                     <p><strong>View Profile</strong></p>
@@ -119,7 +127,7 @@
 <!--       <div class="header"> -->
         <div id="chatroomdiv" class="wrapper">
           <div>
-            <h1 class="chatroomheader">#<%= @chatroom.name %></h1>
+            <h1 class="chatroomheader"># <%= @chatroom.name %></h1>
           </div>
 
           <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
