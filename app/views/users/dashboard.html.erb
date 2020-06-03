@@ -42,7 +42,7 @@
 
           <h6 class="sub-header-purple">Ready for approval</h6>
           <% @posts.where(completed: false).each do |post| %>
-            <% unless post.bids.empty? || post.bids.first.approved %>
+            <% unless post.bids.empty? || post.bids.any? { |bid| bid.approved } %>
               <%= link_to post_path(post), class: "links" do %>
                 <div class="post">
                   <div class="avatar-post-container">
@@ -235,19 +235,19 @@
                 <h4><%= user.score %></h4>
                 <p>Helpr Points</p>
               </div>
-              <%= image_tag "gold.png", alt: "gold trophy", width: 40, class: "trophy" %>
+              <%= image_tag "gold.png", alt: "gold trophy", width: 60, class: "trophy" %>
             <% elsif user == @top_users[1] %>
                 <div class="points mr-3">
                   <h4><%= user.score %></h4>
                   <p>Helpr Points</p>
                 </div>
-              <%= image_tag "silver.png", alt: "silver trophy", width: 40, class: "trophy" %>
+              <%= image_tag "silver.png", alt: "silver trophy", width: 60, class: "trophy" %>
             <% elsif user == @top_users[2] %>
                 <div class="points mr-3">
                   <h4><%= user.score %></h4>
                   <p>Helpr Points</p>
                 </div>
-              <%= image_tag "bronze.png", alt: "bronze trophy", width: 40, class: "trophy" %>
+              <%= image_tag "bronze.png", alt: "bronze trophy", width: 60, class: "trophy" %>
             <% end %>
           </div>
         </div>
