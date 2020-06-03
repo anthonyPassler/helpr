@@ -26,6 +26,8 @@
   display: flex;
   justify-content: center;
   padding-top: 40px;
+  @media (max-width: 767.98px) {
+    flex-direction: column; }
 }
 
 .cards-categories {
@@ -35,6 +37,12 @@
     font-weight: bold;
     margin-top: 8px;
   }
+    @media (max-width: 767.98px) {
+    flex-direction: column;
+    margin-left: 48px;
+    p {
+      margin-right: 30px;
+    } }
 }
 
 .card-categories-icon {
@@ -48,6 +56,11 @@
   height: 72px;
   margin: 0 24px;
   border-radius: 24px 24px 24px 0;
+  @media (max-width: 767.98px) {
+    margin-left: 32px;
+  p {
+     }
+  }
 }
 
 .card-pls-signup {
@@ -72,6 +85,9 @@
     text-align: left;
 
   }
+  @media (max-width: 767.98px) {
+  flex-direction: column;
+  margin-bottom: 5px;  }
 }
 
 .card-pls-signup-img {
@@ -110,6 +126,9 @@
 #why-card-1 {
   background: $blue-grad;
   margin-top: 0;
+  @media (max-width: 767.98px) {
+  margin: 0;
+}
 }
 
 #why-card-2 {
