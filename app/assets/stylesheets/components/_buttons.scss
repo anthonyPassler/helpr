@@ -96,6 +96,7 @@ color: white;
 }
 
 .date-btn {
+  margin-left: 20px;
   text-align: center;
   padding: 8px;
   background: $blue-grad;
@@ -107,6 +108,30 @@ color: white;
     font-size: 12px;
   }
 }
+
+.review-btn {
+  margin-left: 20px;
+  display: flex;
+  text-align: center;
+  padding: 5px 8px 8px 8px;
+  background: $yellow-grad;
+  border-radius: 15px 15px 15px 0px;
+  display: inline-block;
+  height: 36px;
+  align-items: center;
+  a {
+    color: white;
+    margin: 0;
+    font-size: 12px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 /* FACEBOOK & GOOGLE LOGIN BUTTONS FOR SIGN IN & SIGN UP */
 
 .btn-save{
@@ -127,10 +152,10 @@ box-sizing: border-box;
 text-align: center;
 margin: 0.2em;
 padding: 6px 6px;
-background: #0090AA;
+background: $purple-grad;
 color: white;
 &:hover{
-background: #00ACB7;
+background: $blue-grad;
 color: white;
 }
 }

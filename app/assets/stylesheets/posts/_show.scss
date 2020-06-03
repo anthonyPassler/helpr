@@ -128,6 +128,22 @@
     margin: 0;
   }
 }
+
+.cancel {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 16px;
+  background: $blue-grad;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    color: $light-purple;
+    transition: 0.3s ease;
+  }
+}
+
 .view {
   display: flex;
   align-items: center;
