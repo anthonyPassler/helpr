@@ -1,6 +1,8 @@
 class BidsController < ApplicationController
+  before_action :set_post, only: %i[create update]
+  before_action :set_bid, only: %i[update destroy]
+
   def create
-    @post = Post.find(params[:post_id])
     @bid = Bid.new(user:current_user)
     @bid.post = @post
     @bid.save
@@ -11,10 +13,23 @@ class BidsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:post_id])
-    @bid = Bid.find(params[:id])
     @bid.update(approved: true)
     @chatroom = Chatroom.create(host: current_user, guest: @bid.user, post: @post, name: @post.title)
     redirect_to post_path(@post)
+  end
+
+  def destroy
+    @bid.destroy
+    redirect_to post_path(@bid.post)
+  end
+
+  private
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
+  def set_bid
+    @bid = Bid.find(params[:id])
   end
 end
