@@ -10,6 +10,8 @@
   // linear-gradient(135deg, rgba(145,50,148,0.5) 0%, rgba(145,50,148,0.5) 0%),
   background-position: center;
   padding-top: 60px;
+  padding-left: 7vw;
+  padding-right: 7vw;
   position: relative;
   margin-top: -66px;
     @media (max-width: 767.98px) {
@@ -33,6 +35,19 @@
   font-size: 50px;
 }
 
+.fa-arrow-circle-up {
+  color: $dark-purple;
+  font-size: 48px;
+  margin-top: 80px;
+  &:hover {
+    color: $light-purple;
+  }
+}
+
+.scroll-up {
+  color: $dark-purple;
+}
+
 #scroll-btn{
   position: absolute;
   bottom: 20px;
@@ -45,7 +60,7 @@
 .hero-ctas {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   a {
     text-decoration: none;
   }
