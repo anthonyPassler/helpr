@@ -45,11 +45,11 @@
       <%= f.input :photo, as: :file %>
     </div>
 
-    <%= f.submit "Save changes", class: "btn btn-save" %>
+    <%= f.submit "Save Changes", class: "btn btn-save" %>
 
     <div class="form-actions">
       <br>
-    <%= link_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    <%= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
     </div>
     <%= link_to "Cancel", :back %>
     <br>

@@ -21,7 +21,7 @@
 
   <% if user_signed_in? && @user == current_user %>
   <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-profile-edit" %>
-  <%= link_to "Post a request", new_post_path, class: "btn btn-profile-post" %>
+  <%= link_to "Get Help", new_post_path, class: "btn btn-profile-post" %>
   <% end %>
 
 <div class="reviews">
@@ -57,7 +57,7 @@
   <% else %>
     <p> No reviews yet </p>
     <hr>
-  <%= link_to "Browse the feed", posts_path, class: "btn btn-profile-post" %>
+  <%= link_to "Community Feed", posts_path, class: "btn btn-profile-post" %>
   <% end %>
   <% @posts.map(&:reviews).flatten.reject { |review| review.user_id == @user.id }.each do |review| %>
     <div class="review-post">
