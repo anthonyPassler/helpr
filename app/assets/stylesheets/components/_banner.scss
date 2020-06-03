@@ -72,6 +72,12 @@
   &:hover {
     background: $light-purple;
   }
+  @media (max-width: 767.98px) {
+  height: 100px;
+  width:  100px;
+  h3 {
+    font-size: 11px;
+  }  }
 }
 
 #cta-dashboard {

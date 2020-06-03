@@ -55,6 +55,10 @@
   padding: 80px;
   text-align: center;
   background-color: $light-gray;
+  @media (max-width: 767.98px) {
+    flex-wrap: none;
+    padding: 8px;
+   }
 
   h2 {
     font-size: 40px;
@@ -69,6 +73,13 @@
   .row {
     display: flex;
     justify-content: center;
+  }
+}
+
+.inequality{
+    @media (max-width: 767.98px) {
+      justify-content: unset;
+      flex-direction: column;
   }
 }
 
