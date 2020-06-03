@@ -127,10 +127,10 @@ box-sizing: border-box;
 text-align: center;
 margin: 0.2em;
 padding: 6px 6px;
-background: #0090AA;
+background: $purple-grad;
 color: white;
 &:hover{
-background: #00ACB7;
+background: $blue-grad;
 color: white;
 }
 }
