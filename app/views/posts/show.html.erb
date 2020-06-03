@@ -8,7 +8,7 @@
             <% else %>
               <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
                     width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
-                    <%= link_to 'View Profile' , user_path(@user)  %>
+                    <%= link_to 'View Profile' , user_path(@user), class: "textalignprofile"  %>
             <% end %>
           </div>
           <div class="show-text">
