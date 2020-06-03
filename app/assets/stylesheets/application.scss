@@ -53,7 +53,7 @@
 }
 .message-inner {
   // border: 3px solid #72328B;
-  background: linear-gradient(to right, #00ACB7, #0090AA);
+  background-color: $light-purple;
   border-radius: 60px 60px 0px 60px;
   padding: 10px 20px;
   color: white;
@@ -65,10 +65,10 @@
 
 .message-inner-received {
   // border: 3px solid #72328B;
-  background: linear-gradient(to left, #F9DD47, #EFAC42);
+  background-color: white;
   border-radius: 60px 60px 60px 0px;
   padding: 10px 20px;
-  color: white;
+  color: $light-purple;
   margin-bottom: 5px;
   text-align: left;
   p {
@@ -89,7 +89,9 @@ justify-content: flex-start;
 
 
 .chatroomheader{
-color: purple;
+font-weight: bold;
+font-size: 24px;
+margin-bottom: 24px;
 }
 
 body {
