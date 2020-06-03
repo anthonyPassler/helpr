@@ -19,6 +19,13 @@
 @import "users/show";
 
 
+.devlink{
+color: #72328B;
+  &:hover {
+    color: #72328B;
+    text-decoration: none;
+  }
+}
 
 .btn-floating{
 color: #72328B;
