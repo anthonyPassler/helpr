@@ -108,3 +108,42 @@ color: white;
   }
 }
 /* FACEBOOK & GOOGLE LOGIN BUTTONS FOR SIGN IN & SIGN UP */
+
+.btn-save{
+box-sizing: border-box;
+text-align: center;
+margin: 0.2em;
+padding: 6px 6px;
+background: #56ab2f;
+color: white;
+&:hover{
+background: #0c9b18;
+color: white;
+}
+}
+
+.btn-back{
+box-sizing: border-box;
+text-align: center;
+margin: 0.2em;
+padding: 6px 6px;
+background: #0090AA;
+color: white;
+&:hover{
+background: #00ACB7;
+color: white;
+}
+}
+
+.btn-delete{
+box-sizing: border-box;
+text-align: center;
+margin: 0.2em;
+padding: 6px 6px;
+background: #d00000;
+color: white;
+&:hover{
+background: #d62828;
+color: white;
+}
+}
