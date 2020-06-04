@@ -3,10 +3,21 @@
     <div class="col-6">
       <br>
       <div style="text-align: center;">
-        <h4> Leave a review for </h4>
-        <h3> <%= @post.title %> </h3>
+        <h4> Leave a review for
+          <% if @post.user == current_user%>
+            <%= @post.bids.find{|b| b.approved == true}.user.first_name %>
+          <% else %>
+            <%= @post.user.first_name %>
+          <% end %>
+        </h4>
+        <br>
+        <% if @post.user == current_user %>
+          <p>They helped you with your request:</p>
+        <% else %>
+          <p>You helped them with their request:</p>
+        <% end %>
+        <p><strong><%= @post.title %></strong></p>
       </div>
-      <br>
       <hr>
       <br>
       <br>
