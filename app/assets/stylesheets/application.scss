@@ -51,15 +51,15 @@ color: #72328B;
   position: relative;
 }
 .circle{
-  height: 30px;
   width: 30px;
-  border-radius: 50%;
-  background-color: #00ACB7;
+  background-image: url('crown.png');
+  background-size: cover;
   color: white;
+  font-size: 12px;
+  padding: 4px;
   position: absolute;
-    top: 45px;
-    right: 12px;
-  text-size:12px;
+    top: -5px;
+    left: -2px;
   align-items: center;
   justify-content: center;
 }

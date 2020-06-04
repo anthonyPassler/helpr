@@ -1,4 +1,8 @@
-.avatar {
+.avatar-small {
+  object-fit: cover;
+  width: 20px;
+  border-radius: 50%;
+}.avatar {
   object-fit: cover;
   width: 40px;
   border-radius: 50%;
