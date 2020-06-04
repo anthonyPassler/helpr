@@ -1,7 +1,7 @@
 <%= link_to post_path(post), class: "links" do %>
   <div>
-    <% if  current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key,height: 20, :quality=>60, crop: :mfit, class: "avatar", alt: "profile image"  %>
+    <% if  post.user.photo.attached? %>
+      <%= cl_image_tag post.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar", alt: "profile image"  %>
     <% else %>
       <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
             width: 20, crop: :fill, class: "avatar", alt: "profile image")  %>
