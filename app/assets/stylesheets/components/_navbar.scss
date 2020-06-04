@@ -12,7 +12,11 @@
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
+.nav-item {
+  img {
+    margin-left: 8px;
+  }
+}
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
