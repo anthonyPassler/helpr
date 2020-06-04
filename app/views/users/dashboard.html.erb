@@ -69,8 +69,7 @@
 
           <h6 class="sub-header-green">Approved, waiting to be completed</h6>
           <% @posts.where(completed: false).each do |post| %>
-
-            <% if post.bids.any? && post.bids.first.approved%>
+            <% if post.bids.any? { |bid| bid.approved } %>
               <%= link_to post_path(post), class: "links" do %>
                 <div class="post">
                   <div class="avatar-post-container">
