@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.bid = @bid
     if @review.save
-      redirect_to user_path(@post.user)
+      redirect_to dashboard_path(current_user)
     else
       render :new
     end

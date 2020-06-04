@@ -31,6 +31,7 @@ color: #72328B;
 color: #72328B;
 }
 
+
 .devcard{
   display: flex;
   align-items: center;
@@ -38,7 +39,24 @@ color: #72328B;
   margin: 0 10px;
   padding: 8px 16px;
   border-radius: 40px 40px 0 40px;
-  width: 80%;
+  width: 500px;
+  height: 190px;
+  p{
+    margin-top: 10px;
+  }
+   h2{
+    margin-top: 15px;
+  }
+}
+
+.dev-container{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.devcard1{
+  width: 380px;
+  margin-left: 15px;
 }
 
 .devimg{
