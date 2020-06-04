@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     @bids = @user.bids
     @reviews = @user.reviews
     @top_users = User.all.sort { |user1, user2| user2.score <=> user1.score }.first(5)
-
   end
 
   private
