@@ -90,6 +90,7 @@ post27 = Post.create!(title: "Need help setting up whatsapp", content: "I recent
 post28 = Post.create!(title: "Need a lift to town", content: "If anyone is going to town, please could i get a lift.", user: emma, completed: true, date: d16)
 post29 = Post.create!(title: "Could someone teach me how to iron", content: "My wife recently left me and I dont know how to iron.", user: fred, completed: true, date: d16)
 post30 = Post.create!(title: "Take my dog for a walk", content: "Im feeling very under the weather, could someone please take my dog for a walk.", user: olivia, completed: true, date: d16)
+post31 = Post.create!(title: "Connect DVD to TV", content: "I just bought one of these smart TVs and need some help connecting my old DVD player please.", user: bobby, completed: true, date: d16)
 # pending posts
 post24 = Post.create!(title: "Lift to Richmond", content: "If any one is going to richmond on Saturday and could give me a lift I would be very appreciative.", user: liam, date: d25)
 
@@ -144,6 +145,7 @@ bid27 = Bid.create!(post_id: post27.id, user_id: matt.id, approved: true )
 bid28 = Bid.create!(post_id: post28.id, user_id: bobby.id, approved: true )
 bid29 = Bid.create!(post_id: post29.id, user_id: isabella.id, approved: true )
 bid30 = Bid.create!(post_id: post30.id, user_id: emma.id, approved: true )
+bid31 = Bid.create!(post_id: post31.id, user_id: max.id, approved: true )
 
 
 Review.create!(content: "Wonderful! Emma was very friendly, incredibly helpful and showed up at the time she had set.", rating: 5, post_id: post9.id, user_id: annie.id, bid_id: bid10.id)
@@ -166,6 +168,7 @@ Review.create!(content: "Matt you really know alot about technology!", rating: 5
 Review.create!(content: "Thanks for the lift!", rating: 4, post_id: post28.id, user_id: emma.id, bid_id: bid28.id)
 Review.create!(content: "Your ironing is top but you were a very grumpy!", rating: 2, post_id: post29.id, user_id: fred.id, bid_id: bid29.id)
 Review.create!(content: "My dog loves you forever now, thanks for walking him!", rating: 5, post_id: post30.id, user_id: olivia.id, bid_id: bid30.id)
+Review.create!(content: "Thanks for helping me connect my DVD to the tv!", rating: 5, post_id: post31.id, user_id: bobby.id, bid_id: bid31.id)
 
 puts "Seed complete"
 
