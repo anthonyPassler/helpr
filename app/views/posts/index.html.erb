@@ -1,16 +1,18 @@
 <div class="container">
 
   <div class="posts-container">
-    <%= link_to new_post_path, class: "links" do %>
-      <div class="create-post">
-        <% if  current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar", alt: "profile image"  %>
-        <% else %>
-          <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                width: 40, crop: :fill, class: "avatar", alt: "profile image")  %>
-        <% end %>
-        <p><strong>Need Help?</strong> Post a request.</p>
-      </div>
+    <% if policy(Post).create? %>
+      <%= link_to new_post_path, class: "links" do %>
+        <div class="create-post">
+          <% if  current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar", alt: "profile image"  %>
+          <% else %>
+            <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                  width: 40, crop: :fill, class: "avatar", alt: "profile image")  %>
+          <% end %>
+          <p><strong>Need Help?</strong> Post a request.</p>
+        </div>
+      <% end %>
     <% end %>
     <div class="post-container">
 

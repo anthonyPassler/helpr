@@ -1,20 +1,102 @@
-<div class="container">
-  <div class="dashboard-container">
-    <h2 class="margin-bottom header">My Dashboard</h2>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Help Requests</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Offers to Help</a>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <div class="post-container">
-          <h6 class="sub-header-blue">Pending, waiting for someone to offer help</h6>
-          <% @posts.where(completed: false).each do |post| %>
-            <% if post.bids.empty? %>
+<% if policy(@user).dashboard? %>
+  <div class="container">
+    <div class="dashboard-container">
+      <h2 class="margin-bottom header">My Dashboard</h2>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Help Requests</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Offers to Help</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="post-container">
+            <h6 class="sub-header-blue">Pending, waiting for someone to offer help</h6>
+            <% @posts.where(completed: false).each do |post| %>
+              <% if post.bids.empty? %>
+                <%= link_to post_path(post), class: "links" do %>
+                  <div class="post">
+                    <div class="avatar-post-container">
+                      <div>
+                        <% if  post.user.photo.attached? %>
+                          <%= cl_image_tag post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+                        <% else %>
+                          <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                                width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+                        <% end %>
+                      </div>
+                      <div class="post-content">
+                        <h3><%= post.title %></h3>
+                        <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
+                      </div>
+                    </div>
+                    <div class="date-btn">
+
+                      <p><strong><%= post.date.nil? ? "ASAP" : post.date.strftime("%d %b %Y") %></strong></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <h6 class="sub-header-purple">Ready for approval</h6>
+            <% @posts.where(completed: false).each do |post| %>
+              <% unless post.bids.empty? || post.bids.any? { |bid| bid.approved } %>
+                <%= link_to post_path(post), class: "links" do %>
+                  <div class="post">
+                    <div class="avatar-post-container">
+                      <div>
+                        <% if  post.user.photo.attached? %>
+                          <%= cl_image_tag post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+                        <% else %>
+                          <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                                width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+                        <% end %>
+                      </div>
+                      <div class="post-content">
+                        <h3><%= post.title %></h3>
+                        <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
+                      </div>
+                    </div>
+                    <div class="date-btn">
+                      <p><strong><%= post.date.nil? ? "ASAP" : post.date.strftime("%d %b %Y") %></strong></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <h6 class="sub-header-green">Approved, waiting to be completed</h6>
+            <% @posts.where(completed: false).each do |post| %>
+              <% if post.bids.any? { |bid| bid.approved } %>
+                <%= link_to post_path(post), class: "links" do %>
+                  <div class="post">
+                    <div class="avatar-post-container">
+                      <div>
+                        <% if  post.user.photo.attached? %>
+                          <%= cl_image_tag post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+                        <% else %>
+                          <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                                width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+                        <% end %>
+                      </div>
+                      <div class="post-content">
+                        <h3><%= post.title %></h3>
+                        <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
+                      </div>
+                    </div>
+                    <div class="date-btn">
+                      <p><strong><%= post.date.nil? ? "ASAP" : post.date.strftime("%d %b %Y") %></strong></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <h6 class="sub-header">Completed</h6>
+            <% @posts.where(completed: true).each do |post| %>
               <%= link_to post_path(post), class: "links" do %>
                 <div class="post">
                   <div class="avatar-post-container">
@@ -31,99 +113,45 @@
                       <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
                     </div>
                   </div>
-                  <div class="date-btn">
-
-                    <p><strong><%= post.date.nil? ? "ASAP" : post.date.strftime("%d %b %Y") %></strong></p>
-                  </div>
                 </div>
               <% end %>
             <% end %>
-          <% end %>
-
-          <h6 class="sub-header-purple">Ready for approval</h6>
-          <% @posts.where(completed: false).each do |post| %>
-            <% unless post.bids.empty? || post.bids.any? { |bid| bid.approved } %>
-              <%= link_to post_path(post), class: "links" do %>
-                <div class="post">
-                  <div class="avatar-post-container">
-                    <div>
-                      <% if  post.user.photo.attached? %>
-                        <%= cl_image_tag post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
-                      <% else %>
-                        <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                              width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
-                      <% end %>
-                    </div>
-                    <div class="post-content">
-                      <h3><%= post.title %></h3>
-                      <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
-                    </div>
-                  </div>
-                  <div class="date-btn">
-                    <p><strong><%= post.date.nil? ? "ASAP" : post.date.strftime("%d %b %Y") %></strong></p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-
-          <h6 class="sub-header-green">Approved, waiting to be completed</h6>
-          <% @posts.where(completed: false).each do |post| %>
-            <% if post.bids.any? { |bid| bid.approved } %>
-              <%= link_to post_path(post), class: "links" do %>
-                <div class="post">
-                  <div class="avatar-post-container">
-                    <div>
-                      <% if  post.user.photo.attached? %>
-                        <%= cl_image_tag post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
-                      <% else %>
-                        <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                              width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
-                      <% end %>
-                    </div>
-                    <div class="post-content">
-                      <h3><%= post.title %></h3>
-                      <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
-                    </div>
-                  </div>
-                  <div class="date-btn">
-                    <p><strong><%= post.date.nil? ? "ASAP" : post.date.strftime("%d %b %Y") %></strong></p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-
-          <h6 class="sub-header">Completed</h6>
-          <% @posts.where(completed: true).each do |post| %>
-            <%= link_to post_path(post), class: "links" do %>
-              <div class="post">
-                <div class="avatar-post-container">
-                  <div>
-                    <% if  post.user.photo.attached? %>
-                      <%= cl_image_tag post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
-                    <% else %>
-                      <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                            width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
-                    <% end %>
-                  </div>
-                  <div class="post-content">
-                    <h3><%= post.title %></h3>
-                    <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(post.content, length: 119) %></p>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
+          </div>
         </div>
-      </div>
-      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="post-container">
-          <h6 class="sub-header-blue">Pending offers, waiting for offer to be accepted</h6>
-          <% @bids.where(approved: false).each do |bid| %>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="post-container">
+            <h6 class="sub-header-blue">Pending offers, waiting for offer to be accepted</h6>
+            <% @bids.where(approved: false).each do |bid| %>
 
-            <% unless bid.post.bids.any? {|bid| bid.approved} %>
+              <% unless bid.post.bids.any? {|bid| bid.approved} %>
+                <%= link_to post_path(bid.post), class: "links" do %>
+                      <div class="post">
+                        <div class="avatar-post-container">
+                          <div>
+                            <% if  bid.post.user.photo.attached? %>
+                              <%= cl_image_tag bid.post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+                            <% else %>
+                              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                                    width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+                            <% end %>
+                          </div>
+                          <div class="post-content">
+                            <h3><%= bid.post.title %></h3>
+                            <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(bid.post.content, length: 119) %></p>
+                          </div>
+                        </div>
+                        <div class="date-btn">
+                          <p><strong><%= bid.post.date.nil? ? "ASAP" : bid.post.date.strftime("%d %b %Y") %></strong></p>
+                        </div>
+                      </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+
+            <h6 class="sub-header-green">Approved offers, waiting to be completed</h6>
+            <% @bids.where(approved: true).each do |bid| %>
               <%= link_to post_path(bid.post), class: "links" do %>
+                <% unless bid.post.completed %>
                     <div class="post">
                       <div class="avatar-post-container">
                         <div>
@@ -143,115 +171,90 @@
                         <p><strong><%= bid.post.date.nil? ? "ASAP" : bid.post.date.strftime("%d %b %Y") %></strong></p>
                       </div>
                     </div>
-                <% end %>
-              <% end %>
-            <% end %>
-
-          <h6 class="sub-header-green">Approved offers, waiting to be completed</h6>
-          <% @bids.where(approved: true).each do |bid| %>
-            <%= link_to post_path(bid.post), class: "links" do %>
-              <% unless bid.post.completed %>
-                  <div class="post">
-                    <div class="avatar-post-container">
-                      <div>
-                        <% if  bid.post.user.photo.attached? %>
-                          <%= cl_image_tag bid.post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
-                        <% else %>
-                          <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                                width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
-                        <% end %>
-                      </div>
-                      <div class="post-content">
-                        <h3><%= bid.post.title %></h3>
-                        <p style="overflow: hidden; text-overflow: ellipsis;"><%= truncate(bid.post.content, length: 119) %></p>
-                      </div>
-                    </div>
-                    <div class="date-btn">
-                      <p><strong><%= bid.post.date.nil? ? "ASAP" : bid.post.date.strftime("%d %b %Y") %></strong></p>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
-            <% end %>
-
-            <h6 class="sub-header">Completed offers</h6>
-            <% @bids.where(approved: true).each do |bid| %>
-                <% if bid.post.completed %>
-
-                    <div class="post">
-                      <div class="avatar-post-container">
-                        <%= link_to post_path(bid.post), class: "links d-flex" do %>
-                          <div>
-                            <% if  bid.post.user.photo.attached? %>
-                              <%= cl_image_tag bid.post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
-                            <% else %>
-                              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                                    width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
-                            <% end %>
-                          </div>
-                          <div class="post-content">
-                            <h3><%= bid.post.title %></h3>
-                            <p><%= bid.post.content %></p>
-                          </div>
-                        <% end %>
-                      </div>
-                      <% if bid.reviews.select{ |review| review.user_id == current_user.id }.empty? %>
-                        <div class="review-btn links">
-                          <%= link_to "Review", new_post_review_path(bid.post) %>
-                        </div>
-                      <% end %>
-                    </div>
                   <% end %>
                 <% end %>
+              <% end %>
 
+              <h6 class="sub-header">Completed offers</h6>
+              <% @bids.where(approved: true).each do |bid| %>
+                  <% if bid.post.completed %>
+
+                      <div class="post">
+                        <div class="avatar-post-container">
+                          <%= link_to post_path(bid.post), class: "links d-flex" do %>
+                            <div>
+                              <% if  bid.post.user.photo.attached? %>
+                                <%= cl_image_tag bid.post.user.photo.key,height: 72, :quality=>60, crop: :mfit, class: "avatar-extra-large", alt: "profile image"  %>
+                              <% else %>
+                                <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                                      width: 72, crop: :fill, class: "avatar-extra-large", alt: "profile image")  %>
+                              <% end %>
+                            </div>
+                            <div class="post-content">
+                              <h3><%= bid.post.title %></h3>
+                              <p><%= bid.post.content %></p>
+                            </div>
+                          <% end %>
+                        </div>
+                        <% if bid.reviews.select{ |review| review.user_id == current_user.id }.empty? %>
+                          <div class="review-btn links">
+                            <%= link_to "Review", new_post_review_path(bid.post) %>
+                          </div>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  <% end %>
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="top-helpr-container col-5">
-    <h2 class="margin-bottom header">Top Helpr's</h2>
+    <div class="top-helpr-container col-5">
+      <h2 class="margin-bottom header">Top Helpr's</h2>
 
-    <% @top_users.first(3).each do |user| %>
-      <%= link_to user_path(user), class: "links" do %>
-        <div class="top-helpr-card">
-          <div class="avatar-post-container">
-            <div>
-                <% if  user.photo.attached? %>
-                  <%= cl_image_tag user.photo.key, height: 56, :quality=>60, crop: :mfit, class: "avatar-large", alt: "profile image"  %>
-                <% else %>
-                <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                      width: 56, crop: :fill, class: "avatar-large", alt: "profile image")  %>
+      <% @top_users.first(3).each do |user| %>
+        <%= link_to user_path(user), class: "links" do %>
+          <div class="top-helpr-card">
+            <div class="avatar-post-container">
+              <div>
+                  <% if  user.photo.attached? %>
+                    <%= cl_image_tag user.photo.key, height: 56, :quality=>60, crop: :mfit, class: "avatar-large", alt: "profile image"  %>
+                  <% else %>
+                  <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
+                        width: 56, crop: :fill, class: "avatar-large", alt: "profile image")  %>
+                <% end %>
+              </div>
+              <div class="top-helpr-content">
+                <h3><%= user.first_name %> <%= user.last_name %></h3>
+                <span><%= user.render_stars(user.average_rating) %></span>
+              </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+              <% if user == @top_users[0] %>
+                <div class="points mr-3">
+                  <h4><%= user.score %></h4>
+                  <p>Helpr Points</p>
+                </div>
+                <%= image_tag "gold.png", alt: "gold trophy", width: 60, class: "trophy" %>
+              <% elsif user == @top_users[1] %>
+                  <div class="points mr-3">
+                    <h4><%= user.score %></h4>
+                    <p>Helpr Points</p>
+                  </div>
+                <%= image_tag "silver.png", alt: "silver trophy", width: 60, class: "trophy" %>
+              <% elsif user == @top_users[2] %>
+                  <div class="points mr-3">
+                    <h4><%= user.score %></h4>
+                    <p>Helpr Points</p>
+                  </div>
+                <%= image_tag "bronze.png", alt: "bronze trophy", width: 60, class: "trophy" %>
               <% end %>
             </div>
-            <div class="top-helpr-content">
-              <h3><%= user.first_name %> <%= user.last_name %></h3>
-              <span><%= user.render_stars(user.average_rating) %></span>
-            </div>
           </div>
-          <div class="d-flex align-items-center justify-content-center">
-            <% if user == @top_users[0] %>
-              <div class="points mr-3">
-                <h4><%= user.score %></h4>
-                <p>Helpr Points</p>
-              </div>
-              <%= image_tag "gold.png", alt: "gold trophy", width: 60, class: "trophy" %>
-            <% elsif user == @top_users[1] %>
-                <div class="points mr-3">
-                  <h4><%= user.score %></h4>
-                  <p>Helpr Points</p>
-                </div>
-              <%= image_tag "silver.png", alt: "silver trophy", width: 60, class: "trophy" %>
-            <% elsif user == @top_users[2] %>
-                <div class="points mr-3">
-                  <h4><%= user.score %></h4>
-                  <p>Helpr Points</p>
-                </div>
-              <%= image_tag "bronze.png", alt: "bronze trophy", width: 60, class: "trophy" %>
-            <% end %>
-          </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
 
+    </div>
   </div>
-</div>
+
+<% end %>

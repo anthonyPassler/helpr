@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.geocoded.order(created_at: :desc)
+    @posts = policy_scope(Post).geocoded.order(created_at: :desc)
     @live_posts = @posts.reject { |post| post.completed || post.bids.any? { |bid| bid.approved }}
 
 
@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    authorize @post
     @user = @post.user
     if current_user == @post.user || current_user == @post.bids.find_by(approved: true).try(:user)
       @chatroom = Chatroom.find_by(post: @post)
@@ -26,10 +27,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_params)
+    authorize @post
     @post.user = current_user
     if @post.save
       redirect_to posts_path
@@ -40,10 +43,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def update
     @post = Post.find(params[:id])
+    authorize @post
     if params[:completed] == "true"
       @post.completed = true
       @post.save
@@ -57,6 +62,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    authorize @post
     @post.destroy
     redirect_to posts_path
   end
