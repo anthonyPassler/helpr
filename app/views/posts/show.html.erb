@@ -4,24 +4,25 @@
         <div class="img-text">
           <div class ="linkto">
             <% if  @post.user.photo.attached? %>
-              <%= cl_image_tag @post.user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image"  %>
+              <%= cl_image_tag @post.user.photo.key,height: 150, :quality=>60, crop: :mfit, class: "avatar-show-square", alt: "profile image" %>
             <% else %>
-              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                    width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image")  %>
-                    <%= link_to 'View Profile' , user_path(@user), class: "textalignprofile"  %>
+              <%= cl_image_tag("fpatfvf9edoaaqhbkfrt", width: 150, crop: :fill, class: "avatar-show-square", alt: "profile image") %>
+              <%= link_to 'View Profile' , user_path(@user), class: "textalignprofile"  %>
             <% end %>
           </div>
           <div class="show-text">
             <span class="d-flex">
               <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
-              <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@post), class: "edit-pencil" if current_user == @post.user %>
+              <% if policy(@post).edit? %>
+                <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@post), class: "edit-pencil"%>
+                <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this post?"}, class: "edit-pencil"%>
+              <% end %>
             </span>
             <h4><%= @post.title %></h4>
             <p><%= @post.content %></p>
           </div>
         </div>
         <div class="date-btn">
-
           <p><strong><%= @post.date.nil? ? "ASAP" : @post.date.strftime("%d %b %Y") %></strong></p>
         </div>
     </div>
@@ -51,10 +52,9 @@
               <div class="bid">
                 <div class="bid-user-info">
                   <% if  bid.user.photo.attached? %>
-                    <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+                    <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                   <% else %>
-                    <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                          width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  )  %>
+                    <%= cl_image_tag("fpatfvf9edoaaqhbkfrt", width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) %>
                   <% end %>
                   <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
                 </div>
@@ -71,24 +71,23 @@
               </div>
             <% end %>
         <% end %>
-      <% elsif current_user == @post.user %>
+      <% elsif policy(@post).update? %>
         <% @post.bids.each do |bid|%>
           <div class="bid">
             <div class="bid-user-info">
               <% if  bid.user.photo.attached? %>
-                <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+                <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
-                <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                      width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  )  %>
+                <%= cl_image_tag("fpatfvf9edoaaqhbkfrt", width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) %>
               <% end %>
               <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
             </div>
             <div class="view-approve">
-              <% if bid.user == current_user%>
+              <% if policy(bid).destroy? %>
                 <%= link_to bid_path(bid), method: :delete, data: {confirm: "Are you sure you want to cancel this?"} do %>
-                <div class="cancel">
-                  <p><strong>Cancel</strong></p>
-                </div>
+                  <div class="cancel">
+                    <p><strong>Cancel</strong></p>
+                  </div>
                 <% end %>
               <% end %>
               <%= link_to user_path(bid.user) do %>
@@ -96,7 +95,7 @@
                   <p><strong>View Profile</strong></p>
                 </div>
               <% end %>
-                 <% if current_user == @post.user %>
+                 <% if policy(@post).update? %>
                     <%= link_to post_bid_path(@post, bid), method: :patch do %>
                       <div class="approve">
                         <p><strong>Approve</strong></p>
@@ -116,10 +115,9 @@
               <div class="bid">
                 <div class="bid-user-info">
                   <% if  bid.user.photo.attached? %>
-                    <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+                    <%= cl_image_tag bid.user.photo.key,height: 40, :quality=>60, crop: :mfit, class: "avatar dropdown-toggle", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                   <% else %>
-                    <%= cl_image_tag("fpatfvf9edoaaqhbkfrt",
-                          width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  )  %>
+                    <%= cl_image_tag("fpatfvf9edoaaqhbkfrt", width: 40, crop: :fill, class: "avatar", alt: "profile image", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) %>
                   <% end %>
                   <h3><%= bid.user.first_name %> <%= bid.user.last_name %></h3>
                 </div>
@@ -159,7 +157,7 @@
             <% end %>
           </div>
         <% end %>
-      <% if approved && current_user == @post.user  %>
+      <% if approved && current_user == @post.user && !@post.completed  %>
         <%= link_to post_path(@post, completed: true), :method => :put do %>
           <div class="completed">
             <p><strong>Mark as completed</strong></p>
@@ -172,7 +170,6 @@
 
   <% if @chatroom %>
     <div class="chat-container">
-<!--       <div class="header"> -->
         <div id="chatroomdiv" class="wrapper">
           <div>
             <h1 class="chatroomheader"># <%= @chatroom.name %></h1>
@@ -194,7 +191,6 @@
             <% end %>
           </div>
         </div>
-<!--       </div> -->
     </div>
     <div class="chat"></div>
   <% else %>

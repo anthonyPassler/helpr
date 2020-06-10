@@ -6,7 +6,7 @@
         <h4> Leave a review for
           <% if @post.user == current_user%>
             <%= @post.bids.find{|b| b.approved == true}.user.first_name %>
-          <% else %>
+          <% elsif @post.bids.find{|b| b.approved == true}.user == current_user %>
             <%= @post.user.first_name %>
           <% end %>
         </h4>

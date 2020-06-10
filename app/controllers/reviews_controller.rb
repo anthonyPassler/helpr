@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @review = Review.new
+    @review.post = @post
+    authorize @review
   end
 
   def create
@@ -12,6 +14,7 @@ class ReviewsController < ApplicationController
     @review.post = @post
     @review.user = current_user
     @review.bid = @bid
+    authorize @review
     if @review.save
       redirect_to dashboard_path(current_user)
     else

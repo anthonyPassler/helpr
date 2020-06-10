@@ -4,6 +4,7 @@ class BidsController < ApplicationController
 
   def create
     @bid = Bid.new(user:current_user)
+    authorize @bid
     @bid.post = @post
     @bid.save
 
@@ -31,5 +32,6 @@ class BidsController < ApplicationController
 
   def set_bid
     @bid = Bid.find(params[:id])
+    authorize @bid
   end
 end

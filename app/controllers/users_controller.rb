@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    authorize @user
     @posts = @user.posts
     @bids = @user.bids
     @stars = if avg_stars.nan?
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find(params[:id])
+    authorize @user
     @posts = @user.posts
     @bids = @user.bids
     @reviews = @user.reviews
