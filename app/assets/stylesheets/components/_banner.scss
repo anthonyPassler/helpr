@@ -14,8 +14,6 @@
   padding-right: 7vw;
   position: relative;
   margin-top: -66px;
-    @media (max-width: 767.98px) {
-    top: 0px; }
 }
 .tagline {
   display: flex;
@@ -26,8 +24,6 @@
     font-size: 65px;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   }
-    @media (max-width: 767.98px) {
-    margin-top: 70px; }
 }
 
 .fa-arrow-circle-down {
@@ -55,9 +51,6 @@
   position: absolute;
   bottom: 20px;
   left: 50%;
-  @media (max-width: 767.98px) {
-  display: none;
-  }
 }
 
 .hero-ctas {
@@ -94,12 +87,6 @@
   &:hover {
     background: $light-purple;
   }
-  @media (max-width: 767.98px) {
-  height: 100px;
-  width:  100px;
-  h3 {
-    font-size: 11px;
-  }  }
 }
 
 #cta-dashboard {
@@ -131,4 +118,26 @@
 }
 .light {
   font-weight: 300;
+}
+
+@media (max-width: 450px) {
+  #banner {
+    padding: 5%;
+    h2 {
+      font-size: 46px;
+    }
+  }
+  .hero-ctas {
+    justify-content: center;
+  }
+  .cta {
+    height: 135px;
+    width:  135px;
+    h3 {
+      font-size: 14px;
+    }
+  }
+  #scroll-btn {
+    display: none;
+  }
 }

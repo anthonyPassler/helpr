@@ -131,6 +131,17 @@ html {
   }
 }
 
-
+@media (max-width: 450px) {
+  .about-header {
+    padding: 80px 0;
+    p {
+      width: 90%;
+    }
+  }
+  .why {
+    flex-wrap: none;
+    padding: 8px;
+  }
+}
 
 
