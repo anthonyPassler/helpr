@@ -3,7 +3,6 @@
   width: 100vw;
   align-items: center;
 }
-
 .card-img {
   height: 100vh;
   width: 30%;
@@ -13,23 +12,17 @@
   // margin-bottom: 0px;
   padding-top: 85px;
 }
-
 .card-img-to-right{
   width: auto;
   // padding: 32px;
   // text-align: center;
   margin: auto;
 }
-
-
 .container-card-categories {
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  @media (max-width: 767.98px) {
-    flex-direction: column; }
 }
-
 .cards-categories {
   display: flex;
   color: black;
@@ -37,32 +30,17 @@
     font-weight: bold;
     margin-top: 8px;
   }
-    @media (max-width: 767.98px) {
-    flex-direction: column;
-    margin-left: 48px;
-    p {
-      margin-right: 30px;
-    } }
 }
-
 .card-categories-icon {
   display: flex;
   justify-content: center;
   border-radius: 24px 24px 24px 0;
   align-items: center;
-  display: flex;
   background: $purple-grad;
   width: 72px;
   height: 72px;
   margin: 0 24px;
-  border-radius: 24px 24px 24px 0;
-  @media (max-width: 767.98px) {
-    margin-left: 32px;
-  p {
-     }
-  }
 }
-
 .card-pls-signup {
   display: flex;
   align-items: center;
@@ -85,11 +63,7 @@
     text-align: left;
 
   }
-  @media (max-width: 767.98px) {
-  flex-direction: column;
-  margin-bottom: 5px;  }
 }
-
 .card-pls-signup-img {
   height: 88px;
   width: 88px;
@@ -97,19 +71,15 @@
   background-size: cover;
   background-position: center;
 }
-
 .card-become-helpr {
   border-radius: 40px 40px 0 40px;
 }
-
 .card-need-help {
   border-radius: 40px 40px 40px 0;
 }
-
 .card-description {
   width: 80%;
 }
-
 .why-card {
   display: flex;
   margin: 24px;
@@ -122,17 +92,51 @@
     color: white;
   }
 }
-
 #why-card-1 {
   background: $blue-grad;
   margin-top: 0;
-  @media (max-width: 767.98px) {
-  margin: 0;
 }
-}
-
 #why-card-2 {
   background: $green-grad;
   margin-top: 0;
 }
 
+@media (max-width: 450px) {
+  .card-pls-signup {
+    flex-direction: column;
+    margin: 0 auto 16px auto;
+    padding: 16px 24px;
+    width: 85%;
+    h4 {
+      padding-left: 0px;
+      color: $dark-blue;
+      font-weight: bold;
+    }
+    p {
+      font-size: 16px;
+      font-weight: light;
+      margin-left: 0;
+      color: black;
+      text-align: left;
+    }
+  }
+  .card-description {
+    width: 100%;
+    p {
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+  .container-card-categories {
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+  }
+  .cards-categories {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .card-categories-icon {
+    margin: 0 16px;
+  }
+}

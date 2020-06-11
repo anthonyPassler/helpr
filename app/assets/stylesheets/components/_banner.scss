@@ -7,7 +7,6 @@
   margin: 0;
   color: white;
   background-image: url("/assets/hands.jpg");
-  // linear-gradient(135deg, rgba(145,50,148,0.5) 0%, rgba(145,50,148,0.5) 0%),
   background-position: center;
   padding-top: 60px;
   padding-left: 7vw;
@@ -25,7 +24,6 @@
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   }
 }
-
 .fa-arrow-circle-down {
   color: white;
   font-size: 48px;
@@ -33,7 +31,6 @@
     color: #e2e2df;
   }
 }
-
 .fa-arrow-circle-up {
   color: $dark-purple;
   font-size: 48px;
@@ -42,17 +39,14 @@
     color: $light-purple;
   }
 }
-
 .scroll-up {
   color: $dark-purple;
 }
-
 #scroll-btn{
   position: absolute;
   bottom: 20px;
   left: 50%;
 }
-
 .hero-ctas {
   display: flex;
   align-items: center;
@@ -61,7 +55,6 @@
     text-decoration: none;
   }
 }
-
 .cta {
   display: flex;
   align-items: center;
@@ -79,20 +72,16 @@
   h3 {
     font-size: 22px;
   }
-
   a {
     color: white;
   }
-
   &:hover {
     background: $light-purple;
   }
 }
-
 #cta-dashboard {
   border-radius: 50% 50% 0;
 }
-
 #cta-help {
   border-radius: 50% 50% 50% 0;
   background: $yellow-grad;
@@ -100,7 +89,6 @@
     background: $light-yellow;
   }
 }
-
 #cta-become-helpr {
   border-radius: 50% 0 50% 50%;
   background: $green-grad;
@@ -108,7 +96,6 @@
     background: $light-green;
   }
 }
-
 #cta-feed {
   border-radius: 0 50% 50% 50%;
   background: $blue-grad;
@@ -121,18 +108,23 @@
 }
 
 @media (max-width: 450px) {
+  .container {
+    margin-top: 60px;
+  }
   #banner {
-    padding: 5%;
+    height: 700px;
+    padding: 0 5%;
     h2 {
       font-size: 46px;
     }
   }
   .hero-ctas {
+    margin-top: 24px;
     justify-content: center;
   }
   .cta {
-    height: 135px;
-    width:  135px;
+    height: 150px;
+    width:  150px;
     h3 {
       font-size: 14px;
     }

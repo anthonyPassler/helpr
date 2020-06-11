@@ -72,34 +72,30 @@
     <p data-aos="fade-left" data-aos-duration="1000">We are a group of like-minded humans building a tight-knit community. We do that by lending each other a helping hand. We have built a platform to connect people in local communities, for anyone in need of help its an easy way to to get connected with those wanting to do more good.</p>
   </div>
 
-  <div class= how-it-works justify-content-center>
+  <div class="how-it-works">
     <h2 data-aos="fade-right" data-aos-duration="1000">How it works</h2>
+
     <div class="container" data-aos="fade-left" data-aos-duration="1000">
-      <div class="row w-100 justify-content-center">
-
-        <div class="card-pls-signup card-become-helpr">
-          <div class="card-pls-signup-img" style="background-image: url('<%= image_path("hands-2.jpg") %>');">
-          </div>
-
-          <div class="card-description">
-            <h4>Become a Helpr</h4>
-            <p>Earn helpr points by doing good in your community, you can look at what people around you might need and offer someone your help. </p>
-          </div>
+      <div class="card-pls-signup card-become-helpr">
+        <div class="card-pls-signup-img" style="background-image: url('<%= image_path("hands-2.jpg") %>');">
         </div>
-
-        <div class="card-pls-signup card-need-help">
-          <div class="card-pls-signup-img" style="background-image: url('<%= image_path("hands-3.jpg") %>');">
-          </div>
-          <div class="card-description">
-            <h4>Need help?</h4>
-            <p>Reach out to your local community through the app. That way, you can the help you need and meet new people!</p>
-          </div>
+        <div class="card-description">
+          <h4>Become a Helpr</h4>
+          <p>Earn helpr points by doing good in your community, you can look at what people around you might need and offer someone your help. </p>
         </div>
-
       </div>
-    </div> <!-- end of container -->
-  </div> <!-- end of how it works -->
-</div> <!-- end of about -->
+      <div class="card-pls-signup card-need-help">
+        <div class="card-pls-signup-img" style="background-image: url('<%= image_path("hands-3.jpg") %>');">
+        </div>
+        <div class="card-description">
+          <h4>Need help?</h4>
+          <p>Reach out to your local community through the app. That way, you can the help you need and meet new people!</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <div class="categories">
   <h2 data-aos="fade-right" data-aos-duration="1000">Get Helpr'd</h2>
@@ -168,7 +164,7 @@
   <div class="row cards-showcase justify-content-center " data-aos="fade-left" data-aos-duration="1000">
   <% @top_users.each do |user| %>
     <%= link_to user_path(user), class:"text-decoration-none" do %>
-      <div class="card-helpr col-2">
+      <div class="card-helpr">
         <% if  user.photo.attached? %>
           <%= cl_image_tag user.photo.key, height: 104, :quality=>60, crop: :mfit, class: "avatar-xxl", alt: "profile image"  %>
         <% else %>
