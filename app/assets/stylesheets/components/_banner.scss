@@ -7,15 +7,12 @@
   margin: 0;
   color: white;
   background-image: url("/assets/hands.jpg");
-  // linear-gradient(135deg, rgba(145,50,148,0.5) 0%, rgba(145,50,148,0.5) 0%),
   background-position: center;
   padding-top: 60px;
   padding-left: 7vw;
   padding-right: 7vw;
   position: relative;
   margin-top: -66px;
-    @media (max-width: 767.98px) {
-    top: 0px; }
 }
 .tagline {
   display: flex;
@@ -26,10 +23,7 @@
     font-size: 65px;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   }
-    @media (max-width: 767.98px) {
-    margin-top: 70px; }
 }
-
 .fa-arrow-circle-down {
   color: white;
   font-size: 48px;
@@ -37,7 +31,6 @@
     color: #e2e2df;
   }
 }
-
 .fa-arrow-circle-up {
   color: $dark-purple;
   font-size: 48px;
@@ -46,20 +39,14 @@
     color: $light-purple;
   }
 }
-
 .scroll-up {
   color: $dark-purple;
 }
-
 #scroll-btn{
   position: absolute;
   bottom: 20px;
   left: 50%;
-  @media (max-width: 767.98px) {
-  display: none;
-  }
 }
-
 .hero-ctas {
   display: flex;
   align-items: center;
@@ -68,7 +55,6 @@
     text-decoration: none;
   }
 }
-
 .cta {
   display: flex;
   align-items: center;
@@ -86,26 +72,16 @@
   h3 {
     font-size: 22px;
   }
-
   a {
     color: white;
   }
-
   &:hover {
     background: $light-purple;
   }
-  @media (max-width: 767.98px) {
-  height: 100px;
-  width:  100px;
-  h3 {
-    font-size: 11px;
-  }  }
 }
-
 #cta-dashboard {
   border-radius: 50% 50% 0;
 }
-
 #cta-help {
   border-radius: 50% 50% 50% 0;
   background: $yellow-grad;
@@ -113,7 +89,6 @@
     background: $light-yellow;
   }
 }
-
 #cta-become-helpr {
   border-radius: 50% 0 50% 50%;
   background: $green-grad;
@@ -121,7 +96,6 @@
     background: $light-green;
   }
 }
-
 #cta-feed {
   border-radius: 0 50% 50% 50%;
   background: $blue-grad;
@@ -131,4 +105,31 @@
 }
 .light {
   font-weight: 300;
+}
+
+@media (max-width: 450px) {
+  .container {
+    margin-top: 60px;
+  }
+  #banner {
+    height: 700px;
+    padding: 0 5%;
+    h2 {
+      font-size: 46px;
+    }
+  }
+  .hero-ctas {
+    margin-top: 24px;
+    justify-content: center;
+  }
+  .cta {
+    height: 150px;
+    width:  150px;
+    h3 {
+      font-size: 14px;
+    }
+  }
+  #scroll-btn {
+    display: none;
+  }
 }

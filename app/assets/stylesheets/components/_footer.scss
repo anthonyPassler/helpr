@@ -24,13 +24,9 @@
 .list-unstyled{
   margin-bottom: 0px;
 }
-
-// STICK TO BOTTOM OF THE PAGE
-// body {
-//     display: flex;
-//     min-height: 100vh;
-//     flex-direction: column;
-// }
-// .container {
-//     flex: 1;    /* same as flex-grow: 1; */
-// }
+@media (max-width: 450px) {
+  .page-footer {
+    font-size: 10px;
+    padding: 0 16px;
+  }
+}

@@ -4,107 +4,79 @@ html {
 .about-header {
   padding: 80px;
   text-align: center;
-
   h2 {
     font-size: 40px;
     font-weight: bold;
     color: $light-blue;
     margin-bottom: 40px;
-
   }
   p {
     width: 60%;
     margin: 0 auto;
   }
 }
-
-
 .how-it-works {
   padding: 80px;
   text-align: center;
   background-color: $light-gray;
-
   h2 {
     font-size: 40px;
     font-weight: bold;
     color: $light-purple;
     font-size: 40px;
   }
-
   h4 {
     color: $light-purple;
     text-align: left;
     padding-left: 16px;
   }
-
   .card-description {
     align-self: flex-start;
   }
-
+  .container {
+    justify-content: center;
+  }
 }
-
 .categories {
   text-align: center;
   padding: 80px;
-
   h2 {
     color: $light-green;
     font-size: 40px;
     font-weight: bold;
   }
 }
-
 .why {
   padding: 80px;
   text-align: center;
   background-color: $light-gray;
-  @media (max-width: 767.98px) {
-    flex-wrap: none;
-    padding: 8px;
-   }
-
   h2 {
     font-size: 40px;
     font-weight: bold;
     color: $light-purple;
   }
-
   p {
     color: white;
   }
-
   .row {
     display: flex;
     justify-content: center;
   }
 }
-
-.inequality{
-    @media (max-width: 767.98px) {
-      justify-content: unset;
-      flex-direction: column;
-  }
-}
-
 .cards-showcase {
   margin-top: 40px;
   display: flex;
   justify-content: center;
-  padding-left: 150px;
 }
-
 #showcase-helprs {
   padding: 80px;
   text-align: center;
-
   h2 {
     color: $light-yellow;
     font-size: 40px;
     font-weight: bold;
   }
 }
-
-
 .card-helpr {
   padding: 0 20px;
   box-shadow: rgba(0,0,0,0.5);
@@ -113,24 +85,71 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   a:hover {
     text-decoration: none;
   }
-
   &:hover {
     text-decoration: none;
     opacity: 0.6;
     color: rgba(0,0,0,0.6)
   }
-
   p {
     color: black;
     margin-top: 8px;
     font-weight: bold;
   }
 }
-
-
+@media (max-width: 450px) {
+  .about-header {
+    padding: 80px 0;
+    p {
+      width: 85%;
+    }
+  }
+  .how-it-works {
+    padding: 80px 0;
+    h2 {
+      margin-bottom: 40px;
+    }
+    h4 {
+      color: $light-purple;
+      text-align: center;
+      padding-left: 0;
+    }
+    .container {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+  .categories {
+    text-align: center;
+    padding: 80px 0;
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
+  .why {
+    padding: 80px 10%;
+    h2 {
+      margin-bottom: 40px;
+    }
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  #showcase-helprs {
+    padding: 80px 0;
+    text-align: center;
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
+  .cards-showcase {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
 
 

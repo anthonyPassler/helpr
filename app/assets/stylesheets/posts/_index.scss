@@ -3,8 +3,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  @media (max-width: 767.98px) {
-    flex-direction: column; }
 }
 .post {
   display: flex;
@@ -40,9 +38,6 @@
   a {
     text-decoration: none;
   }
-  @media (max-width: 767.98px) {
-  width: 100%;
-  }
 }
 .map-container {
   position: -webkit-sticky;
@@ -54,11 +49,7 @@
     // width: 100%;
     object-fit: cover;
   }
-  @media (max-width: 767.98px) {
-  display: none;
-  }
 }
-
 .map-dashboard {
   width: 100%;
 }
@@ -68,7 +59,6 @@
   margin: 10px 0;
   color: white;
 }
-
 .map-bottom {
   border-radius: 0px 0px 40px 0px;
   padding: 24px;
@@ -93,4 +83,16 @@
 }
 .avatar-post-container {
   display: flex;
+}
+@media (max-width: 450px) {
+  .container {
+    padding: 0px 0;
+    flex-direction: column;
+  }
+  .posts-container {
+    width: 100%;
+  }
+  .map-container {
+    display: none;
+  }
 }

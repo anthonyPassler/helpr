@@ -13,7 +13,6 @@
 }
 .img-text {
   display: flex;
-
 }
 .show-post {
   display: flex;
@@ -213,8 +212,9 @@
     color: $light-purple;
   }
 }
+@media (max-width: 450px) {
 
-
+}
 
 
 
