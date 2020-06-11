@@ -129,7 +129,6 @@
     margin: 0;
   }
 }
-
 .cancel {
   display: flex;
   align-items: center;
@@ -144,7 +143,6 @@
     transition: 0.3s ease;
   }
 }
-
 .view {
   display: flex;
   align-items: center;
@@ -159,7 +157,6 @@
     transition: 0.3s ease;
   }
 }
-
 .approve {
   display: flex;
   align-items: center;
@@ -212,8 +209,32 @@
     color: $light-purple;
   }
 }
+.textalignprofile{
+margin-left: 35px;
+color: #00ACB7;
+}
+.linkto {
+  display: flex;
+  flex-direction: column;
+}
 @media (max-width: 450px) {
-
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .show-post-container {
+    padding: 16px;
+    width: 100%;
+    min-height: 500px;
+  }
+  .show-post {
+    flex-wrap: wrap;
+  }
+  .avatar-show-square {
+    width: 100px;
+    height: 100px;
+    margin-right: 16px;
+  }
 }
 
 
