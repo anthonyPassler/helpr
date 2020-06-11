@@ -1,27 +1,26 @@
 .btn-profile-post{
-box-sizing: border-box;
-text-align: center;
-margin: 0.2em;
-padding: 6px 6px;
-background: $purple-grad;
-color: white;
-&:hover{
-background: $blue-grad;
-color: white;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0.2em;
+  padding: 6px 6px;
+  background: $purple-grad;
+  color: white;
+  &:hover{
+    background: $blue-grad;
+    color: white;
+  }
 }
-}
-
 .btn-profile-edit{
-box-sizing: border-box;
-text-align: center;
-margin: 0.2em;
-padding: 6px 6px;
-background: $purple-grad;
-color: white;
-&:hover{
-background: $blue-grad;
-color: white;
-}
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0.2em;
+  padding: 6px 6px;
+  background: $purple-grad;
+  color: white;
+  &:hover{
+    background: $blue-grad;
+    color: white;
+  }
 }
 .edit-pencil {
   color: $light-blue;
@@ -31,8 +30,6 @@ color: white;
   color: $light-purple;
   }
 }
-
-
 /* FACEBOOK & GOOGLE LOGIN BUTTONS FOR SIGN IN & SIGN UP */
 .loginBtn {
   box-sizing: border-box;
@@ -72,7 +69,6 @@ color: white;
 .loginBtn--facebook {
   background-color: #4C69BA;
   background-image: linear-gradient(#4C69BA, #3B55A0);
-  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
   text-shadow: 0 -1px 0 #354C8C;
 }
 .loginBtn--facebook:before {
@@ -84,11 +80,8 @@ color: white;
   background-color: #5B7BD5;
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
-
-
 /* Google */
 .loginBtn--google {
-  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
   background: #DD4B39;
 }
 .loginBtn--google:before {
@@ -99,7 +92,6 @@ color: white;
 .loginBtn--google:focus {
   background: #E74B37;
 }
-
 .date-btn {
   margin-left: 20px;
   text-align: center;
@@ -113,7 +105,6 @@ color: white;
     font-size: 12px;
   }
 }
-
 .review-btn {
   margin-left: 20px;
   display: flex;
@@ -136,19 +127,16 @@ color: white;
     opacity: 0.7;
   }
 }
-
 /* FACEBOOK & GOOGLE LOGIN BUTTONS FOR SIGN IN & SIGN UP */
-
 .btn-save{
-box-sizing: border-box;
-text-align: center;
-margin: 0.2em;
-padding: 6px 6px;
-background: $purple-grad;
-color: white;
-&:hover{
-background: $blue-grad;
-color: white;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0.2em;
+  padding: 6px 6px;
+  background: $purple-grad;
+  color: white;
+  &:hover{
+    background: $blue-grad;
+    color: white;
+  }
 }
-}
-

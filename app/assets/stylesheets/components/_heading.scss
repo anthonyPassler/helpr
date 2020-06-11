@@ -4,24 +4,23 @@
   margin-bottom: 40px;
   line-height: 1;
   &:after {
-      content: "";
-      display: block;
-      width: 80px;
-      padding-top: 8px;
-      border-bottom: 8px solid $light-purple;
+    content: "";
+    display: block;
+    width: 80px;
+    padding-top: 8px;
+    border-bottom: 8px solid $light-purple;
   }
 }
 .header-center {
   &:after {
-      content: "";
-      display: block;
-      width: 80px;
-      padding-top: 8px;
-      margin: 0 auto;
-      border-bottom: 8px solid $light-purple;
+    content: "";
+    display: block;
+    width: 80px;
+    padding-top: 8px;
+    margin: 0 auto;
+    border-bottom: 8px solid $light-purple;
   }
 }
-
 .chatroomdiv{
   color: black;
   font-weight: 600;

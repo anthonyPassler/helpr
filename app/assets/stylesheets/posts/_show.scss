@@ -14,11 +14,6 @@
 .img-text {
   display: flex;
 }
-.show-post {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
 .chat-container {
   background-color: rgba(145, 49, 138, 0.1);
   padding: 16px;
@@ -41,6 +36,7 @@
   }
 }
 .show-text {
+  width: 100%;
   h3 {
     font-size: 24px;
     color: $light-blue;
@@ -210,8 +206,8 @@
   }
 }
 .textalignprofile{
-margin-left: 35px;
-color: #00ACB7;
+  margin-left: 35px;
+  color: #00ACB7;
 }
 .linkto {
   display: flex;
@@ -234,6 +230,22 @@ color: #00ACB7;
     width: 100px;
     height: 100px;
     margin-right: 16px;
+  }
+  .textalignprofile{
+    margin-left: 0px;
+    text-align: center;
+    margin-right: 16px;
+  }
+  .show-text {
+    h3 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+  }
+  .date-btn {
+    margin-left: 0px;
   }
 }
 
