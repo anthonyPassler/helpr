@@ -92,7 +92,24 @@
   .posts-container {
     width: 100%;
   }
+  .avatar-post-container {
+    max-width: 250px;
+  }
   .map-container {
     display: none;
+  }
+  .avatar-extra-large {
+    width: 40px;
+    height: 40px;
+  }
+  .date-btn {
+    p {
+      font-size: 10px;
+    }
+  }
+}
+@media (max-width: 330px) {
+  .avatar-post-container {
+    max-width: 200px;
   }
 }

@@ -42,3 +42,12 @@ p {
 .min-height{
   min-height: calc(100vh - 176px)
 }
+@media (max-width: 450px) {
+  h3 {
+    font-size: 12px;
+  }
+  p {
+    font-weight: 300;
+    font-size: 12px;
+  }
+}

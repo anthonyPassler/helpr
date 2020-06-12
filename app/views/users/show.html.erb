@@ -54,12 +54,8 @@
         </div>
       <% end %>
     <% end %>
-  <% else %>
-    <p> No reviews yet </p>
-    <hr>
-  <%= link_to "Community Feed", posts_path, class: "btn btn-profile-post" %>
-  <% end %>
-  <% @posts.map(&:reviews).flatten.reject { |review| review.user_id == @user.id }.each do |review| %>
+  <% elsif @posts.map(&:reviews).flatten.reject { |review| review.user_id == @user.id }.any? %>
+      <% @posts.map(&:reviews).flatten.reject { |review| review.user_id == @user.id }.each do |review| %>
     <div class="review-post">
       <div class="avatar-post-container">
         <div>
@@ -78,6 +74,11 @@
         </div>
       </div>
     </div>
+  <% end %>
+  <% else %>
+    <p> No reviews yet </p>
+    <hr>
+  <%= link_to "Community Feed", posts_path, class: "btn btn-profile-post" %>
   <% end %>
   </div>
 </div>
