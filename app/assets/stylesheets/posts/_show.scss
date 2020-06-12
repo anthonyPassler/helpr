@@ -14,11 +14,6 @@
 .img-text {
   display: flex;
 }
-.show-post {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
 .chat-container {
   background-color: rgba(145, 49, 138, 0.1);
   padding: 16px;
@@ -41,6 +36,7 @@
   }
 }
 .show-text {
+  width: 100%;
   h3 {
     font-size: 24px;
     color: $light-blue;
@@ -115,23 +111,8 @@
   display: flex;
   align-items: center;
 }
-.bid1 {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 24px;
-  border-radius: 50px 50px 50px 0px;
-  border: 2px solid $light-purple;
-  p {
-    margin: 0;
-  }
-  h3 {
-    padding: 16px;
-    margin: 0;
-  }
-}
 .cancel {
-  display: flex;
-  align-items: center;
+  text-align: center;
   color: white;
   padding: 16px;
   background: $blue-grad;
@@ -144,8 +125,7 @@
   }
 }
 .view {
-  display: flex;
-  align-items: center;
+  text-align: center;
   color: $light-purple;
   padding: 16px;
   background: $yellow-grad;
@@ -158,8 +138,7 @@
   }
 }
 .approve {
-  display: flex;
-  align-items: center;
+  text-align: center;
   color: white;
   border-radius: 0px 50px 50px 0px;
   padding: 16px;
@@ -173,8 +152,7 @@
   }
 }
 .pending {
-  display: flex;
-  align-items: center;
+  text-align: center;
   color: white;
   border-radius: 0px 50px 50px 0px;
   padding: 16px;
@@ -187,8 +165,7 @@
   display: flex;
 }
 .approved {
-  display: flex;
-  align-items: center;
+  text-align: center;
   color: white;
   border-radius: 0px 50px 50px 0px;
   padding: 16px;
@@ -210,8 +187,8 @@
   }
 }
 .textalignprofile{
-margin-left: 35px;
-color: #00ACB7;
+  margin-left: 35px;
+  color: #00ACB7;
 }
 .linkto {
   display: flex;
@@ -225,15 +202,90 @@ color: #00ACB7;
   .show-post-container {
     padding: 16px;
     width: 100%;
-    min-height: 500px;
+    min-height: 0px;
   }
   .show-post {
     flex-wrap: wrap;
   }
   .avatar-show-square {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     margin-right: 16px;
+  }
+  .textalignprofile{
+    margin-left: 0px;
+    text-align: center;
+    margin-right: 16px;
+    font-size: 12px;
+  }
+  .show-text {
+    h3 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .date-btn {
+    margin-left: 0px;
+    margin-bottom: 8px;
+  }
+  .name-date-container {
+    flex-direction: column-reverse;
+  }
+  .see-offer {
+    margin-top: 24px;
+  }
+  .bid {
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    p {
+      font-size: 12px;
+    }
+  }
+  .view-approve {
+    a {
+      width: 33%
+    }
+    .pending, .approve {
+      width: 34%
+    }
+    .approved {
+      flex-grow: 2;
+    }
+  }
+  .cancel {
+    padding: 8px;
+  }
+  .view {
+    padding: 8px;
+  }
+  .approve {
+    border-radius: 0px 0px 0px 0px;
+    padding: 8px;
+  }
+  .pending {
+    border-radius: 0px 0px 0px 0px;
+    padding: 8px;
+  }
+  .approved {
+    border-radius: 0px 0px 0px 0px;
+    padding: 8px;
+  }
+  .bid-user-info {
+    justify-content: center;
+  }
+  .chat-container-placeholder {
+    display: none;
+  }
+  .chat-container {
+    width: 100%;
+    margin-top: 24px;
+    margin-left: 0px;
   }
 }
 
